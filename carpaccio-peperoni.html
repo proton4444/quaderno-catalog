@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Carpaccio di peperoni — Ratanà</title>
+<meta name="description" content="Peperoni rossi arrostisti, spellati e marinati — meglio se riposano un paio di giorni."/>
+<link rel="stylesheet" href="/css/scheda.css"/>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/">&larr; <span data-lang-it>Indice</span><span data-lang-en>Index</span></a>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="it" aria-pressed="true">IT</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</div></header>
+<section class="wrap hero-page">
+  <p class="kicker">Ratanà · Cesare Battisti · <span data-lang-it>Ricetta V</span><span data-lang-en>Recipe V</span></p>
+  <h1 data-lang-it>Carpaccio di peperoni</h1>
+  <h1 data-lang-en>Pepper carpaccio</h1>
+  <p class="lede" data-lang-it>Peperoni rossi arrostisti, spellati e marinati — meglio se riposano un paio di giorni.</p>
+  <p class="lede" data-lang-en>Roasted red peppers, peeled and marinated — better after a couple of days’ rest.</p>
+  <a class="tut-link" href="/carpaccio-peperoni-tutorial" data-lang-it>Tutorial passo-passo →</a>
+  <a class="tut-link" href="/carpaccio-peperoni-tutorial" data-lang-en>Step-by-step tutorial →</a>
+  <p class="serving" data-lang-it>Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.</p>
+  <p class="serving" data-lang-en>Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented.</p>
+  <a class="source" href="https://www.facebook.com/reel/2969146523439327" target="_blank" rel="noopener" data-lang-it>Fonte · Facebook Reel ↗</a>
+  <a class="source" href="https://www.facebook.com/reel/2969146523439327" target="_blank" rel="noopener" data-lang-en>Source · Facebook Reel ↗</a>
+</section>
+<div class="wrap grid">
+<aside>
+  <p class="h3" data-lang-it>Ingredienti</p>
+  <p class="h3" data-lang-en>Ingredients</p>
+  <ul class="ings">
+<li><span data-lang-it>Peperoni rossi</span><span data-lang-en>Red peppers</span></li>
+<li><span data-lang-it>Sale, pepe, olio</span><span data-lang-en>Salt, pepper, oil</span></li>
+<li><span data-lang-it>Aglio</span><span data-lang-en>Garlic</span></li>
+<li><span data-lang-it>Basilico</span><span data-lang-en>Basil</span></li>
+<li><span data-lang-it>Origano</span><span data-lang-en>Oregano</span></li>
+<li><span data-lang-it>Un pizzico d’aceto</span><span data-lang-en>A pinch of vinegar</span></li>
+<li><span data-lang-it>Noci</span><span data-lang-en>Walnuts</span></li>
+<li><span data-lang-it>Erbette</span><span data-lang-en>Fresh herbs</span></li>
+  </ul>
+</aside>
+<div>
+  <p class="h3" data-lang-it>Procedimento</p>
+  <p class="h3" data-lang-en>Method</p>
+  <ol class="steps">
+<li><span class="n">01</span><span class="t"><span data-lang-it>Forno a 220 °C per 20 minuti.</span><span data-lang-en>Oven at 220 °C for 20 minutes.</span></span></li>
+<li><span class="n">02</span><span class="t"><span data-lang-it>Raffreddare e spellare.</span><span data-lang-en>Cool and peel.</span></span></li>
+<li><span class="n">03</span><span class="t"><span data-lang-it>Marinare con sale, pepe, olio, aglio, basilico, origano e aceto.</span><span data-lang-en>Marinate with salt, pepper, oil, garlic, basil, oregano and vinegar.</span></span></li>
+<li><span class="n">04</span><span class="t"><span data-lang-it>In frigo un paio di giorni se possibile.</span><span data-lang-en>Refrigerate a couple of days if possible.</span></span></li>
+<li><span class="n">05</span><span class="t"><span data-lang-it>Impiattare come carpaccio.</span><span data-lang-en>Plate like a carpaccio.</span></span></li>
+<li><span class="n">06</span><span class="t"><span data-lang-it>Finire con noci, erbette, basilico, pepe e olio+aceto della marinata.</span><span data-lang-en>Finish with walnuts, herbs, basil, pepper and oil+vinegar from the marinade.</span></span></li>
+  </ol>
+</div>
+</div>
+<aside class="wrap after">
+  <p class="h3" data-lang-it>Note di cucina</p>
+  <p class="h3" data-lang-en>Kitchen notes</p>
+  <ul>
+<li><span data-lang-it>Più marinano, meglio è.</span><span data-lang-en>The longer they marinate, the better.</span></li>
+<li><span data-lang-it>Sconosciuto dal reel: quantità.</span><span data-lang-en>Unknown from the reel: quantities.</span></li>
+  </ul>
+</aside>
+<footer><div class="wrap">
+  <p class="muted" data-lang-it>Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.</p>
+  <p class="muted" data-lang-en>After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated.</p>
+</div></footer>
+<script>
+
+(function(){
+  const KEY='recipe-lang';
+  const html=document.documentElement;
+  const buttons=[...document.querySelectorAll('[data-set-lang]')];
+  function apply(lang){
+    html.lang=lang;
+    buttons.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.setLang===lang)));
+    try{localStorage.setItem(KEY,lang);document.cookie=KEY+'='+lang+';path=/;max-age=31536000';}catch(e){}
+  }
+  let initial='it';
+  try{
+    const c=document.cookie.split(';').map(s=>s.trim()).find(s=>s.startsWith(KEY+'='));
+    initial=(c&&c.split('=')[1])||localStorage.getItem(KEY)||'it';
+  }catch(e){}
+  if(initial!=='en'&&initial!=='it') initial='it';
+  apply(initial);
+  buttons.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.setLang)));
+})();
+
+</script>
+</body></html>

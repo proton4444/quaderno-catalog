@@ -1,0 +1,46 @@
+
+:root{
+  --paper:#f4efe4;--paper-deep:#ebe3d3;--ink:#241c14;--ink-soft:#3d3429;--ink-muted:#5c5348;
+  --rule:#d4c6b0;--terracotta:#8a3d28;--gold:#a07c45;
+  --serif:"Source Serif 4",Palatino,Georgia,serif;--sans:system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif)}
+a{color:var(--terracotta);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+.site{position:sticky;top:0;z-index:20;border-bottom:1px solid color-mix(in srgb,var(--rule) 80%,transparent);background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.brand{font-family:var(--sans);font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang{display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden}
+.lang button{font-family:var(--sans);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;border:0;background:transparent;color:var(--ink-muted);padding:.4rem .7rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.kicker{font-family:var(--sans);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--terracotta)}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin:.6rem 0 0}
+.lede{margin-top:1rem;font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.55;color:var(--ink-soft);max-width:38rem}
+footer{border-top:1px solid var(--rule);background:var(--paper-deep);padding:2.5rem 0 3rem;color:var(--ink-soft)}
+footer .muted{color:var(--ink-muted);font-size:.9rem;max-width:40rem;line-height:1.55}
+[data-lang-en]{display:none}
+html[lang="en"] [data-lang-it]{display:none}
+html[lang="en"] [data-lang-en]{display:revert}
+html[lang="en"] .tut-link[data-lang-en]{display:inline-flex}
+html[lang="en"] .source[data-lang-en]{display:inline}
+html[lang="en"] .h3[data-lang-en]{display:block}
+.hero-page{padding:2.5rem 0 1.25rem}
+.source{display:inline-block;margin-top:1rem;font-family:var(--sans);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);border-bottom:1px solid color-mix(in srgb,var(--terracotta) 40%,transparent)}
+.serving{margin-top:1rem;border-left:2px solid color-mix(in srgb,var(--gold) 70%,transparent);padding-left:1rem;color:var(--ink-muted);line-height:1.5;max-width:42rem}
+.grid{margin-top:2.5rem;display:grid;gap:2.5rem;padding-bottom:1rem}
+@media(min-width:960px){.grid{grid-template-columns:17rem 1fr;gap:3rem}}
+.h3{font-family:var(--sans);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;margin:0 0 1rem;color:var(--ink)}
+ul.ings{list-style:none;padding:0;margin:.4rem 0 0}
+ul.ings li{display:flex;gap:.7rem;margin:.4rem 0;line-height:1.5;color:var(--ink-soft)}
+ul.ings li::before{content:"";width:.25rem;height:.25rem;border-radius:50%;background:var(--terracotta);margin-top:.7em;flex:none}
+ol.steps{list-style:none;padding:0;margin:.8rem 0 0}
+ol.steps li{display:flex;gap:1rem;margin:0 0 .9rem}
+.n{font-family:var(--sans);font-size:.72rem;color:var(--terracotta);width:1.5rem;flex:none;padding-top:.15rem}
+.t{line-height:1.55;color:var(--ink-soft);font-size:1.02rem}
+.after{margin:2.5rem 0 3rem;padding-top:1.5rem;border-top:1px solid var(--rule);max-width:42rem}
+.after ul{color:var(--ink-soft);line-height:1.55;padding-left:1.1rem}
+.tut-link{display:inline-flex;margin:.85rem 0 0;padding:.45rem .85rem;border:1px solid color-mix(in srgb,var(--terracotta) 35%,var(--rule));border-radius:999px;font-family:var(--sans);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);text-decoration:none;background:color-mix(in srgb,var(--paper) 80%,#fff)}
+.tut-link:hover{background:var(--terracotta);color:var(--paper);text-decoration:none}

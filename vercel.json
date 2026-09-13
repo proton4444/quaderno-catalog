@@ -1,0 +1,128 @@
+{
+  "rewrites": [
+    {
+      "source": "/peperonata",
+      "destination": "/peperonata.html"
+    },
+    {
+      "source": "/peperonata-romana",
+      "destination": "/peperonata-romana.html"
+    },
+    {
+      "source": "/spaghetti-imago",
+      "destination": "/spaghetti-imago.html"
+    },
+    {
+      "source": "/padellata-verdure",
+      "destination": "/padellata-verdure.html"
+    },
+    {
+      "source": "/padellata-verdure-tutorial",
+      "destination": "/padellata-verdure-tutorial.html"
+    },
+    {
+      "source": "/spaghetti-cipollotto",
+      "destination": "/spaghetti-cipollotto.html"
+    },
+    {
+      "source": "/spaghetti-cipollotto-tutorial",
+      "destination": "/spaghetti-cipollotto-tutorial.html"
+    },
+    {
+      "source": "/gnocchi-sorrentina",
+      "destination": "/gnocchi-sorrentina.html"
+    },
+    {
+      "source": "/gnocchi-sorrentina-tutorial",
+      "destination": "/gnocchi-sorrentina-tutorial.html"
+    },
+    {
+      "source": "/risotto-zucchine",
+      "destination": "/risotto-zucchine.html"
+    },
+    {
+      "source": "/risotto-zucchine-tutorial",
+      "destination": "/risotto-zucchine-tutorial.html"
+    },
+    {
+      "source": "/carpaccio-peperoni",
+      "destination": "/carpaccio-peperoni.html"
+    },
+    {
+      "source": "/carpaccio-peperoni-tutorial",
+      "destination": "/carpaccio-peperoni-tutorial.html"
+    },
+    {
+      "source": "/pappa-pomodoro",
+      "destination": "/pappa-pomodoro.html"
+    },
+    {
+      "source": "/pappa-pomodoro-tutorial",
+      "destination": "/pappa-pomodoro-tutorial.html"
+    },
+    {
+      "source": "/tartare-trota",
+      "destination": "/tartare-trota.html"
+    },
+    {
+      "source": "/tartare-trota-tutorial",
+      "destination": "/tartare-trota-tutorial.html"
+    },
+    {
+      "source": "/medaglie-salsiccia",
+      "destination": "/medaglie-salsiccia.html"
+    },
+    {
+      "source": "/medaglie-salsiccia-tutorial",
+      "destination": "/medaglie-salsiccia-tutorial.html"
+    },
+    {
+      "source": "/fish-and-chips-locatelli",
+      "destination": "/fish-and-chips-locatelli.html"
+    },
+    {
+      "source": "/fish-and-chips-locatelli-tutorial",
+      "destination": "/fish-and-chips-locatelli-tutorial.html"
+    },
+    {
+      "source": "/medaglioni-cervo",
+      "destination": "/medaglioni-cervo.html"
+    },
+    {
+      "source": "/medaglioni-cervo-tutorial",
+      "destination": "/medaglioni-cervo-tutorial.html"
+    },
+    {
+      "source": "/colazione-barbieri",
+      "destination": "/colazione-barbieri.html"
+    },
+    {
+      "source": "/colazione-barbieri-tutorial",
+      "destination": "/colazione-barbieri-tutorial.html"
+    },
+    {
+      "source": "/pernice-ripiena",
+      "destination": "/pernice-ripiena.html"
+    },
+    {
+      "source": "/pernice-ripiena-tutorial",
+      "destination": "/pernice-ripiena-tutorial.html"
+    },
+    {
+      "source": "/cucina-vegana-locatelli",
+      "destination": "/cucina-vegana-locatelli.html"
+    },
+    {
+      "source": "/cucina-vegana-locatelli-tutorial",
+      "destination": "/cucina-vegana-locatelli-tutorial.html"
+    },
+    {
+      "source": "/risotto-caprino-lumache",
+      "destination": "/risotto-caprino-lumache.html"
+    },
+    {
+      "source": "/risotto-caprino-lumache-tutorial",
+      "destination": "/risotto-caprino-lumache-tutorial.html"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gnocchi alla sorrentina — Ratanà</title>
+<meta name="description" content="Gnocchi delicati al forno con sughetto, mozzarella di bufala e pesto."/>
+<link rel="stylesheet" href="/css/scheda.css"/>
+</head>
+<body>
+<header class="site"><div class="wrap nav">
+  <a class="brand" href="/">&larr; <span data-lang-it>Indice</span><span data-lang-en>Index</span></a>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="it" aria-pressed="true">IT</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</div></header>
+<section class="wrap hero-page">
+  <p class="kicker">Ratanà · Cesare Battisti · <span data-lang-it>Ricetta III</span><span data-lang-en>Recipe III</span></p>
+  <h1 data-lang-it>Gnocchi alla sorrentina</h1>
+  <h1 data-lang-en>Gnocchi alla sorrentina</h1>
+  <p class="lede" data-lang-it>Gnocchi delicati al forno con sughetto, mozzarella di bufala e pesto.</p>
+  <p class="lede" data-lang-en>Delicate baked gnocchi with tomato sauce, buffalo mozzarella and pesto.</p>
+  <a class="tut-link" href="/gnocchi-sorrentina-tutorial" data-lang-it>Tutorial passo-passo →</a>
+  <a class="tut-link" href="/gnocchi-sorrentina-tutorial" data-lang-en>Step-by-step tutorial →</a>
+  <p class="serving" data-lang-it>Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.</p>
+  <p class="serving" data-lang-en>Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented.</p>
+  <a class="source" href="https://www.facebook.com/reel/1344966010733012" target="_blank" rel="noopener" data-lang-it>Fonte · Facebook Reel ↗</a>
+  <a class="source" href="https://www.facebook.com/reel/1344966010733012" target="_blank" rel="noopener" data-lang-en>Source · Facebook Reel ↗</a>
+</section>
+<div class="wrap grid">
+<aside>
+  <p class="h3" data-lang-it>Ingredienti</p>
+  <p class="h3" data-lang-en>Ingredients</p>
+  <ul class="ings">
+<li><span data-lang-it>Gnocchi</span><span data-lang-en>Gnocchi</span></li>
+<li><span data-lang-it>Acqua bollente</span><span data-lang-en>Boiling water</span></li>
+<li><span data-lang-it>Sughetto di pomodoro</span><span data-lang-en>Tomato sauce (sughetto)</span></li>
+<li><span data-lang-it>Mozzarella di bufala</span><span data-lang-en>Buffalo mozzarella</span></li>
+<li><span data-lang-it>Pesto, circa 1 cucchiaino</span><span data-lang-en>Pesto, about 1 teaspoon</span></li>
+<li><span data-lang-it>Formaggio grattugiato</span><span data-lang-en>Grated cheese</span></li>
+  </ul>
+</aside>
+<div>
+  <p class="h3" data-lang-it>Procedimento</p>
+  <p class="h3" data-lang-en>Method</p>
+  <ol class="steps">
+<li><span class="n">01</span><span class="t"><span data-lang-it>Tagliare gli gnocchi a pezzetti.</span><span data-lang-en>Cut the gnocchi into pieces.</span></span></li>
+<li><span class="n">02</span><span class="t"><span data-lang-it>Cuocere in acqua bollente senza romperli.</span><span data-lang-en>Cook in boiling water without breaking them.</span></span></li>
+<li><span class="n">03</span><span class="t"><span data-lang-it>Quando vengono a galla, circa 5 minuti.</span><span data-lang-en>When they float, about 5 minutes.</span></span></li>
+<li><span class="n">04</span><span class="t"><span data-lang-it>Padellino o teglia col sugo.</span><span data-lang-en>A small pan or baking dish with the sauce.</span></span></li>
+<li><span class="n">05</span><span class="t"><span data-lang-it>Mozzarella spezzata a mano.</span><span data-lang-en>Mozzarella torn by hand.</span></span></li>
+<li><span class="n">06</span><span class="t"><span data-lang-it>Pesto e formaggio.</span><span data-lang-en>Pesto and cheese.</span></span></li>
+<li><span class="n">07</span><span class="t"><span data-lang-it>Forno a 140 °C per 20 minuti.</span><span data-lang-en>Oven at 140 °C for 20 minutes.</span></span></li>
+  </ol>
+</div>
+</div>
+<aside class="wrap after">
+  <p class="h3" data-lang-it>Note di cucina</p>
+  <p class="h3" data-lang-en>Kitchen notes</p>
+  <ul>
+<li><span data-lang-it>Sono delicati; il latte della mozzarella va bene.</span><span data-lang-en>They are delicate; the mozzarella’s milk is fine.</span></li>
+<li><span data-lang-it>Sconosciuto dal reel: quantità.</span><span data-lang-en>Unknown from the reel: quantities.</span></li>
+  </ul>
+</aside>
+<footer><div class="wrap">
+  <p class="muted" data-lang-it>Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.</p>
+  <p class="muted" data-lang-en>After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated.</p>
+</div></footer>
+<script>
+
+(function(){
+  const KEY='recipe-lang';
+  const html=document.documentElement;
+  const buttons=[...document.querySelectorAll('[data-set-lang]')];
+  function apply(lang){
+    html.lang=lang;
+    buttons.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.setLang===lang)));
+    try{localStorage.setItem(KEY,lang);document.cookie=KEY+'='+lang+';path=/;max-age=31536000';}catch(e){}
+  }
+  let initial='it';
+  try{
+    const c=document.cookie.split(';').map(s=>s.trim()).find(s=>s.startsWith(KEY+'='));
+    initial=(c&&c.split('=')[1])||localStorage.getItem(KEY)||'it';
+  }catch(e){}
+  if(initial!=='en'&&initial!=='it') initial='it';
+  apply(initial);
+  buttons.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.setLang)));
+})();
+
+</script>
+</body></html>
