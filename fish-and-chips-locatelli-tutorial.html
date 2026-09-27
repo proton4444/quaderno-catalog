@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fish and chips con mushy peas · Tutorial — MasterChef Magazine</title>
   <meta name="description" content="Tutorial Fooby: Fish and chips con mushy peas, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -37,8 +37,9 @@
     </section>
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
         <div class="group"><ul>
             <li data-lang-it>Patate — quantità non detta (cita varietà inglesi Maris Piper / King Edward come preferite in UK)</li>
             <li data-lang-en>Potatoes — quantity not stated (mentions Maris Piper / King Edward as UK favourites)</li>
@@ -63,6 +64,8 @@
             <li data-lang-it>Sale — a fine impiattamento</li>
             <li data-lang-en>Salt — at plating</li>
         </ul></div>
+          </div>
+        </details>
       </aside>
       <section class="steps" aria-label="Steps">
         <div class="steps-head">
@@ -76,7 +79,7 @@
             <p class="step-text" data-lang-it>Pelare e tagliare chips lunghe regolari; tenere sotto acqua corrente per togliere l’amido.</p>
             <p class="step-text" data-lang-en>Peel and cut long even chips; keep under running water to remove starch.</p>
           </div>
-          <figure><img src="steps/fish-chips-01.jpg" alt="Patate in acqua" width="960" height="600" loading="eager" /></figure>
+          <figure><img src="steps/fish-chips-01.jpg" alt="Patate in acqua" width="560" height="315" loading="eager" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -84,7 +87,7 @@
             <p class="step-text" data-lang-it>Mushy peas: 1 scalogno (o cipolla) grossolano, pochettino di burro, rosolare; piselli freschi.</p>
             <p class="step-text" data-lang-en>Mushy peas: 1 rough shallot (or onion), a little butter, brown; fresh peas.</p>
           </div>
-          <figure><img src="steps/fish-chips-02.jpg" alt="Mushy peas" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/fish-chips-02.jpg" alt="Mushy peas" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -92,7 +95,7 @@
             <p class="step-text" data-lang-it>Olio di semi a 130–140 °C: prima cottura chips senza colorire.</p>
             <p class="step-text" data-lang-en>Seed oil at 130–140 °C: first chip fry without colouring.</p>
           </div>
-          <figure><img src="steps/fish-chips-03.jpg" alt="Prima frittura" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/fish-chips-03.jpg" alt="Prima frittura" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -100,7 +103,7 @@
             <p class="step-text" data-lang-it>Pastella: farina, birra, un po’ di aceto di malto e limone; riposo 15–20 minuti. Pesce a fingers, farina, pastella, friggere.</p>
             <p class="step-text" data-lang-en>Batter: flour, beer, a little malt vinegar and lemon; rest 15–20 min. Fish fingers, flour, batter, fry.</p>
           </div>
-          <figure><img src="steps/fish-chips-04.jpg" alt="Pastella e pesce" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/fish-chips-04.jpg" alt="Pastella e pesce" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -108,10 +111,16 @@
             <p class="step-text" data-lang-it>Secondo passaggio chips a 170–180 °C; impiattare con mushy peas e sale.</p>
             <p class="step-text" data-lang-en>Second chip fry at 170–180 °C; plate with mushy peas and salt.</p>
           </div>
-          <figure><img src="steps/fish-chips-05.jpg" alt="Impiattamento" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/fish-chips-05.jpg" alt="Impiattamento" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="medaglie-salsiccia-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Medaglie di salsiccia con burro all’acetosella e coriandoli di verdure</span><span data-lang-en>Sausage pasta medallions with sorrel butter and vegetable confetti</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="medaglioni-cervo-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Medaglioni di cervo al lemongrass con patate e funghi</span><span data-lang-en>Venison medallions with lemongrass, potatoes and mushrooms</span></a>
+    </nav>
   </main>
   <footer>
     <div class="wrap">
@@ -144,5 +153,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

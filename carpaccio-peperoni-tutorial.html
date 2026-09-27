@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carpaccio di peperoni · Tutorial — Ratanà</title>
   <meta name="description" content="Tutorial Fooby: carpaccio di peperoni, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -39,8 +39,9 @@
 
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
 
         <div class="group">
           <ul>
@@ -62,6 +63,8 @@
             <li data-lang-en>Fresh herbs</li>
           </ul>
         </div>
+          </div>
+        </details>
       </aside>
 
       <section class="steps" aria-label="Steps">
@@ -77,7 +80,7 @@
             <p class="step-text" data-lang-it>Forno a 220 °C per 20 minuti.</p>
             <p class="step-text" data-lang-en>Oven at 220 °C for 20 minutes.</p>
           </div>
-          <figure><img src="steps/carpaccio-01.jpg" alt="Peperoni in forno" width="960" height="600" loading="eager" /></figure>
+          <figure class="lowres"><img src="steps/carpaccio-01.jpg" alt="Peperoni in forno" width="280" height="156" loading="eager" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -86,7 +89,7 @@
             <p class="step-text" data-lang-it>Raffreddare e spellare.</p>
             <p class="step-text" data-lang-en>Cool and peel.</p>
           </div>
-          <figure><img src="steps/carpaccio-02.jpg" alt="Spellatura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/carpaccio-02.jpg" alt="Spellatura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -95,7 +98,7 @@
             <p class="step-text" data-lang-it>Marinare con sale, pepe, olio, aglio, basilico, origano e aceto; in frigo un paio di giorni se possibile.</p>
             <p class="step-text" data-lang-en>Marinate with salt, pepper, oil, garlic, basil, oregano and vinegar; refrigerate a couple of days if possible.</p>
           </div>
-          <figure><img src="steps/carpaccio-03.jpg" alt="Marinatura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/carpaccio-03.jpg" alt="Marinatura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -104,10 +107,16 @@
             <p class="step-text" data-lang-it>Impiattare come carpaccio; finire con noci, erbette, basilico, pepe e olio+aceto della marinata.</p>
             <p class="step-text" data-lang-en>Plate like a carpaccio; finish with walnuts, herbs, basil, pepper and oil+vinegar from the marinade.</p>
           </div>
-          <figure><img src="steps/carpaccio-04.jpg" alt="Impiattamento" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/carpaccio-04.jpg" alt="Impiattamento" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="risotto-zucchine-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Risotto con zucchine e fiori di zucca</span><span data-lang-en>Risotto with courgettes and squash blossoms</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="pappa-pomodoro-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Pappa al pomodoro</span><span data-lang-en>Pappa al pomodoro</span></a>
+    </nav>
   </main>
 
   <footer>
@@ -149,5 +158,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

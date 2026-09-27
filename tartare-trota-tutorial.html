@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tartare di trota con carciofi all’aglio nero e polenta al taleggio · Tutorial — MasterChef Magazine</title>
   <meta name="description" content="Tutorial Fooby: Tartare di trota con carciofi all’aglio nero e polenta al taleggio, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -37,8 +37,9 @@
     </section>
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
         <div class="group"><ul>
             <li data-lang-it>Trota (per tartare) — quantità non detta</li>
             <li data-lang-en>Trout (for tartare) — quantity not stated</li>
@@ -57,6 +58,8 @@
             <li data-lang-it>Rosmarino (crema di rosmarino menzionata) — quantità non detta</li>
             <li data-lang-en>Rosemary (rosemary cream mentioned) — quantity not stated</li>
         </ul></div>
+          </div>
+        </details>
       </aside>
       <section class="steps" aria-label="Steps">
         <div class="steps-head">
@@ -70,7 +73,7 @@
             <p class="step-text" data-lang-it>Pulire la trota togliendo tutte le lische; preparare la tartare con lo zenzero.</p>
             <p class="step-text" data-lang-en>Clean the trout, removing every bone; make the tartare with ginger.</p>
           </div>
-          <figure><img src="steps/tartare-trota-01.jpg" alt="Tartare di trota" width="960" height="600" loading="eager" /></figure>
+          <figure><img src="steps/tartare-trota-01.jpg" alt="Tartare di trota" width="560" height="315" loading="eager" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -78,7 +81,7 @@
             <p class="step-text" data-lang-it>Preparare i carciofi glassati / all’aglio nero (tecnica dettagliata non detta).</p>
             <p class="step-text" data-lang-en>Prepare artichokes glazed / with black garlic (detailed technique not stated).</p>
           </div>
-          <figure><img src="steps/tartare-trota-02.jpg" alt="Carciofi all’aglio nero" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/tartare-trota-02.jpg" alt="Carciofi all’aglio nero" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -86,7 +89,7 @@
             <p class="step-text" data-lang-it>Preparare una polenta fonduta / aromatizzata al taleggio (crema di rosmarino menzionata — metodo non detto).</p>
             <p class="step-text" data-lang-en>Prepare a polenta fondue / flavoured with Taleggio (rosemary cream mentioned — method not stated).</p>
           </div>
-          <figure><img src="steps/tartare-trota-03.jpg" alt="Polenta al taleggio" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/tartare-trota-03.jpg" alt="Polenta al taleggio" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -94,10 +97,16 @@
             <p class="step-text" data-lang-it>Impiattare: carciofi all’aglio nero, tartare di trota allo zenzero, polenta al taleggio.</p>
             <p class="step-text" data-lang-en>Plate: black-garlic artichokes, ginger trout tartare, Taleggio polenta.</p>
           </div>
-          <figure><img src="steps/tartare-trota-04.jpg" alt="Impiattamento" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/tartare-trota-04.jpg" alt="Impiattamento" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="pappa-pomodoro-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Pappa al pomodoro</span><span data-lang-en>Pappa al pomodoro</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="medaglie-salsiccia-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Medaglie di salsiccia con burro all’acetosella e coriandoli di verdure</span><span data-lang-en>Sausage pasta medallions with sorrel butter and vegetable confetti</span></a>
+    </nav>
   </main>
   <footer>
     <div class="wrap">
@@ -130,5 +139,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

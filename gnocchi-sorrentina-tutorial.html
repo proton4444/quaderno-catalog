@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gnocchi alla sorrentina · Tutorial — Ratanà</title>
   <meta name="description" content="Tutorial Fooby: gnocchi alla sorrentina, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -39,8 +39,9 @@
 
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
 
         <div class="group">
           <ul>
@@ -58,6 +59,8 @@
             <li data-lang-en>Grated cheese</li>
           </ul>
         </div>
+          </div>
+        </details>
       </aside>
 
       <section class="steps" aria-label="Steps">
@@ -73,7 +76,7 @@
             <p class="step-text" data-lang-it>Tagliare gli gnocchi a pezzetti.</p>
             <p class="step-text" data-lang-en>Cut the gnocchi into pieces.</p>
           </div>
-          <figure><img src="steps/gnocchi-01.jpg" alt="Gnocchi a pezzetti" width="960" height="600" loading="eager" /></figure>
+          <figure class="lowres"><img src="steps/gnocchi-01.jpg" alt="Gnocchi a pezzetti" width="280" height="156" loading="eager" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -82,7 +85,7 @@
             <p class="step-text" data-lang-it>Cuocere in acqua bollente senza romperli; quando vengono a galla, circa 5 minuti.</p>
             <p class="step-text" data-lang-en>Cook in boiling water without breaking them; when they float, about 5 minutes.</p>
           </div>
-          <figure><img src="steps/gnocchi-02.jpg" alt="Gnocchi in bollente" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/gnocchi-02.jpg" alt="Gnocchi in bollente" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -91,7 +94,7 @@
             <p class="step-text" data-lang-it>Padellino o teglia col sugo.</p>
             <p class="step-text" data-lang-en>A small pan or baking dish with the sauce.</p>
           </div>
-          <figure><img src="steps/gnocchi-03.jpg" alt="Sugo in teglia" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/gnocchi-03.jpg" alt="Sugo in teglia" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -100,7 +103,7 @@
             <p class="step-text" data-lang-it>Mozzarella spezzata a mano.</p>
             <p class="step-text" data-lang-en>Mozzarella torn by hand.</p>
           </div>
-          <figure><img src="steps/gnocchi-04.jpg" alt="Mozzarella a mano" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/gnocchi-04.jpg" alt="Mozzarella a mano" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -109,7 +112,7 @@
             <p class="step-text" data-lang-it>Pesto e formaggio.</p>
             <p class="step-text" data-lang-en>Pesto and cheese.</p>
           </div>
-          <figure><img src="steps/gnocchi-05.jpg" alt="Pesto e formaggio" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/gnocchi-05.jpg" alt="Pesto e formaggio" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -118,10 +121,16 @@
             <p class="step-text" data-lang-it>Forno a 140 °C per 20 minuti.</p>
             <p class="step-text" data-lang-en>Oven at 140 °C for 20 minutes.</p>
           </div>
-          <figure><img src="steps/gnocchi-06.jpg" alt="In forno" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/gnocchi-06.jpg" alt="In forno" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="spaghetti-cipollotto-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Spaghetti con cipollotto</span><span data-lang-en>Spaghetti with spring onion</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="risotto-zucchine-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Risotto con zucchine e fiori di zucca</span><span data-lang-en>Risotto with courgettes and squash blossoms</span></a>
+    </nav>
   </main>
 
   <footer>
@@ -163,5 +172,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

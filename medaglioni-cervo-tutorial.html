@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Medaglioni di cervo al lemongrass con patate e funghi · Tutorial — MasterChef Magazine</title>
   <meta name="description" content="Tutorial Fooby: Medaglioni di cervo al lemongrass con patate e funghi, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -37,8 +37,9 @@
     </section>
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
         <div class="group"><ul>
             <li data-lang-it>Filetto / medaglioni di cervo — quantità non detta</li>
             <li data-lang-en>Venison fillet / medallions — quantity not stated</li>
@@ -59,6 +60,8 @@
             <li data-lang-it>Erba cipollina — quantità non detta</li>
             <li data-lang-en>Chives — quantity not stated</li>
         </ul></div>
+          </div>
+        </details>
       </aside>
       <section class="steps" aria-label="Steps">
         <div class="steps-head">
@@ -72,7 +75,7 @@
             <p class="step-text" data-lang-it>Pulire i funghi con panno umido (non lavarli).</p>
             <p class="step-text" data-lang-en>Clean mushrooms with a damp cloth (do not wash).</p>
           </div>
-          <figure><img src="steps/medaglioni-cervo-01.jpg" alt="Funghi" width="960" height="600" loading="eager" /></figure>
+          <figure><img src="steps/medaglioni-cervo-01.jpg" alt="Funghi" width="560" height="315" loading="eager" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -80,7 +83,7 @@
             <p class="step-text" data-lang-it>Rosolare medaglioni di cervo nel burro: croccanti fuori, morbidi dentro.</p>
             <p class="step-text" data-lang-en>Brown venison medallions in butter: crisp outside, soft inside.</p>
           </div>
-          <figure><img src="steps/medaglioni-cervo-02.jpg" alt="Cervo" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglioni-cervo-02.jpg" alt="Cervo" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -88,7 +91,7 @@
             <p class="step-text" data-lang-it>Guanciale lessato, poi burro e lemongrass; salsa paprika, limone, aglio, lemongrass, aceto.</p>
             <p class="step-text" data-lang-en>Blanched guanciale, then butter and lemongrass; sauce of paprika, lemon, garlic, lemongrass, vinegar.</p>
           </div>
-          <figure><img src="steps/medaglioni-cervo-03.jpg" alt="Lemongrass e salsa" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglioni-cervo-03.jpg" alt="Lemongrass e salsa" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -96,7 +99,7 @@
             <p class="step-text" data-lang-it>Patate fritte; erba cipollina.</p>
             <p class="step-text" data-lang-en>Fried potatoes; chives.</p>
           </div>
-          <figure><img src="steps/medaglioni-cervo-04.jpg" alt="Patate" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglioni-cervo-04.jpg" alt="Patate" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -104,10 +107,16 @@
             <p class="step-text" data-lang-it>Impiattare: crostini di brioche, medaglioni, porcini, patate ed erba cipollina.</p>
             <p class="step-text" data-lang-en>Plate: brioche croûtons, medallions, porcini, potatoes and chives.</p>
           </div>
-          <figure><img src="steps/medaglioni-cervo-05.jpg" alt="Impiattamento" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglioni-cervo-05.jpg" alt="Impiattamento" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="fish-and-chips-locatelli-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Fish and chips con mushy peas</span><span data-lang-en>Fish and chips with mushy peas</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="colazione-barbieri-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Colazione Barbieri: porridge, chutney di frutta e gioco d’uovo</span><span data-lang-en>Barbieri breakfast: porridge, fruit chutney and egg game</span></a>
+    </nav>
   </main>
   <footer>
     <div class="wrap">
@@ -140,5 +149,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

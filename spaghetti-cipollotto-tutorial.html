@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Spaghetti con cipollotto · Tutorial — Ratanà</title>
   <meta name="description" content="Tutorial Fooby: spaghetti con cipollotto, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -39,8 +39,9 @@
 
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
 
         <div class="group">
           <ul>
@@ -70,6 +71,8 @@
             <li data-lang-en>Green part of the spring onion</li>
           </ul>
         </div>
+          </div>
+        </details>
       </aside>
 
       <section class="steps" aria-label="Steps">
@@ -85,7 +88,7 @@
             <p class="step-text" data-lang-it>Tagliare i cipollotti sottilissimi.</p>
             <p class="step-text" data-lang-en>Slice the spring onions very thinly.</p>
           </div>
-          <figure><img src="steps/cipollotto-01.jpg" alt="Cipollotti tagliati" width="960" height="600" loading="eager" /></figure>
+          <figure class="lowres"><img src="steps/cipollotto-01.jpg" alt="Cipollotti tagliati" width="280" height="156" loading="eager" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -94,7 +97,7 @@
             <p class="step-text" data-lang-it>In padella fredda: olio, burro e rosmarino.</p>
             <p class="step-text" data-lang-en>In a cold pan: oil, butter and rosemary.</p>
           </div>
-          <figure><img src="steps/cipollotto-02.jpg" alt="Olio burro rosmarino" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/cipollotto-02.jpg" alt="Olio burro rosmarino" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -103,7 +106,7 @@
             <p class="step-text" data-lang-it>Sale, pepe, aceto e un mestolino d’acqua.</p>
             <p class="step-text" data-lang-en>Salt, pepper, vinegar and a ladle of water.</p>
           </div>
-          <figure><img src="steps/cipollotto-03.jpg" alt="Sale pepe aceto acqua" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/cipollotto-03.jpg" alt="Sale pepe aceto acqua" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -112,7 +115,7 @@
             <p class="step-text" data-lang-it>Stufare almeno 10 minuti senza rosolare.</p>
             <p class="step-text" data-lang-en>Stew at least 10 minutes without browning.</p>
           </div>
-          <figure><img src="steps/cipollotto-04.jpg" alt="Cipollotto che stufa" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/cipollotto-04.jpg" alt="Cipollotto che stufa" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -121,7 +124,7 @@
             <p class="step-text" data-lang-it>Cuocere gli spaghetti.</p>
             <p class="step-text" data-lang-en>Cook the spaghetti.</p>
           </div>
-          <figure><img src="steps/cipollotto-05.jpg" alt="Spaghetti in cottura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/cipollotto-05.jpg" alt="Spaghetti in cottura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -130,7 +133,7 @@
             <p class="step-text" data-lang-it>Disporre il cipollotto sul fondo del piatto; aggiungere pasta, acqua di cottura e olio fino a crema.</p>
             <p class="step-text" data-lang-en>Lay the spring onion on the base of the plate; add pasta, cooking water and oil until creamy.</p>
           </div>
-          <figure><img src="steps/cipollotto-06.jpg" alt="Pasta e cipollotto" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/cipollotto-06.jpg" alt="Pasta e cipollotto" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -139,10 +142,16 @@
             <p class="step-text" data-lang-it>Finire con pesto, formaggio, pane e la parte verde del cipollotto.</p>
             <p class="step-text" data-lang-en>Finish with pesto, cheese, bread and the green part of the spring onion.</p>
           </div>
-          <figure><img src="steps/cipollotto-07.jpg" alt="Finitura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/cipollotto-07.jpg" alt="Finitura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="padellata-verdure-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Padellata di verdure e ricotta salata</span><span data-lang-en>Sautéed vegetables with salted ricotta</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="gnocchi-sorrentina-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Gnocchi alla sorrentina</span><span data-lang-en>Gnocchi alla sorrentina</span></a>
+    </nav>
   </main>
 
   <footer>
@@ -184,5 +193,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

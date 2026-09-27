@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Medaglie di salsiccia con burro all’acetosella e coriandoli di verdure · Tutorial — MasterChef Magazine</title>
   <meta name="description" content="Tutorial Fooby: Medaglie di salsiccia con burro all’acetosella e coriandoli di verdure, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -37,8 +37,9 @@
     </section>
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
         <div class="group"><ul>
             <li data-lang-it>Uova — quantità non detta</li>
             <li data-lang-en>Eggs — quantity not stated</li>
@@ -63,6 +64,8 @@
             <li data-lang-it>Sedano di Verona (sedano rapa) — quantità non detta</li>
             <li data-lang-en>Celeriac (Verona celery) — quantity not stated</li>
         </ul></div>
+          </div>
+        </details>
       </aside>
       <section class="steps" aria-label="Steps">
         <div class="steps-head">
@@ -76,7 +79,7 @@
             <p class="step-text" data-lang-it>Sbattere molto bene le uova senza farina, poi incorporare la farina; tirare la pasta.</p>
             <p class="step-text" data-lang-en>Beat the eggs thoroughly without flour, then incorporate flour; roll the pasta.</p>
           </div>
-          <figure><img src="steps/medaglie-salsiccia-01.jpg" alt="Pasta all’uovo" width="960" height="600" loading="eager" /></figure>
+          <figure><img src="steps/medaglie-salsiccia-01.jpg" alt="Pasta all’uovo" width="560" height="315" loading="eager" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -84,7 +87,7 @@
             <p class="step-text" data-lang-it>Formare medaglioni/ravioli ripieni di salsiccia, ricotta e rosmarino.</p>
             <p class="step-text" data-lang-en>Form medallions/ravioli filled with sausage, ricotta and rosemary.</p>
           </div>
-          <figure><img src="steps/medaglie-salsiccia-02.jpg" alt="Medaglioni ripieni" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglie-salsiccia-02.jpg" alt="Medaglioni ripieni" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -92,7 +95,7 @@
             <p class="step-text" data-lang-it>Dadolata colorata di patata dolce e sedano rapa («coriandoli di verdure»).</p>
             <p class="step-text" data-lang-en>Colourful dice of sweet potato and celeriac («vegetable confetti»).</p>
           </div>
-          <figure><img src="steps/medaglie-salsiccia-03.jpg" alt="Coriandoli" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglie-salsiccia-03.jpg" alt="Coriandoli" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -100,7 +103,7 @@
             <p class="step-text" data-lang-it>Salsa: burro montato con aceto (vino bianco/scalogno menzionati) e acetosella; passare al setaccio.</p>
             <p class="step-text" data-lang-en>Sauce: whipped butter with vinegar (white wine/shallot mentioned) and sorrel; strain.</p>
           </div>
-          <figure><img src="steps/medaglie-salsiccia-04.jpg" alt="Burro all’acetosella" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglie-salsiccia-04.jpg" alt="Burro all’acetosella" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -108,10 +111,16 @@
             <p class="step-text" data-lang-it>Cuocere la pasta, saltare con mostarda di Cremona; impiattare con salsa, coriandoli e mostarda.</p>
             <p class="step-text" data-lang-en>Cook the pasta, toss with Cremona mustard; plate with sauce, confetti and mustard.</p>
           </div>
-          <figure><img src="steps/medaglie-salsiccia-05.jpg" alt="Impiattamento" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/medaglie-salsiccia-05.jpg" alt="Impiattamento" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="tartare-trota-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Tartare di trota con carciofi all’aglio nero e polenta al taleggio</span><span data-lang-en>Trout tartare with black-garlic artichokes and Taleggio polenta</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="fish-and-chips-locatelli-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Fish and chips con mushy peas</span><span data-lang-en>Fish and chips with mushy peas</span></a>
+    </nav>
   </main>
   <footer>
     <div class="wrap">
@@ -144,5 +153,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

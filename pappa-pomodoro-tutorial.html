@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pappa al pomodoro · Tutorial — Ratanà</title>
   <meta name="description" content="Tutorial Fooby: pappa al pomodoro, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -39,8 +39,9 @@
 
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
 
         <div class="group">
           <ul>
@@ -64,6 +65,8 @@
             <li data-lang-en>Basil</li>
           </ul>
         </div>
+          </div>
+        </details>
       </aside>
 
       <section class="steps" aria-label="Steps">
@@ -79,7 +82,7 @@
             <p class="step-text" data-lang-it>Tagliare la cipolla grossolana; olio abbondante in padella.</p>
             <p class="step-text" data-lang-en>Roughly chop the onion; abundant oil in the pan.</p>
           </div>
-          <figure><img src="steps/pappa-01.jpg" alt="Cipolla e olio" width="960" height="600" loading="eager" /></figure>
+          <figure class="lowres"><img src="steps/pappa-01.jpg" alt="Cipolla e olio" width="280" height="156" loading="eager" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -88,7 +91,7 @@
             <p class="step-text" data-lang-it>Aggiungere i pomodori; sale, pepe, peperoncino e acqua o brodo. Cuocere 15–20 minuti, molto cotti.</p>
             <p class="step-text" data-lang-en>Add the tomatoes; salt, pepper, chilli and water or stock. Cook 15–20 minutes, until very soft.</p>
           </div>
-          <figure><img src="steps/pappa-02.jpg" alt="Pomodori in cottura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/pappa-02.jpg" alt="Pomodori in cottura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -97,7 +100,7 @@
             <p class="step-text" data-lang-it>Aggiungere passata e pane.</p>
             <p class="step-text" data-lang-en>Add passata and bread.</p>
           </div>
-          <figure><img src="steps/pappa-03.jpg" alt="Passata e pane" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/pappa-03.jpg" alt="Passata e pane" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -106,10 +109,16 @@
             <p class="step-text" data-lang-it>Spegnere e aggiungere il basilico; raffreddare — a Ratanà la mangiano fredda.</p>
             <p class="step-text" data-lang-en>Turn off the heat and add the basil; cool — at Ratanà they eat it cold.</p>
           </div>
-          <figure><img src="steps/pappa-04.jpg" alt="Basilico e raffreddamento" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/pappa-04.jpg" alt="Basilico e raffreddamento" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="carpaccio-peperoni-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Carpaccio di peperoni</span><span data-lang-en>Pepper carpaccio</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="tartare-trota-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Tartare di trota con carciofi all’aglio nero e polenta al taleggio</span><span data-lang-en>Trout tartare with black-garlic artichokes and Taleggio polenta</span></a>
+    </nav>
   </main>
 
   <footer>
@@ -151,5 +160,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

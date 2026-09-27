@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Risotto con zucchine e fiori di zucca · Tutorial — Ratanà</title>
   <meta name="description" content="Tutorial Fooby: risotto con zucchine e fiori di zucca, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -39,8 +39,9 @@
 
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
 
         <div class="group">
           <ul>
@@ -62,6 +63,8 @@
             <li data-lang-en>Optional courgette/blossom powder (shown in the video)</li>
           </ul>
         </div>
+          </div>
+        </details>
       </aside>
 
       <section class="steps" aria-label="Steps">
@@ -77,7 +80,7 @@
             <p class="step-text" data-lang-it>Separare il verde esterno e il cuore bianco delle zucchine.</p>
             <p class="step-text" data-lang-en>Separate the outer green and the white heart of the courgettes.</p>
           </div>
-          <figure><img src="steps/risotto-01.jpg" alt="Verde e cuore" width="960" height="600" loading="eager" /></figure>
+          <figure class="lowres"><img src="steps/risotto-01.jpg" alt="Verde e cuore" width="280" height="156" loading="eager" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -86,7 +89,7 @@
             <p class="step-text" data-lang-it>Rosolare il verde in padella calda; il cuore a dadini, marinato crudo con sale, pepe e olio.</p>
             <p class="step-text" data-lang-en>Brown the green in a hot pan; dice the heart and marinate it raw with salt, pepper and oil.</p>
           </div>
-          <figure><img src="steps/risotto-02.jpg" alt="Rosolatura e marinatura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/risotto-02.jpg" alt="Rosolatura e marinatura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -95,7 +98,7 @@
             <p class="step-text" data-lang-it>Pulire i fiori, tagliarli a pezzetti e unirli a fuoco spento sulle zucchine.</p>
             <p class="step-text" data-lang-en>Clean the blossoms, cut into pieces and add them off the heat onto the courgettes.</p>
           </div>
-          <figure><img src="steps/risotto-03.jpg" alt="Fiori sulle zucchine" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/risotto-03.jpg" alt="Fiori sulle zucchine" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -104,7 +107,7 @@
             <p class="step-text" data-lang-it>Tostare il Carnaroli, aggiungere il brodo a filo e cuocere circa 14 minuti.</p>
             <p class="step-text" data-lang-en>Toast the Carnaroli, add the stock little by little and cook about 14 minutes.</p>
           </div>
-          <figure><img src="steps/risotto-04.jpg" alt="Risotto in cottura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/risotto-04.jpg" alt="Risotto in cottura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -113,7 +116,7 @@
             <p class="step-text" data-lang-it>Spegnere: zucchine, ricotta e pesto (niente mantecatura di burro o olio).</p>
             <p class="step-text" data-lang-en>Turn off the heat: courgettes, ricotta and pesto (no butter or oil mantecatura).</p>
           </div>
-          <figure><img src="steps/risotto-05.jpg" alt="Chiusura ricotta pesto" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/risotto-05.jpg" alt="Chiusura ricotta pesto" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -122,10 +125,16 @@
             <p class="step-text" data-lang-it>Finire col cuore marinato e fiori sottili.</p>
             <p class="step-text" data-lang-en>Finish with the marinated heart and thin blossom pieces.</p>
           </div>
-          <figure><img src="steps/risotto-06.jpg" alt="Finitura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/risotto-06.jpg" alt="Finitura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="gnocchi-sorrentina-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Gnocchi alla sorrentina</span><span data-lang-en>Gnocchi alla sorrentina</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="carpaccio-peperoni-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Carpaccio di peperoni</span><span data-lang-en>Pepper carpaccio</span></a>
+    </nav>
   </main>
 
   <footer>
@@ -167,5 +176,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pernice ripiena di lardo con rane, salsa all’Amarone e indivia brasata · Tutorial — MasterChef Magazine</title>
   <meta name="description" content="Tutorial Fooby: Pernice ripiena di lardo con rane, salsa all’Amarone e indivia brasata, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -37,8 +37,9 @@
     </section>
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
         <div class="group"><ul>
             <li data-lang-it>Pernice — quantità non detta</li>
             <li data-lang-en>Partridge — quantity not stated</li>
@@ -57,6 +58,8 @@
             <li data-lang-it>Mostarda (richiamata in chiusura — quantità non detta)</li>
             <li data-lang-en>Mustard (mentioned at closing — quantity not stated)</li>
         </ul></div>
+          </div>
+        </details>
       </aside>
       <section class="steps" aria-label="Steps">
         <div class="steps-head">
@@ -70,7 +73,7 @@
             <p class="step-text" data-lang-it>Farcire la pernice con lardo di montagna e chiudere; cosce a parte in burro.</p>
             <p class="step-text" data-lang-en>Stuff the partridge with mountain lard and close; legs separately in butter.</p>
           </div>
-          <figure><img src="steps/pernice-ripiena-01.jpg" alt="Pernice farcita" width="960" height="600" loading="eager" /></figure>
+          <figure><img src="steps/pernice-ripiena-01.jpg" alt="Pernice farcita" width="560" height="315" loading="eager" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -78,7 +81,7 @@
             <p class="step-text" data-lang-it>Rane in padella con burro e rosmarino (stile francese).</p>
             <p class="step-text" data-lang-en>Frogs in the pan with butter and rosemary (French style).</p>
           </div>
-          <figure><img src="steps/pernice-ripiena-02.jpg" alt="Rane" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/pernice-ripiena-02.jpg" alt="Rane" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -86,7 +89,7 @@
             <p class="step-text" data-lang-it>Salsa di Amarone e frutti di bosco.</p>
             <p class="step-text" data-lang-en>Amarone and berry sauce.</p>
           </div>
-          <figure><img src="steps/pernice-ripiena-03.jpg" alt="Salsa Amarone" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/pernice-ripiena-03.jpg" alt="Salsa Amarone" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -94,7 +97,7 @@
             <p class="step-text" data-lang-it>Brasare l’indivia belga in padella.</p>
             <p class="step-text" data-lang-en>Braise Belgian endive in a pan.</p>
           </div>
-          <figure><img src="steps/pernice-ripiena-04.jpg" alt="Indivia" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/pernice-ripiena-04.jpg" alt="Indivia" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -102,10 +105,16 @@
             <p class="step-text" data-lang-it>Tagliare e impiattare con olio, maggiorana e mostarda richiamata.</p>
             <p class="step-text" data-lang-en>Carve and plate with oil, marjoram and mustard as recalled.</p>
           </div>
-          <figure><img src="steps/pernice-ripiena-05.jpg" alt="Impiattamento" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/pernice-ripiena-05.jpg" alt="Impiattamento" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="colazione-barbieri-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Colazione Barbieri: porridge, chutney di frutta e gioco d’uovo</span><span data-lang-en>Barbieri breakfast: porridge, fruit chutney and egg game</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="cucina-vegana-locatelli-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Melanzana ripiena vegana («’mbuttunata») con ricotta di soia</span><span data-lang-en>Vegan stuffed aubergine («’mbuttunata») with soy ricotta</span></a>
+    </nav>
   </main>
   <footer>
     <div class="wrap">
@@ -138,5 +147,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

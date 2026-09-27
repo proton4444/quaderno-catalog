@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Risotto al caprino con lumache, capesante e cavolo rosso · Tutorial — MasterChef Magazine</title>
   <meta name="description" content="Tutorial Fooby: Risotto al caprino con lumache, capesante e cavolo rosso, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -37,8 +37,9 @@
     </section>
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
         <div class="group"><ul>
             <li data-lang-it>Riso — quantità non detta</li>
             <li data-lang-en>Rice — quantity not stated</li>
@@ -59,6 +60,8 @@
             <li data-lang-it>Aglio, pepe, erbe (per capesante) — quantità non dette</li>
             <li data-lang-en>Garlic, pepper, herbs (for scallops) — quantities not stated</li>
         </ul></div>
+          </div>
+        </details>
       </aside>
       <section class="steps" aria-label="Steps">
         <div class="steps-head">
@@ -72,7 +75,7 @@
             <p class="step-text" data-lang-it>Brodo alle erbe, cipolla, tostare il riso e bagnare col brodo (risotto in bianco).</p>
             <p class="step-text" data-lang-en>Herb stock, onion, toast rice and moisten with stock (white risotto).</p>
           </div>
-          <figure><img src="steps/risotto-caprino-01.jpg" alt="Risotto" width="960" height="600" loading="eager" /></figure>
+          <figure><img src="steps/risotto-caprino-01.jpg" alt="Risotto" width="560" height="315" loading="eager" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -80,7 +83,7 @@
             <p class="step-text" data-lang-it>Preparare il cavolo rosso (metodo dettagliato non detto).</p>
             <p class="step-text" data-lang-en>Prepare red cabbage (detailed method not stated).</p>
           </div>
-          <figure><img src="steps/risotto-caprino-02.jpg" alt="Cavolo rosso" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/risotto-caprino-02.jpg" alt="Cavolo rosso" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -88,7 +91,7 @@
             <p class="step-text" data-lang-it>Cuocere le lumache; panna come detto; finire il risotto col caprino.</p>
             <p class="step-text" data-lang-en>Cook snails; cream as said; finish risotto with goat cheese.</p>
           </div>
-          <figure><img src="steps/risotto-caprino-03.jpg" alt="Caprino e lumache" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/risotto-caprino-03.jpg" alt="Caprino e lumache" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -96,7 +99,7 @@
             <p class="step-text" data-lang-it>Capesante: parte in padella, parte con lumache/cavolo; aglio, pepe, erbe.</p>
             <p class="step-text" data-lang-en>Scallops: some pan-fried, some with snails/cabbage; garlic, pepper, herbs.</p>
           </div>
-          <figure><img src="steps/risotto-caprino-04.jpg" alt="Capesante" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/risotto-caprino-04.jpg" alt="Capesante" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
         <article class="step">
           <div class="step-top">
@@ -104,10 +107,16 @@
             <p class="step-text" data-lang-it>Impiattare risotto al caprino con lumache, capesante e cavolo rosso.</p>
             <p class="step-text" data-lang-en>Plate goat-cheese risotto with snails, scallops and red cabbage.</p>
           </div>
-          <figure><img src="steps/risotto-caprino-05.jpg" alt="Impiattamento" width="960" height="600" loading="lazy" /></figure>
+          <figure><img src="steps/risotto-caprino-05.jpg" alt="Impiattamento" width="560" height="315" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="cucina-vegana-locatelli-tutorial.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Melanzana ripiena vegana («’mbuttunata») con ricotta di soia</span><span data-lang-en>Vegan stuffed aubergine («’mbuttunata») with soy ricotta</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <span></span>
+    </nav>
   </main>
   <footer>
     <div class="wrap">
@@ -140,5 +149,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>

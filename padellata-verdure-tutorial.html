@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Padellata di verdure e ricotta salata · Tutorial — Ratanà</title>
   <meta name="description" content="Tutorial Fooby: padellata di verdure e ricotta salata, passo-passo illustrato." />
-        <link rel="stylesheet" href="css/tutorial.css"/>
+<link rel="stylesheet" href="css/site.css"/>
 </head>
-<body>
+<body class="page-tutorial">
   <header class="topbar">
     <a class="brand" href="index.html">
       <span class="brand-mark">Quaderno di cucina</span>
@@ -39,8 +39,9 @@
 
     <div class="layout">
       <aside class="ingredients" aria-label="Ingredients">
-        <h2 data-lang-it>Ingredienti</h2>
-        <h2 data-lang-en>Ingredients</h2>
+        <details class="ing-details" open>
+          <summary><h2 data-lang-it>Ingredienti</h2><h2 data-lang-en>Ingredients</h2></summary>
+          <div class="ing-body">
 
         <div class="group">
           <ul>
@@ -68,6 +69,8 @@
             <li data-lang-en>Salted ricotta (ricotta salata)</li>
           </ul>
         </div>
+          </div>
+        </details>
       </aside>
 
       <section class="steps" aria-label="Steps">
@@ -83,7 +86,7 @@
             <p class="step-text" data-lang-it>Rosare la cipolla.</p>
             <p class="step-text" data-lang-en>Sweat / lightly brown the onion.</p>
           </div>
-          <figure><img src="steps/padellata-01.jpg" alt="Cipolla in padella" width="960" height="600" loading="eager" /></figure>
+          <figure class="lowres"><img src="steps/padellata-01.jpg" alt="Cipolla in padella" width="280" height="156" loading="eager" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -92,7 +95,7 @@
             <p class="step-text" data-lang-it>Aggiungere l’aglio, poi melanzana e peperoni.</p>
             <p class="step-text" data-lang-en>Add the garlic, then aubergine and peppers.</p>
           </div>
-          <figure><img src="steps/padellata-02.jpg" alt="Aglio, melanzana e peperoni" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/padellata-02.jpg" alt="Aglio, melanzana e peperoni" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -101,7 +104,7 @@
             <p class="step-text" data-lang-it>Salare, poi aggiungere la zucchina.</p>
             <p class="step-text" data-lang-en>Season with salt, then add the courgette.</p>
           </div>
-          <figure><img src="steps/padellata-03.jpg" alt="Zucchina e sale" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/padellata-03.jpg" alt="Zucchina e sale" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -110,7 +113,7 @@
             <p class="step-text" data-lang-it>Aggiungere origano e pomodorini.</p>
             <p class="step-text" data-lang-en>Add oregano and the date tomatoes.</p>
           </div>
-          <figure><img src="steps/padellata-04.jpg" alt="Origano e pomodorini" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/padellata-04.jpg" alt="Origano e pomodorini" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -119,7 +122,7 @@
             <p class="step-text" data-lang-it>Cuocere: melanzana e cipolla ben cotte; zucchina e peperoni leggermente croccanti.</p>
             <p class="step-text" data-lang-en>Cook until aubergine and onion are well done; courgette and peppers slightly crisp.</p>
           </div>
-          <figure><img src="steps/padellata-05.jpg" alt="Verdure in cottura" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/padellata-05.jpg" alt="Verdure in cottura" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -128,7 +131,7 @@
             <p class="step-text" data-lang-it>Aggiungere pesto, basilico, erbe e olive.</p>
             <p class="step-text" data-lang-en>Add pesto, basil, herbs and olives.</p>
           </div>
-          <figure><img src="steps/padellata-06.jpg" alt="Pesto, erbe e olive" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/padellata-06.jpg" alt="Pesto, erbe e olive" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
 
         <article class="step">
@@ -137,10 +140,16 @@
             <p class="step-text" data-lang-it>Finire con ricotta salata.</p>
             <p class="step-text" data-lang-en>Finish with salted ricotta.</p>
           </div>
-          <figure><img src="steps/padellata-07.jpg" alt="Ricotta salata" width="960" height="600" loading="lazy" /></figure>
+          <figure class="lowres"><img src="steps/padellata-07.jpg" alt="Ricotta salata" width="280" height="156" loading="lazy" decoding="async" /></figure>
         </article>
       </section>
     </div>
+  
+    <nav class="pager" aria-label="Tutorial">
+      <a class="prev" href="spaghetti-imago.html"><small><span data-lang-it>← Precedente</span><span data-lang-en>← Previous</span></small><span data-lang-it>Spaghetti Imàgo · pepe limone senape</span><span data-lang-en>Imàgo spaghetti · pepper lemon mustard</span></a>
+      <a class="home" href="index.html"><small><span data-lang-it>Indice</span><span data-lang-en>Index</span></small><span data-lang-it>Tutte le ricette</span><span data-lang-en>All recipes</span></a>
+      <a class="next" href="spaghetti-cipollotto-tutorial.html"><small><span data-lang-it>Successivo →</span><span data-lang-en>Next →</span></small><span data-lang-it>Spaghetti con cipollotto</span><span data-lang-en>Spaghetti with spring onion</span></a>
+    </nav>
   </main>
 
   <footer>
@@ -182,5 +191,11 @@
     })();
 
   </script>
+<script>
+(function(){var d=document.querySelector('.ing-details');if(!d)return;var mq=window.matchMedia('(min-width: 900px)');
+function sync(){if(mq.matches)d.open=true;}d.open=mq.matches;
+if(mq.addEventListener)mq.addEventListener('change',sync);else if(mq.addListener)mq.addListener(sync);
+d.querySelector('summary').addEventListener('click',function(e){if(mq.matches)e.preventDefault();});})();
+</script>
 </body>
 </html>
