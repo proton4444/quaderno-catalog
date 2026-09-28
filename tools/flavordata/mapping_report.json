@@ -1,0 +1,436 @@
+{
+ "mapped": {
+  "peperoni": {
+   "ahn": "bell_pepper",
+   "quality": "exact",
+   "note": "",
+   "compounds": 66
+  },
+  "pomodoro": {
+   "ahn": "tomato",
+   "quality": "exact",
+   "note": "",
+   "compounds": 150
+  },
+  "cipolla": {
+   "ahn": "onion",
+   "quality": "exact",
+   "note": "",
+   "compounds": 58
+  },
+  "cipollotto": {
+   "ahn": "scallion",
+   "quality": "exact",
+   "note": "spring onion = scallion",
+   "compounds": 3
+  },
+  "scalogno": {
+   "ahn": "shallot",
+   "quality": "exact",
+   "note": "",
+   "compounds": 14
+  },
+  "aglio": {
+   "ahn": "garlic",
+   "quality": "exact",
+   "note": "",
+   "compounds": 21
+  },
+  "zucchine": {
+   "ahn": "zucchini",
+   "quality": "exact",
+   "note": "only 1 compound in dataset",
+   "compounds": 1
+  },
+  "carciofi": {
+   "ahn": "artichoke",
+   "quality": "exact",
+   "note": "",
+   "compounds": 6
+  },
+  "patate": {
+   "ahn": "potato",
+   "quality": "exact",
+   "note": "",
+   "compounds": 97
+  },
+  "patate-dolci": {
+   "ahn": "sweet_potato",
+   "quality": "exact",
+   "note": "",
+   "compounds": 8
+  },
+  "piselli": {
+   "ahn": "pea",
+   "quality": "exact",
+   "note": "",
+   "compounds": 68
+  },
+  "funghi": {
+   "ahn": "mushroom",
+   "quality": "exact",
+   "note": "",
+   "compounds": 117
+  },
+  "cavolo-rosso": {
+   "ahn": "cabbage",
+   "quality": "close",
+   "note": "red cabbage -> cabbage",
+   "compounds": 38
+  },
+  "indivia": {
+   "ahn": "endive",
+   "quality": "exact",
+   "note": "Belgian endive",
+   "compounds": 27
+  },
+  "sedano-rapa": {
+   "ahn": "celery_root",
+   "quality": "exact",
+   "note": "celeriac; only 1 compound in dataset",
+   "compounds": 1
+  },
+  "olive": {
+   "ahn": "olive",
+   "quality": "exact",
+   "note": "",
+   "compounds": 63
+  },
+  "basilico": {
+   "ahn": "basil",
+   "quality": "exact",
+   "note": "",
+   "compounds": 23
+  },
+  "origano": {
+   "ahn": "oregano",
+   "quality": "exact",
+   "note": "only 2 compounds in dataset",
+   "compounds": 2
+  },
+  "rosmarino": {
+   "ahn": "rosemary",
+   "quality": "exact",
+   "note": "",
+   "compounds": 28
+  },
+  "alloro": {
+   "ahn": "laurel",
+   "quality": "exact",
+   "note": "bay leaf = Laurus nobilis (dataset entity \"laurel\")",
+   "compounds": 34
+  },
+  "maggiorana": {
+   "ahn": "marjoram",
+   "quality": "exact",
+   "note": "",
+   "compounds": 20
+  },
+  "menta": {
+   "ahn": "mint",
+   "quality": "exact",
+   "note": "",
+   "compounds": 45
+  },
+  "erba-cipollina": {
+   "ahn": "chive",
+   "quality": "exact",
+   "note": "",
+   "compounds": 22
+  },
+  "santoreggia": {
+   "ahn": "savory",
+   "quality": "exact",
+   "note": "only 1 compound in dataset",
+   "compounds": 1
+  },
+  "lemongrass": {
+   "ahn": "lemongrass",
+   "quality": "exact",
+   "note": "",
+   "compounds": 18
+  },
+  "pesce": {
+   "ahn": "fish",
+   "quality": "exact",
+   "note": "generic fish",
+   "compounds": 64
+  },
+  "salmone": {
+   "ahn": "salmon",
+   "quality": "exact",
+   "note": "",
+   "compounds": 84
+  },
+  "caviale": {
+   "ahn": "caviar",
+   "quality": "exact",
+   "note": "",
+   "compounds": 21
+  },
+  "capesante": {
+   "ahn": "scallop",
+   "quality": "exact",
+   "note": "",
+   "compounds": 41
+  },
+  "salsiccia": {
+   "ahn": "pork_sausage",
+   "quality": "exact",
+   "note": "",
+   "compounds": 119
+  },
+  "guanciale": {
+   "ahn": "cured_pork",
+   "quality": "close",
+   "note": "guanciale = cured pork cheek -> cured pork",
+   "compounds": 135
+  },
+  "bacon": {
+   "ahn": "bacon",
+   "quality": "exact",
+   "note": "",
+   "compounds": 120
+  },
+  "pollo": {
+   "ahn": "chicken_broth",
+   "quality": "exact",
+   "note": "chicken stock; only 1 compound in dataset",
+   "compounds": 1
+  },
+  "burro": {
+   "ahn": "butter",
+   "quality": "exact",
+   "note": "",
+   "compounds": 140
+  },
+  "mozzarella": {
+   "ahn": "mozzarella_cheese",
+   "quality": "exact",
+   "note": "",
+   "compounds": 132
+  },
+  "formaggio": {
+   "ahn": "cheese",
+   "quality": "exact",
+   "note": "generic grated cheese -> generic cheese",
+   "compounds": 127
+  },
+  "caprino": {
+   "ahn": "goat_cheese",
+   "quality": "exact",
+   "note": "",
+   "compounds": 131
+  },
+  "panna": {
+   "ahn": "cream",
+   "quality": "exact",
+   "note": "",
+   "compounds": 29
+  },
+  "latte": {
+   "ahn": "milk",
+   "quality": "exact",
+   "note": "",
+   "compounds": 118
+  },
+  "uova": {
+   "ahn": "egg",
+   "quality": "exact",
+   "note": "",
+   "compounds": 49
+  },
+  "riso": {
+   "ahn": "rice",
+   "quality": "exact",
+   "note": "",
+   "compounds": 74
+  },
+  "pane": {
+   "ahn": "bread",
+   "quality": "exact",
+   "note": "",
+   "compounds": 51
+  },
+  "polenta": {
+   "ahn": "corn_grit",
+   "quality": "close",
+   "note": "polenta (cornmeal) -> corn grit",
+   "compounds": 4
+  },
+  "farina": {
+   "ahn": "wheat",
+   "quality": "close",
+   "note": "wheat flour -> wheat",
+   "compounds": 5
+  },
+  "avena": {
+   "ahn": "oat",
+   "quality": "exact",
+   "note": "oat flakes -> oat",
+   "compounds": 36
+  },
+  "limone": {
+   "ahn": "lemon",
+   "quality": "exact",
+   "note": "",
+   "compounds": 78
+  },
+  "lime": {
+   "ahn": "lime",
+   "quality": "exact",
+   "note": "",
+   "compounds": 64
+  },
+  "mele": {
+   "ahn": "apple",
+   "quality": "exact",
+   "note": "",
+   "compounds": 195
+  },
+  "mango": {
+   "ahn": "mango",
+   "quality": "exact",
+   "note": "",
+   "compounds": 141
+  },
+  "albicocche": {
+   "ahn": "apricot",
+   "quality": "exact",
+   "note": "",
+   "compounds": 111
+  },
+  "lamponi": {
+   "ahn": "raspberry",
+   "quality": "exact",
+   "note": "",
+   "compounds": 130
+  },
+  "frutti-bosco": {
+   "ahn": "berry",
+   "quality": "exact",
+   "note": "mixed berries -> berry",
+   "compounds": 52
+  },
+  "noci": {
+   "ahn": "walnut",
+   "quality": "exact",
+   "note": "",
+   "compounds": 15
+  },
+  "pistacchi": {
+   "ahn": "pistachio",
+   "quality": "exact",
+   "note": "",
+   "compounds": 9
+  },
+  "olio": {
+   "ahn": "olive_oil",
+   "quality": "exact",
+   "note": "only 3 compounds in dataset",
+   "compounds": 3
+  },
+  "olio-semi": {
+   "ahn": "seed_oil",
+   "quality": "exact",
+   "note": "only 3 compounds in dataset",
+   "compounds": 3
+  },
+  "pepe": {
+   "ahn": "black_pepper",
+   "quality": "exact",
+   "note": "",
+   "compounds": 38
+  },
+  "aceto": {
+   "ahn": "vinegar",
+   "quality": "exact",
+   "note": "",
+   "compounds": 33
+  },
+  "peperoncino": {
+   "ahn": "cayenne",
+   "quality": "close",
+   "note": "dried hot chilli -> cayenne",
+   "compounds": 39
+  },
+  "zenzero": {
+   "ahn": "ginger",
+   "quality": "exact",
+   "note": "",
+   "compounds": 86
+  },
+  "senape": {
+   "ahn": "mustard",
+   "quality": "close",
+   "note": "mustard seeds -> mustard",
+   "compounds": 22
+  },
+  "rafano": {
+   "ahn": "horseradish",
+   "quality": "exact",
+   "note": "only 2 compounds in dataset",
+   "compounds": 2
+  },
+  "miele": {
+   "ahn": "honey",
+   "quality": "exact",
+   "note": "",
+   "compounds": 55
+  },
+  "cacao": {
+   "ahn": "cocoa",
+   "quality": "exact",
+   "note": "",
+   "compounds": 193
+  },
+  "vino-bianco": {
+   "ahn": "white_wine",
+   "quality": "exact",
+   "note": "",
+   "compounds": 222
+  },
+  "birra": {
+   "ahn": "beer",
+   "quality": "exact",
+   "note": "",
+   "compounds": 227
+  },
+  "amarone": {
+   "ahn": "red_wine",
+   "quality": "close",
+   "note": "Amarone (a red wine) -> red wine",
+   "compounds": 165
+  }
+ },
+ "unmapped": {
+  "aglio-nero": "no entity (fermented black garlic differs from garlic)",
+  "melanzana": "no aubergine/eggplant in dataset",
+  "fiori-zucca": "no squash blossom in dataset",
+  "spinaci": "only dried spinach in dataset",
+  "acetosella": "no sorrel in dataset",
+  "trota": "no trout in dataset",
+  "lardo": "dataset has rendered lard, not cured lardo",
+  "cervo": "no venison in dataset",
+  "pernice": "no partridge in dataset",
+  "ricotta": "no ricotta in dataset",
+  "taleggio": "no taleggio in dataset",
+  "spaghetti": "no pasta in dataset",
+  "rigatoni": "no pasta in dataset",
+  "gnocchi": "composite (no entity)",
+  "brioche": "composite (no entity)",
+  "sale": "salt has no aroma compounds in dataset",
+  "paprika": "no paprika in dataset",
+  "pimenton": "no smoked paprika in dataset",
+  "mostarda": "composite",
+  "zucchero": "no sugar in dataset",
+  "pesto": "composite",
+  "brodo": "unspecified stock",
+  "lumache": "no snails in dataset",
+  "rane": "no frogs in dataset",
+  "latte-soia": "no soy milk in dataset",
+  "ricotta-vegana": "composite",
+  "elisir": "composite",
+  "pectina": "no aroma entity"
+ }
+}

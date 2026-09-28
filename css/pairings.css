@@ -216,3 +216,16 @@ body.sel .credit-fixed{opacity:0;pointer-events:none}
 #sList li.none{cursor:default;color:var(--muted);font-style:italic}
 @media (max-width:759px){.sbox input{font-size:17px}}
 body.typing .hint{opacity:0}
+
+/* ---------- mode toggle: Solo quaderno / Tutti gli ingredienti ---------- */
+.mode{position:fixed;z-index:4;left:calc(var(--sal) + 12px);top:calc(var(--sat) + 112px);display:inline-flex;padding:3px;gap:2px;border-radius:999px;
+  background:rgba(251,246,236,.88);border:1px solid var(--line);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.mode button{height:28px;padding:0 12px;border-radius:999px;font:600 11.5px/1 var(--sans);letter-spacing:.02em;color:var(--sepia)}
+.mode button[aria-pressed="true"]{background:var(--ink-2);color:#fbf6ec}
+@media (min-width:760px){.mode{top:calc(var(--sat) + 120px);left:calc(var(--sal) + 22px)}}
+.dl.out .ct{font-style:italic;text-transform:none;letter-spacing:0}
+.dl.out .nm{opacity:.85}
+.mlist li.out .mn{color:var(--ink-2);font-style:italic}
+.oq{font:500 10.5px/1 var(--sans);color:var(--muted);font-style:italic;margin-left:4px;white-space:nowrap}
+.modenote{margin:-2px 0 6px;font-size:11.5px;color:var(--muted)}
+.more button.out{border-style:dashed;color:var(--muted)}

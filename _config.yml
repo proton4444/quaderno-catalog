@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll) settings: the site is plain static HTML; keep build tooling and docs out of the published site.
+exclude:
+  - tools
+  - README.md

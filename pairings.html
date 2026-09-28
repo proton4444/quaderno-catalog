@@ -12,7 +12,7 @@
 <link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="data/pairings-v4.json" as="fetch" crossorigin/>
-<link rel="stylesheet" href="css/pairings.css?v=4"/>
+<link rel="stylesheet" href="css/pairings.css?v=5"/>
 </head>
 <body>
 <div class="stage" id="stage">
@@ -38,6 +38,7 @@
   </div>
 </header>
 <nav class="chips" id="chips" aria-label="Tipi di ingrediente"></nav>
+<div class="mode" id="mode" role="group" aria-label="Quali ingredienti"><button type="button" data-mode="nb" aria-pressed="true">Solo quaderno</button><button type="button" data-mode="all" aria-pressed="false">Tutti gli ingredienti</button></div>
 
 <div class="sbox" id="sbox"></div>
 
@@ -57,7 +58,7 @@
 
 <noscript><p class="nojs">Questa pagina concept richiede JavaScript. <a href="app.html">Torna al quaderno</a>.</p></noscript>
 <section class="fallback" id="fallback" hidden></section>
-<script src="js/pairings.js?v=4" defer></script>
+<script src="js/pairings.js?v=5" defer></script>
 <script>
 /* watchdog: if the page script never starts (network error, old browser), show a readable message instead of a blank page */
 setTimeout(function(){if(window.__pairingsReady)return;var b=document.getElementById('fallback');if(!b||!b.hidden)return;
