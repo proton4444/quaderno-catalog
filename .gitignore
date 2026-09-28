@@ -8,3 +8,5 @@ Thumbs.db
 node_modules/
 *.part
 tools/*.db-journal
+tools/sources/foodon/
+tools/*.db.tmp

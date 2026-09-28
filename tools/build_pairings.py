@@ -16,7 +16,7 @@ import argparse, collections, itertools, json, os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from catalog import C, TYPES, STAPLES, EXCLUDE, MAP, UNMAPPED_WHY, norm  # noqa: E402
+from catalog import C, TYPES, STAPLES, EXCLUDE, MAP, UNMAPPED_WHY, norm, ingredient_id  # noqa: E402
 from flavordata import load as load_ahn, cname, distinctive  # noqa: E402
 
 SRC = os.path.join(ROOT, 'data', 'recipes.json')
@@ -187,12 +187,8 @@ def build_full(A, nb, out_dir):
     meta = {c[0]: c for c in C}
     ents = sorted(n for n in IC if IC[n])
     eid = {}
-    catalog_ids = set(meta)
     for n in ents:
-        i = rev.get(n)
-        if not i:
-            i = n.replace('_', '-')
-            if i in catalog_ids: i += '-ds'   # e.g. dataset 'cacao' vs catalog 'cacao' (= dataset 'cocoa')
+        i = ingredient_id(n)
         assert re.fullmatch(r'[a-z0-9-]+', i), i
         eid[n] = i
     assert len(set(eid.values())) == len(eid), 'id collision between catalog ids and dataset slugs'
@@ -259,15 +255,38 @@ def build_full(A, nb, out_dir):
     return {'files': len(ents), 'bytes': total, 'index': idx_size, 'compounds': cmp_size}
 
 
+def load_from_db(path):
+    """Same structure as flavordata.load(), read from pairings.db (source 'ahn2011')."""
+    import sqlite3
+    if not os.path.exists(path):
+        raise SystemExit('%s not found: run  python tools/build_db.py' % path)
+    db = sqlite3.connect(path)
+    q = lambda sql: db.execute(sql).fetchall()
+    ing2ahn = dict(q("SELECT ingredient_id, ext_id FROM xref WHERE source='ahn2011'"))
+    cat = {a: c for a, c in q("SELECT x.ext_id, c.code FROM xref x JOIN ingredient_category c ON c.ingredient_id=x.ingredient_id "
+                              "AND c.source='ahn2011' WHERE x.source='ahn2011'")}
+    comp = dict(q('SELECT id, name FROM compound'))
+    IC = collections.defaultdict(set)
+    for i, c in q("SELECT ingredient_id, compound_id FROM ingredient_compound WHERE source='ahn2011'"):
+        IC[ing2ahn[i]].add(c)
+    n_s2 = int(q("SELECT value FROM meta WHERE key='ahn2011_pairs_verified'")[0][0])
+    db.close()
+    deg = collections.Counter(c for s in IC.values() for c in s)
+    return {'ing': dict(enumerate(sorted(ing2ahn.values()))), 'cat': cat, 'comp': comp, 'IC': dict(IC), 'deg': deg, 'n_s2': n_s2}
+
+
 def main(argv=None):
     global VERBOSE
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--out-dir', default=ROOT, help='write data/ (and the mapping report) under this directory (default: repo root)')
+    ap.add_argument('--from-db', nargs='?', const=os.path.join(ROOT, 'tools', 'pairings.db'), default=None, metavar='DB',
+                    help='read the ahn2011 source from tools/pairings.db (built by build_db.py) instead of the TSV files')
     ap.add_argument('-v', '--verbose', action='store_true')
     args = ap.parse_args(argv)
     VERBOSE = args.verbose
-    A = load_ahn(verify=True)
-    print('flavordata: %d ingredients, %d compounds; all %d official shared-compound pairs verified' % (len(A['IC']), len(A['comp']), A['n_s2']))
+    A = load_from_db(args.from_db) if args.from_db else load_ahn(verify=True)
+    print('flavordata: %d ingredients, %d compounds; all %d official shared-compound pairs verified%s' % (len(A['IC']), len(A['comp']), A['n_s2'],
+          ' (when %s was built)' % os.path.basename(args.from_db) if args.from_db else ''))
     nb = build_notebook(A, args.out_dir, 'Ahn et al. 2011 ingredient–compound table + data/recipes.json (tools/build_pairings.py)')
     print('notebook mode: %d ingredients, %d with aroma data, %d without' % (len(nb['ids']), len(nb['mapped']), len(nb['unmapped'])))
     build_full(A, nb, args.out_dir)

@@ -56,7 +56,64 @@ Tools:
 | `tools/fetch_flavordata.py` | re-downloads the source files and checks SHA-256 (`--force` to re-download) |
 | `tools/build_pairings.py` | writes notebook-mode and full-mode pairing JSON |
 | `tools/check_site.py` | checks local links/images, JSON validity, index ↔ per-ingredient files, JS data URLs |
+| `tools/fetch_sources.py`, `tools/build_db.py` | pairing database (see below) |
 | `tools/flavordata/` | source data + `SOURCES.md` (licence, URLs, checksums) |
+
+## Pairing database (`tools/pairings.db`)
+
+One SQLite file that collects every pairing source behind a master ingredient table. The site stays static: the
+JSON files under `data/` are exported from the database by `tools/build_pairings.py --from-db` (the export is
+byte-identical to building straight from the TSV files, which `python tools/build.py --no-db` still does).
+
+```bash
+python tools/fetch_sources.py                     # verify sources; downloads the pinned FoodOn file (10 MB, not committed)
+python tools/build_db.py                          # -> tools/pairings.db (~12.5 MB, committed) + tools/pairings_review.csv
+python tools/build_pairings.py --from-db          # export site JSON from the database
+python tools/fetch_sources.py --refresh-wikidata  # re-query Wikidata (snapshot + checksums change; review the diff)
+```
+
+`python tools/build.py` runs all of this. The database is deterministic (same inputs → identical file), so
+`build.py --check` also detects a stale `pairings.db`. Offline, the committed database is used as is.
+
+Sources and licences (details: `tools/sources/SOURCES.md`, `tools/flavordata/SOURCES.md`):
+
+| source id | provides | licence |
+|---|---|---|
+| `ahn2011` | flavour compounds, pair scores (shared compounds, Jaccard) | CC BY-NC-SA 3.0 |
+| `wikidata` | QIDs, EN/IT labels + aliases, food classes, FoodOn cross-links | CC0 |
+| `foodon` | FoodOn class ids, labels, exact synonyms, parent classes | CC BY 4.0 |
+| `catalog` | the notebook's ingredients (`tools/catalog.py`) | — |
+
+Schema (stage 1):
+
+| table | columns |
+|---|---|
+| `ingredient` | `id` (stable, = site id: catalog id or Ahn name with `_`→`-`), `name_en`, `name_it`, `name_it_source`, `category` (the 9 page types), `in_notebook`, `wikidata`, `wikidata_match`, `foodon`, `foodon_match`, `review` |
+| `synonym` | `ingredient_id`, `lang`, `name`, `source` |
+| `ingredient_category` | `ingredient_id`, `source`, `code`, `label` (Ahn category, Wikidata food class, FoodOn parent) |
+| `xref` | `source`, `ext_id`, `ingredient_id`, `match`, `note` (`ahn2011` names and `catalog` ids → master ids) |
+| `compound`, `ingredient_compound` | Ahn et al. compounds (`id`, `name`, `cas`) and ingredient ↔ compound links |
+| `pair_score` | `source`, `a`, `b` (a < b), `shared`, `jaccard`, `cooc` — `ahn2011`: all 221,777 pairs sharing ≥ 1 compound |
+| `source`, `meta` | provenance (licence, URL, version, SHA-256) and counts |
+
+Matching (automatic, conservative): an ingredient is looked up by name (notebook ingredients by their English and
+Italian names, dataset ingredients by the Ahn name). Only Wikidata items that are food/drink (subclass of Q2095/Q40050)
+or taxa count. `wikidata_match` = `unique` (one candidate), `ranked` (clear winner: matches in both languages, food
+over taxon, label over alias, FoodOn link, sitelinks), `ambiguous`, or `manual`. FoodOn comes from Wikidata's P6767
+link, else a unique exact label / exact synonym. Anything doubtful gets a `review` reason and a row in
+`tools/pairings_review.csv` (with the candidates found); decisions go in `tools/sources/overrides.csv`
+(`id,wikidata,foodon,name_it,note`; `-` = none) and win over the automatic choice. Italian names from Wikidata are
+stored in the database but **not** used on the site until reviewed.
+
+Example queries:
+
+```sql
+-- best ahn2011 partners of tomato ('pomodoro')
+SELECT CASE WHEN a='pomodoro' THEN b ELSE a END AS partner, shared, jaccard
+FROM pair_score WHERE source='ahn2011' AND (a='pomodoro' OR b='pomodoro') ORDER BY jaccard DESC LIMIT 10;
+-- notebook ingredients still waiting for a decision
+SELECT id, name_it, review FROM ingredient WHERE in_notebook=1 AND review IS NOT NULL;
+```
 
 ## Adding a recipe
 

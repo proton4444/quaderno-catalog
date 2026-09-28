@@ -230,3 +230,16 @@ UNMAPPED_WHY = {
  'lumache': 'no snails in dataset', 'rane': 'no frogs in dataset',
  'latte-soia': 'no soy milk in dataset', 'ricotta-vegana': 'composite', 'elisir': 'composite', 'pectina': 'no aroma entity',
 }
+
+
+# ---------- stable ingredient ids (site URLs, per-ingredient files, pairings.db master table) ----------
+# A notebook ingredient keeps its catalog id; any other Ahn et al. entity gets its name with '_' -> '-',
+# plus '-ds' if that would collide with a catalog id. Ids are never renamed once published.
+def ingredient_id(ahn_name):
+    for cid, (a, q, _) in MAP.items():
+        if a == ahn_name:
+            return cid
+    i = ahn_name.replace('_', '-')
+    if i in {c[0] for c in C}:
+        i += '-ds'   # e.g. dataset 'cacao' vs catalog 'cacao' (= dataset 'cocoa')
+    return i

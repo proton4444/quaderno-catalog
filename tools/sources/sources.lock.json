@@ -1,0 +1,22 @@
+{
+ "wikidata/aliases.tsv": {
+  "retrieved": "2026-09-28T14:13:26Z",
+  "sha256": "3d0f26702b5479c03bf873b7d56419697db3e96fe1d2cc1dc25554362e7c8a25",
+  "url": "https://query.wikidata.org/sparql"
+ },
+ "wikidata/candidates.tsv": {
+  "retrieved": "2026-09-28T14:13:26Z",
+  "sha256": "730fa2e7619515665a2edd722916369de5c7baa31c1183ba9bfea1066ff18cd1",
+  "url": "https://query.wikidata.org/sparql"
+ },
+ "wikidata/class_labels.tsv": {
+  "retrieved": "2026-09-28T14:13:26Z",
+  "sha256": "0a17ea647cd015f2a4584eab0f410e688e8a38bbaf1898c43357caf46fd64cb2",
+  "url": "https://query.wikidata.org/sparql"
+ },
+ "wikidata/food_classes.tsv": {
+  "retrieved": "2026-09-28T14:13:26Z",
+  "sha256": "385b88274064ca204ecca3f04dfe6de80ec7bf5db01f902d3d35f141e0bd97f8",
+  "url": "https://query.wikidata.org/sparql"
+ }
+}
