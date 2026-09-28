@@ -11,8 +11,8 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
 <link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="data/pairings.json" as="fetch" crossorigin/>
-<link rel="stylesheet" href="css/pairings.css"/>
+<link rel="preload" href="data/pairings-v2.json" as="fetch" crossorigin/>
+<link rel="stylesheet" href="css/pairings.css?v=3"/>
 </head>
 <body>
 <div class="stage" id="stage">
@@ -54,6 +54,14 @@
 </aside>
 
 <noscript><p class="nojs">Questa pagina concept richiede JavaScript. <a href="app.html">Torna al quaderno</a>.</p></noscript>
-<script src="js/pairings.js" defer></script>
+<section class="fallback" id="fallback" hidden></section>
+<script src="js/pairings.js?v=3" defer></script>
+<script>
+/* watchdog: if the page script never starts (network error, old browser), show a readable message instead of a blank page */
+setTimeout(function(){if(window.__pairingsReady)return;var b=document.getElementById('fallback');if(!b||!b.hidden)return;
+  var en=/(?:^|; )recipe-lang=en/.test(document.cookie);b.hidden=false;
+  b.innerHTML=en?'<h2>This concept page did not start</h2><p>Try reloading the page (hard refresh). If it keeps happening, your browser may be too old for it.</p><p><a href="app.html">Back to the notebook</a></p>'
+    :'<h2>La pagina concept non si è avviata</h2><p>Prova a ricaricare la pagina (ricaricamento forzato). Se succede ancora, il browser potrebbe essere troppo vecchio.</p><p><a href="app.html">Torna al quaderno</a></p>';},12000);
+</script>
 </body>
 </html>

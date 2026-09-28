@@ -66,12 +66,76 @@ function clamp(v,a,b){return v<a?a:v>b?b:v;}
 function rnd(a,b){return a+Math.random()*(b-a);}
 
 /* ---------- data ---------- */
-fetch('data/pairings.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(init).catch(function(e){
-  hintEl.textContent='Impossibile caricare i dati / Could not load data';console.warn(e);
-});
+// Versioned file name: an old service worker (cache-first on data/) can never have it cached,
+// so new code never meets stale data. Falls back to the legacy name if the new file is missing.
+var DATA_URLS=['data/pairings-v2.json','data/pairings.json'];
+function loadData(i){
+  i=i||0;
+  return fetch(DATA_URLS[i],{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' '+DATA_URLS[i]);return r.json();})
+    .catch(function(e){if(i+1<DATA_URLS.length){console.warn(e);return loadData(i+1);}throw e;});
+}
+function boot(){
+  loadData().then(function(data){
+    try{init(data);window.__pairingsReady=true;}
+    catch(e){console.error('pairings init failed',e);fallback(e,data);}
+  },function(e){console.error('pairings data failed',e);fallback(e,null);});
+}
+boot();
+
+/* Never a blank page: readable message + plain ingredient list (or a retry button when there is no data). */
+function fallback(err,data){
+  window.__pairingsReady=true;window.__pairingsFallback=String(err&&err.message||err);
+  try{stop();}catch(_){}
+  try{
+    var en=lang==='en';
+    var box=$('fallback');
+    if(!box){box=doc.createElement('section');box.id='fallback';doc.body.appendChild(box);}
+    box.className='fallback';box.hidden=false;box.setAttribute('role','alert');
+    var h='<h2>'+(en?'The drops could not be drawn':'Le gocce non si possono disegnare')+'</h2><p>'+
+      (en?'Something went wrong while loading this concept page. Try reloading (a hard refresh clears an old cached copy).':
+          'Qualcosa è andato storto nel caricare questa pagina concept. Prova a ricaricare (un ricaricamento forzato elimina una vecchia copia in cache).')+'</p>'+
+      '<p><button type="button" id="fbRetry">'+(en?'Reload':'Ricarica')+'</button> · <a href="app.html">'+(en?'Back to the notebook':'Torna al quaderno')+'</a></p>';
+    var ok=data&&Array.isArray(data.ingredients)&&data.ingredients.length;
+    if(ok){
+      var ings=data.ingredients.filter(function(g){return g&&g.id;});
+      var types=Array.isArray(data.types)?data.types.filter(function(ty){return ty&&ty.id;}):[];
+      var byT={},names={},tset={};types.forEach(function(ty){tset[ty.id]=1;});
+      ings.forEach(function(g){names[g.id]=g[lang]||g.it||g.id;var k=tset[g.type]?g.type:'_';(byT[k]=byT[k]||[]).push(g);});
+      if(byT._)types=types.concat([{id:'_',it:'Ingredienti',en:'Ingredients'}]);
+      h+='<div class="fb-list">'+types.map(function(ty){var gs=byT[ty.id]||[];if(!gs.length)return '';
+        return '<h3 style="--c:'+esc(/^#[0-9a-f]{6}$/i.test(ty.color||'')?ty.color:'#704a2c')+'">'+esc(ty[lang]||ty.it||ty.id)+'</h3><ul>'+gs.map(function(g){
+          var ms=(Array.isArray(g.matches)?g.matches:[]).slice(0,5).map(function(m){return esc(names[m.id]||m.id)+(m.n!=null?' ('+m.n+')':'');}).join(', ');
+          return '<li><b>'+esc(names[g.id])+'</b>'+(ms?' — '+ms:'')+'</li>';}).join('')+'</ul>';}).join('')+'</div>';
+      if(data.source&&data.source.url)h+='<p class="fb-src">'+esc((en?'Aroma data':'Dati aromatici')+': '+(data.source.label||data.source.short||''))+' · '+esc(data.source.license||'')+'</p>';
+    }
+    box.innerHTML=h;
+    var rb=$('fbRetry');if(rb)rb.addEventListener('click',function(){location.reload();});
+    if(hintEl)hintEl.classList.add('gone');
+  }catch(e2){console.error(e2);if(hintEl)hintEl.textContent='Impossibile caricare i dati / Could not load data';}
+}
+
+function normalise(data){
+  if(!data||!data.ingredients||!data.types||!data.recipes)throw new Error('pairings data: missing fields');
+  data.compounds=data.compounds||[];
+  data.method=data.method||{it:'',en:''};
+  data.unmapped=data.unmapped||[];
+  data.mappedCount=data.mappedCount!=null?data.mappedCount:data.ingredients.length;
+  data.featured=(data.featured||data.ingredients.map(function(g){return g.id;}));
+  data.recipeCount=data.recipeCount||data.recipes.length;
+  var ids={};data.ingredients.forEach(function(g){ids[g.id]=1;});
+  data.featured=data.featured.filter(function(id){return ids[id];});
+  data.ingredients.forEach(function(g){
+    g.n=+g.n||1;g.recipes=g.recipes||[];
+    g.matches=(g.matches||[]).filter(function(m){return m&&ids[m.id];});
+    g.matches.forEach(function(m){m.score=isFinite(+m.score)?+m.score:0;m.n=+m.n||0;m.recipes=m.recipes||[];m.ex=m.ex||[];});
+  });
+  var tids={};data.types.forEach(function(ty){tids[ty.id]=1;if(!/^#[0-9a-f]{6}$/i.test(ty.color||''))ty.color='#704a2c';});
+  data.ingredients.forEach(function(g){if(!tids[g.type])g.type=data.types[data.types.length-1].id;});
+  return data;
+}
 
 function init(data){
-  D=data;
+  D=normalise(data);
   data.types.forEach(function(ty,i){ty.idx=i;ty.rgb=hexRgb(ty.color);TYPE[ty.id]=ty;TYPES.push(ty);});
   data.ingredients.forEach(function(g){ING[g.id]=g;});
   data.recipes.forEach(function(r){RECIPE[r.slug]=r;});
@@ -185,7 +249,7 @@ function select(id,instant){
   openSheet(g,ms);
   var fa=focalArea(),fx0=(fa.x0+fa.x1)/2,fy0=(fa.y0+fa.y1)/2;
   var R=Math.min((fa.x1-fa.x0)*0.40,(fa.y1-fa.y0)*0.40);
-  var maxS=ms.length?ms[0].score:1;
+  var maxS=Math.max(ms.length?ms[0].score:1,1e-6);
   FOC={x:fx0,y:fy0,r:mobile?0:R*1.45};
   drops.forEach(function(o){
     o.el.classList.remove('focus');
@@ -257,9 +321,9 @@ function openSheet(g,ms){
   }
   h+='<h3 class="sh-h">'+esc(L.pairs)+'</h3>';
   if(!ms.length)h+='<p class="empty">'+esc(g.ahn?L.none:L.noData)+'</p>';
-  var max=ms.length?ms[0].score:1;
+  var max=Math.max(ms.length?ms[0].score:1,1e-6);
   h+='<ol class="mlist">'+ms.map(function(m){var o=ING[m.id],c=TYPE[o.type].color;
-    var ex=(m.ex||[]).map(function(k){return esc(D.compounds[k]);}).join(' · ')+(m.n>(m.ex||[]).length?esc(L.moreC(m.n-m.ex.length)):'');
+    var ex=(m.ex||[]).map(function(k){return esc(D.compounds[k]!=null?D.compounds[k]:'');}).filter(Boolean).join(' · ')+(m.n>(m.ex||[]).length?esc(L.moreC(m.n-m.ex.length)):'');
     return '<li><button class="m" type="button" data-go="'+m.id+'"><span class="d" style="--c:'+c+'"></span><span class="mn">'+esc(nm(o))+'</span>'+
       '<span class="bar" title="Jaccard '+m.score+'"><i style="width:'+Math.round(18+82*m.score/max)+'%"></i></span><span class="mc">'+esc(L.nComp(m.n))+'</span></button>'+
       '<div class="mr cx"><b>'+esc(L.shared)+'</b> '+ex+'</div>'+
@@ -275,11 +339,11 @@ function openSheet(g,ms){
   h+='<h3 class="sh-h">'+esc(L.recipesWith+nm(g).toLowerCase())+'</h3><ul class="rlist">'+g.recipes.map(function(s){var r=RECIPE[s];
     return '<li><a href="app.html#/r/'+encodeURIComponent(s)+'">'+(r.cover?'<img src="'+esc(r.cover)+'" alt="" loading="lazy" decoding="async"/>':'<i></i>')+
       '<span>'+esc(nm(r.title))+'</span>'+ICON_GO+'</a></li>';}).join('')+'</ul>';
-  h+='<p class="credit">'+srcCredit()+'</p>';
+  if(D.source)h+='<p class="credit">'+srcCredit()+'</p>';
   sheetIn.innerHTML=h;sheetIn.scrollTop=0;
   sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');sheet.setAttribute('aria-labelledby','shTitle');
 }
-function srcCredit(){var s=D.source;return esc(t('src'))+': <a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.short)+'</a> · <a href="'+esc(s.licenseUrl)+'" target="_blank" rel="noopener">'+esc(s.license)+'</a>';}
+function srcCredit(){var s=D.source;if(!s||!s.url)return '';return esc(t('src'))+': <a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.short)+'</a> · <a href="'+esc(s.licenseUrl)+'" target="_blank" rel="noopener">'+esc(s.license)+'</a>';}
 function closeSheet(){sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true');}
 
 /* ---------- chips / language ---------- */
@@ -314,11 +378,15 @@ function applyLang(){
   chipsEl.setAttribute('aria-label',t('types'));labelsEl.setAttribute('aria-label',t('ings'));
   doc.title=t('title')+' — Quaderno';
   if(D){
-    $('howBody').innerHTML='<strong>'+esc(t('howTitle'))+'</strong><p>'+esc(nm(D.method))+'</p>'+
-      '<p class="src">'+esc(D.source.label)+'. <a href="'+esc(D.source.url)+'" target="_blank" rel="noopener">doi:10.1038/srep00196</a> · <a href="'+esc(D.source.licenseUrl)+'" target="_blank" rel="noopener">'+esc(D.source.license)+'</a></p>'+
-      '<p class="unm">'+esc(t('unm'))+esc(D.unmapped.map(function(u){return nm(u);}).join(', '))+'.</p>'+
+    var S=D.source;
+    var hb=$('howBody');
+    if(hb)hb.innerHTML='<strong>'+esc(t('howTitle'))+'</strong><p>'+esc(nm(D.method))+'</p>'+
+      (S&&S.url?'<p class="src">'+esc(S.label||S.short||'')+'. <a href="'+esc(S.url)+'" target="_blank" rel="noopener">doi:10.1038/srep00196</a> · <a href="'+esc(S.licenseUrl||'#')+'" target="_blank" rel="noopener">'+esc(S.license||'')+'</a></p>':'')+
+      (D.unmapped.length?'<p class="unm">'+esc(t('unm'))+esc(D.unmapped.map(function(u){return nm(u);}).join(', '))+'.</p>':'')+
       '<p>'+esc(T[lang].stats(D.recipeCount,D.ingredients.length,D.types.length,D.mappedCount))+'</p>';
-    $('credit').innerHTML=srcCredit();
+    var cr=$('credit');
+    if(!cr&&S&&S.url){cr=doc.createElement('p');cr.id='credit';cr.className='credit-fixed';doc.body.appendChild(cr);}
+    if(cr)cr.innerHTML=srcCredit();
     drops.forEach(setLabel);
     if(focus)openSheet(focus.g,topMatches(focus.g));
   }
@@ -424,7 +492,11 @@ function step(dt,pinned){
   }
   var damp=Math.exp(-dt*3.4);
   for(i=0;i<drops.length;i++){
-    d=drops[i];if(d.dragging||d===pinned)continue;
+    d=drops[i];
+    if(!isFinite(d.x)||!isFinite(d.y)||!isFinite(d.vx)||!isFinite(d.vy)){ // never let a NaN hide a drop
+      d.x=isFinite(d.hx)?d.hx:W/2;d.y=isFinite(d.hy)?d.hy:H/2;d.vx=0;d.vy=0;}
+    if(!isFinite(d.s)){d.s=d.sT||1;d.vs=0;}
+    if(d.dragging||d===pinned)continue;
     d.vx*=damp;d.vy*=damp;d.x+=d.vx*dt;d.y+=d.vy*dt;
     var r=d.r0*d.s*0.7,minY=d.role==='dim'?a.y0-10:a.y0+r;
     if(d.x<a.x0+r){d.x=a.x0+r;d.vx=Math.abs(d.vx)*0.3;}
@@ -451,6 +523,9 @@ function settle(n,pinned){for(var i=0;i<n;i++)step(1/60,pinned);particles=[];spl
 var ft=[],slow=0;
 function frame(now){
   raf=requestAnimationFrame(frame);
+  try{frameBody(now);}catch(e){console.error('pairings frame failed',e);stop();fallback(e,D);}
+}
+function frameBody(now){
   var dtr=Math.min(0.1,(now-(lastT||now))/1000);lastT=now;
   acc+=dtr;var n=0;while(acc>=1/60&&n<6){step(1/60);acc-=1/60;n++;}if(n===6)acc=0;
   renderAll();
