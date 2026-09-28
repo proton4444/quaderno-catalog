@@ -30,7 +30,7 @@ var T={
    seeAll:'Vedi in Tutti gli ingredienti',seeAllN:function(n){return n+(n===1?' abbinamento':' abbinamenti')+' tra tutti gli ingredienti del dataset.';},
    noneAll:'Nessun abbinamento neanche tra tutti gli ingredienti del dataset.',
    onlyStaples:'Condivide aromi solo con ingredienti onnipresenti (qui sotto).',
-   filtered:function(n){return n+(n===1?' abbinamento nascosto':' abbinamenti nascosti')+' dai filtri per tipo.';},showTypes:'Mostra tutti i tipi',hiddenT:'Abbinamenti nascosti',
+   filtered:function(n){return n+(n===1?' abbinamento nascosto':' abbinamenti nascosti')+' dai filtri per tipo.';},showTypes:'Mostra tutti i tipi',fileErrT:'Dati non caricati',fileErr:'Il file degli abbinamenti di questo ingrediente non si è caricato (problema di rete).',retry:'Riprova',hiddenT:'Abbinamenti nascosti',
    weak:'Abbinamenti deboli: nessun ingrediente ne condivide almeno 2 composti, quindi mostro quelli che ne condividono 1.',
    src:'Dati aromatici',unm:'Senza dati aromatici: ',
    inN:function(n){return 'in '+n+(n===1?' ricetta':' ricette')+' del quaderno';},nRec:function(n){return n+(n===1?' ricetta':' ricette');},
@@ -53,7 +53,7 @@ var T={
    seeAll:'See in All ingredients',seeAllN:function(n){return n+(n===1?' pairing':' pairings')+' among all the dataset ingredients.';},
    noneAll:'No pairings among all the dataset ingredients either.',
    onlyStaples:'Shares aromas only with everyday staples (below).',
-   filtered:function(n){return n+(n===1?' pairing hidden':' pairings hidden')+' by the type filters.';},showTypes:'Show all types',hiddenT:'Pairings hidden',
+   filtered:function(n){return n+(n===1?' pairing hidden':' pairings hidden')+' by the type filters.';},showTypes:'Show all types',fileErrT:'Data not loaded',fileErr:'The pairing file for this ingredient did not load (network problem).',retry:'Try again',hiddenT:'Pairings hidden',
    weak:'Weak pairings: no ingredient shares 2 of its compounds, so these share 1.',
    src:'Aroma data',unm:'No aroma data: ',
    inN:function(n){return 'in '+n+(n===1?' recipe':' recipes')+' in the notebook';},nRec:function(n){return n+(n===1?' recipe':' recipes');},
@@ -113,7 +113,9 @@ function loadFull(id){
   if(FULL[id])return Promise.resolve(FULL[id]);
   return loadIndex().then(function(){
     var r=IDXROW[id];if(!r||r[5]===2)return null; // notebook ingredient without aroma data: nothing to load
-    return fetch('data/ing/'+encodeURIComponent(id)+'.json?v='+DATA_V).then(function(res){if(!res.ok)throw new Error('HTTP '+res.status+' '+id);return res.json();})
+    var url='data/ing/'+encodeURIComponent(id)+'.json?v='+DATA_V;
+    var get=function(){return fetch(url).then(function(res){if(!res.ok)throw new Error('HTTP '+res.status+' '+id);return res.json();});};
+    return get().catch(function(){return new Promise(function(ok){setTimeout(ok,700);}).then(get);})
       .then(function(d){FULL[id]=d;var g=ensureIng(id);if(g){if(!g.ahn)g.ahn=d.ahn;if(!g.nc)g.nc=d.nc;}return d;});
   });
 }
@@ -350,13 +352,15 @@ function topMatches(g){
   return matchesFor(g).filter(function(m){var o=ING[m.id]||ensureIng(m.id);return o&&!m.staple&&!hidden[o.type];}).slice(0,lim);
 }
 function select(id,instant){
-  if(MODE==='all'&&!FULL[id]&&!(ING[id]&&ING[id].fullErr)&&!(IDX&&!IDXROW[id])){
+  if(MODE==='all'&&!FULL[id]&&!(ING[id]&&ING[id].fullErr&&Date.now()-ING[id].fullErr<15000)&&!(IDX&&!IDXROW[id])){
     var r0=ING[id];
     if(IDX&&IDXROW[id]&&IDXROW[id][5]===2){/* notebook-only, no file */}
     else{
       if(hintEl&&!focus){hintEl.textContent=t('loading');}
       loadFull(id).then(function(){if(hintEl)hintEl.textContent=t('hint');select(id,instant);},function(e){
-        console.warn(e);var g0=ensureIng(id)||r0;if(g0&&!g0.ds){g0.fullErr=true;select(id,instant);}else modeFail();});
+        console.warn(e);var g0=ensureIng(id)||r0;
+        if(!IDX||!g0){modeFail();return;}          // the index itself failed: full mode is unusable
+        g0.fullErr=Date.now();select(id,instant);});  // just this file: show the drop with a retry
       return;
     }
   }
@@ -372,7 +376,7 @@ function select(id,instant){
   var ms=topMatches(g),mset={};
   ms.forEach(function(m,i){mset[m.id]=m;});
   drops.forEach(function(o){if(o.nopair&&o!==d){o.nopair=false;setLabel(o);}});
-  var none=!ms.length&&!matchesFor(g).some(function(m){var o=ING[m.id];return o&&!m.staple&&hidden[o.type];});
+  var none=!ms.length&&!(MODE==='all'&&g.fullErr&&!FULL[id])&&!matchesFor(g).some(function(m){var o=ING[m.id];return o&&!m.staple&&hidden[o.type];});
   if(!!d.nopair!==none){d.nopair=none;setLabel(d);}
   // make sure matches exist on stage (they emerge from the tapped drop)
   ms.forEach(function(m){var md=byId[m.id];if(!md){md=makeDrop(m.id,true);md.x=d.x+rnd(-4,4);md.y=d.y+rnd(-4,4);md.s=0;md.delay=RM?0:0.16+Math.random()*0.25;}});
@@ -450,7 +454,7 @@ function openSheet(g,ms){
       return i===trail.length-1?'<span aria-current="true">'+esc(nm(ING[id]))+'</span>':'<button type="button" data-go="'+id+'">'+esc(nm(ING[id]))+'</button><span aria-hidden="true">→</span>';}).join('')+'</nav>';
   }
   var full=MODE==='all'&&!!FULL[g.id];
-  h+='<h3 class="sh-h">'+esc(L.pairs)+'</h3>'+(full?'<p class="modenote">'+esc(L.allNote)+'</p>':'')+(MODE==='all'&&g.fullErr?'<p class="modenote">'+esc(L.loadErr)+'</p>':'');
+  h+='<h3 class="sh-h">'+esc(L.pairs)+'</h3>'+(full?'<p class="modenote">'+esc(L.allNote)+'</p>':'')+(MODE==='all'&&g.fullErr&&!g.ds?'<p class="modenote">'+esc(L.loadErr)+'</p>':'');
   var allM=matchesFor(g);
   if(full&&FULL[g.id].fb&&ms.length)h+='<p class="modenote">'+esc(L.weak)+'</p>';
   if(!ms.length)h+=emptyState(g,allM,full,L);
@@ -481,6 +485,8 @@ function openSheet(g,ms){
 }
 // A drop with no threads always says why, and offers the next useful step.
 function emptyState(g,all,full,L){
+  if(MODE==='all'&&g.fullErr&&!full&&(g.ds||!g.ahn||!all.length))
+    return '<div class="nopair-box" role="status"><b>'+esc(L.fileErrT)+'</b><p>'+esc(L.fileErr)+'</p><button type="button" class="cta" data-act="retry">'+esc(L.retry)+'</button></div>';
   var hiddenN=all.filter(function(m){var o=ING[m.id];return o&&!m.staple&&hidden[o.type];}).length;
   var h='<div class="nopair-box" role="status"><b>'+esc(L.noPair)+'</b><p>';
   if(hiddenN)return '<div class="nopair-box" role="status"><b>'+esc(L.hiddenT)+'</b><p>'+esc(L.filtered(hiddenN))+'</p><button type="button" class="cta" data-act="types">'+esc(L.showTypes)+'</button></div>';
@@ -601,6 +607,7 @@ function bind(){
     var go=e.target.closest('[data-go]');if(go){select(go.dataset.go);return;}
     if(e.target.closest('[data-act="reset"]'))reset();
     else if(e.target.closest('[data-act="seeall"]'))setMode('all');
+    else if(e.target.closest('[data-act="retry"]')&&focus){var fg=focus.g,f=focus.id;fg.fullErr=0;focus=null;trail.pop();select(f,true);}
     else if(e.target.closest('[data-act="types"]')){hidden={};[].forEach.call(chipsEl.children,function(b){b.setAttribute('aria-pressed','true');});
       if(focus){var f=focus.id;focus=null;trail.pop();select(f,true);}}
   });
