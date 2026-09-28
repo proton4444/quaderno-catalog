@@ -1,0 +1,3936 @@
+{
+ "version": 1,
+ "generatedFrom": "scheda + tutorial HTML (build_recipes.py)",
+ "sections": [
+  {
+   "id": "italia-squisita",
+   "num": "I",
+   "name": "Italia Squisita"
+  },
+  {
+   "id": "ratana",
+   "num": "II",
+   "name": "Ratanà"
+  },
+  {
+   "id": "masterchef",
+   "num": "III",
+   "name": "MasterChef Magazine"
+  }
+ ],
+ "categories": [
+  {
+   "id": "pasta",
+   "label": {
+    "it": "Pasta",
+    "en": "Pasta"
+   }
+  },
+  {
+   "id": "risotto",
+   "label": {
+    "it": "Risotto",
+    "en": "Risotto"
+   }
+  },
+  {
+   "id": "carne",
+   "label": {
+    "it": "Carne",
+    "en": "Meat"
+   }
+  },
+  {
+   "id": "pesce",
+   "label": {
+    "it": "Pesce",
+    "en": "Fish"
+   }
+  },
+  {
+   "id": "verdure",
+   "label": {
+    "it": "Verdure",
+    "en": "Vegetables"
+   }
+  },
+  {
+   "id": "vegano",
+   "label": {
+    "it": "Vegano",
+    "en": "Vegan"
+   }
+  },
+  {
+   "id": "colazione",
+   "label": {
+    "it": "Colazione",
+    "en": "Breakfast"
+   }
+  }
+ ],
+ "recipes": [
+  {
+   "slug": "peperonata-romana",
+   "order": 1,
+   "section": {
+    "id": "italia-squisita",
+    "num": "I",
+    "name": "Italia Squisita"
+   },
+   "title": {
+    "it": "Peperonata romana",
+    "en": "Roman peperonata"
+   },
+   "shortTitle": {
+    "it": "Peperonata romana",
+    "en": "Roman peperonata"
+   },
+   "subtitle": {
+    "it": "Peperonata romana con rigatoni di kamut",
+    "en": "Roman peperonata with kamut rigatoni"
+   },
+   "kicker": {
+    "it": "Italia Squisita · Andrea Antonini · Ricetta I · Il classico",
+    "en": "Italia Squisita · Andrea Antonini · Recipe I · The classic"
+   },
+   "description": {
+    "it": "Peperoni cotti fino a cedere la dolcezza, conclusi col pomodoro alla romana, poi usati come sugo per rigatoni di kamut.",
+    "en": "Peppers cooked until they surrender their sweetness, finished with tomato in the Roman manner, then used as a sauce for kamut rigatoni."
+   },
+   "intro": {
+    "it": "Peperoni cotti fino a cedere la dolcezza, conclusi col pomodoro alla romana, poi usati come sugo per rigatoni di grano khorasan. La stessa base puo essere contorno condiviso, o fondamento del pollo coi peperoni.",
+    "en": "Peppers cooked until they surrender their sweetness, finished with tomato in the Roman manner, then used as a sauce for khorasan-wheat rigatoni. The same base may stand as a shared side, or as the foundation of pollo coi peperoni."
+   },
+   "servingNote": {
+    "it": "Nel film le quantita si giudicano a occhio e dal comportamento della padella. Qui si registrano taglio, sequenza e proporzione, non una formula chiusa a peso.",
+    "en": "Quantities in the source demonstration are judged largely by eye and by the behaviour of the pan. What follows records cut, sequence, and proportion rather than a closed formula with weights."
+   },
+   "cover": {
+    "src": "steps/roman-10.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: peperonata romana in ciotola, con basilico e origano spezzati a mano",
+    "w": 480,
+    "h": 269
+   },
+   "source": {
+    "url": "https://youtu.be/4L3aJYqebj8",
+    "label": {
+     "it": "Fonte · Film su YouTube",
+     "en": "Source · Film on YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo Andrea Antonini per Italia Squisita. Film su YouTube",
+    "en": "After Andrea Antonini for Italia Squisita. Film on YouTube"
+   },
+   "ingredients": [
+    {
+     "title": {
+      "it": "Peperoni",
+      "en": "Peppers"
+     },
+     "intro": {
+      "it": "Un cesto misto. Rossi e gialli classici, Sweet Palermo e cornetto. I peperoni del mercato vanno benissimo; nel film sono del Lazio.",
+      "en": "A mixed basket. Classic red and yellow, Sweet Palermo, and cornetto (horn). Market peppers are entirely suitable; the film uses peppers from Lazio."
+     },
+     "note": {
+      "it": "La buccia puo restare per croccantezza e nutrimento, o togliersi se la digestione e delicata.",
+      "en": "The skin may be left on for crunch and nutrition, or peeled if digestion is a concern."
+     },
+     "items": [
+      {
+       "it": "Togliere picciolo e punta; aprire a meta; togliere semi e parte bianca.",
+       "en": "Trim the stem and the tip; halve; remove seeds and white pith."
+      },
+      {
+       "it": "Tagliare a bastoncini regolari, circa 7-8 cm per 1 cm.",
+       "en": "Cut into even sticks, about 7–8 cm by 1 cm."
+      },
+      {
+       "it": "Per grandi quantita vanno bene cubetti o strisce piu spesse.",
+       "en": "For a large batch, cubes or slightly thicker strips are acceptable."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Aromatici",
+      "en": "Aromatics"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Cipolla bianca e rossa, affettate sottilissime perche si fondano.",
+       "en": "White and red onion, sliced very thinly so that they melt into the sauce."
+      },
+      {
+       "it": "Aglio sbucciato — intero, schiacciato o a fette.",
+       "en": "Garlic cloves, peeled — left whole, smashed, or sliced."
+      },
+      {
+       "it": "Peperoncino dolce, friggitello maturo o cornetto rosso (non necessariamente piccante).",
+       "en": "Sweet chilli, ripe friggitello, or red horn pepper (not necessarily spicy)."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Pomodoro — il tocco romano",
+      "en": "Tomato — the Roman touch"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Pomodorini datterini all'inizio del fondo.",
+       "en": "Date tomatoes, added at the start of the base."
+      },
+      {
+       "it": "Una salsa degli stessi datterini, a finire.",
+       "en": "A sauce made from the same date tomatoes, to finish."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Pasta",
+      "en": "Pasta"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Rigatoni di kamut (khorasan).",
+       "en": "Kamut (khorasan) rigatoni."
+      },
+      {
+       "it": "Acqua di cottura, tenuta da parte.",
+       "en": "Cooking water, reserved."
+      },
+      {
+       "it": "Olio extravergine, per lucentezza.",
+       "en": "Extra-virgin olive oil, for shine."
+      },
+      {
+       "it": "Basilico e origano freschi, spezzati a mano.",
+       "en": "Fresh basil and oregano, torn by hand."
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": {
+      "it": "La peperonata",
+      "en": "The peperonata"
+     },
+     "intro": null,
+     "steps": [
+      {
+       "it": "Scaldare l'olio extravergine. Tostare leggermente l'aglio fino all'aroma, senza bruciarlo.",
+       "en": "Warm extra-virgin olive oil. Lightly toast the garlic until it is aromatic, without colouring it harshly."
+      },
+      {
+       "it": "Aggiungere il peperoncino, poi i datterini.",
+       "en": "Add the chilli, then the date tomatoes."
+      },
+      {
+       "it": "Aggiungere cipolla bianca e rossa. Far appassire.",
+       "en": "Add the white and red onion. Sweat until soft."
+      },
+      {
+       "it": "Aggiungere i peperoni e lasciarli prendere, perche gli zuccheri inizino a caramellare.",
+       "en": "Add the peppers and let them catch, so that their sugars begin to caramelise."
+      },
+      {
+       "it": "Sfumare col vino bianco e farlo evaporare del tutto.",
+       "en": "Deglaze with white wine and cook it off completely."
+      },
+      {
+       "it": "Aggiungere la salsa di pomodoro. Coprire e cuocere dai 40 minuti a un'ora circa, finche i peperoni sono morbidi e la salsa si e scomposta.",
+       "en": "Add the tomato sauce. Cover and cook for about 40 minutes to an hour, until the peppers are soft and the sauce has broken down."
+      },
+      {
+       "it": "Scoperchiare a finire. Togliere l'aglio.",
+       "en": "Uncover to finish. Remove the garlic."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Per finire con la pasta",
+      "en": "To finish with pasta"
+     },
+     "intro": null,
+     "steps": [
+      {
+       "it": "Cuocere i rigatoni di kamut a un minuto dalla cottura. Scolarli direttamente nella peperonata.",
+       "en": "Cook the kamut rigatoni until one minute short of done. Drain it directly into the peperonata."
+      },
+      {
+       "it": "Allungare con acqua di pasta fino a cremosita. Un filo d'olio da lucentezza.",
+       "en": "Loosen with pasta water until the sauce turns creamy. A drizzle of oil will give it shine."
+      },
+      {
+       "it": "Fuori dal fuoco, spezzare basilico e origano a mano.",
+       "en": "Off the heat, tear in fresh basil and oregano by hand."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Servire come contorno condiviso, o come primo.",
+     "en": "Serve as a shared side, or as a first course."
+    },
+    {
+     "it": "La stessa base vale per il pollo coi peperoni, piatto di Ferragosto.",
+     "en": "The same base is used for pollo coi peperoni, the Ferragosto dish."
+    },
+    {
+     "it": "A Roma il pomodoro entra in peperonata dal XIX secolo circa. Altrove a volte capperi, melanzane o olive.",
+     "en": "Rome has put tomato in peperonata since about the nineteenth century. Elsewhere the dish is sometimes finished with capers, aubergine, or olives."
+    }
+   ],
+   "meta": [
+    {
+     "it": "⏱ ≈ 1 h 30",
+     "en": "⏱ ≈ 1 h 30"
+    },
+    {
+     "it": "🍽 4 porzioni",
+     "en": "🍽 4 servings"
+    },
+    {
+     "it": "● Media",
+     "en": "● Medium"
+    }
+   ],
+   "techNote": null,
+   "servings": 4,
+   "scalable": false,
+   "categories": [
+    "pasta",
+    "verdure"
+   ],
+   "tutorial": {
+    "page": "peperonata-romana.html",
+    "title": {
+     "it": "Peperonata romana",
+     "en": "Roman peperonata"
+    },
+    "lede": {
+     "it": "Una peperonata lenta e profumata, finita in padella con rigatoni di kamut, acqua di cottura e erbe strappate a mano — struttura Fooby, illustrazioni Leonardo.",
+     "en": "A slow, fragrant peperonata finished in the pan with kamut rigatoni, pasta water and hand-torn herbs — Fooby structure, Leonardo illustrations."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Scalda l’olio EVO e tosta leggermente l’aglio fino a renderlo aromatico, senza colorarlo in modo aggressivo.",
+      "en": "Warm the EVOO and lightly toast the garlic until aromatic — avoid harsh browning.",
+      "img": {
+       "src": "steps/roman-01.jpg",
+       "alt": "Aglio in olio EVO",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "02",
+      "it": "Aggiungi il peperoncino, poi i pomodorini datterini.",
+      "en": "Add the chilli, then the date tomatoes.",
+      "img": {
+       "src": "steps/roman-02.jpg",
+       "alt": "Peperoncino e datterini",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "03",
+      "it": "Unisci cipolla bianca e rossa; falle sudare finché risultano morbide.",
+      "en": "Add white and red onion; sweat until soft.",
+      "img": {
+       "src": "steps/roman-03.jpg",
+       "alt": "Cipolle in padella",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "04",
+      "it": "Aggiungi i peperoni e lasciali prendere colore, così gli zuccheri caramellizzano.",
+      "en": "Add the peppers and let them catch so the sugars caramelise.",
+      "img": {
+       "src": "steps/roman-04.jpg",
+       "alt": "Peperoni in cottura",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "05",
+      "it": "Sfumare con vino bianco e farlo evaporare del tutto.",
+      "en": "Deglaze with white wine and cook it off completely.",
+      "img": {
+       "src": "steps/roman-05.jpg",
+       "alt": "Sfumatura col vino",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "06",
+      "it": "Versa la salsa di pomodoro, copri e cuoci 40 minuti–1 ora, finché tutto è morbido.",
+      "en": "Add tomato sauce, cover, and cook 40 minutes–1 hour until soft.",
+      "img": {
+       "src": "steps/roman-06.jpg",
+       "alt": "Peperonata coperta",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "07",
+      "it": "Scopri per finire la cottura e togli l’aglio.",
+      "en": "Uncover to finish cooking, then remove the garlic.",
+      "img": {
+       "src": "steps/roman-07.jpg",
+       "alt": "Rimozione aglio",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "08",
+      "it": "Cuoci i rigatoni di kamut 1 minuto sotto cottura; scolali direttamente nella peperonata.",
+      "en": "Cook kamut rigatoni 1 minute underdone; drain straight into the peperonata.",
+      "img": {
+       "src": "steps/roman-08.jpg",
+       "alt": "Rigatoni nella peperonata",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "09",
+      "it": "Amalgama con acqua di cottura fino a una cremosità setosa; un filo d’olio per lucidare.",
+      "en": "Loosen with pasta water until creamy; drizzle oil for shine.",
+      "img": {
+       "src": "steps/roman-09.jpg",
+       "alt": "Mantecatura",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "10",
+      "it": "Fuori dal fuoco, strappa basilico e origano a mano e mescola.",
+      "en": "Off the heat, tear basil and oregano by hand and fold through.",
+      "img": {
+       "src": "steps/roman-10.jpg",
+       "alt": "Erbe a mano",
+       "w": 480,
+       "h": 269
+      }
+     }
+    ]
+   },
+   "schedaPage": "peperonata.html#peperonata-romana"
+  },
+  {
+   "slug": "spaghetti-imago",
+   "order": 2,
+   "section": {
+    "id": "italia-squisita",
+    "num": "I",
+    "name": "Italia Squisita"
+   },
+   "title": {
+    "it": "Spaghetti pepe, limone e senape",
+    "en": "Imàgo spaghetti · pepper lemon mustard"
+   },
+   "shortTitle": {
+    "it": "Spaghetti Imàgo",
+    "en": "Spaghetti Imàgo"
+   },
+   "subtitle": {
+    "it": "Pepe, limone e senape — dopo Imago",
+    "en": "Pepper, lemon, and mustard — after Imàgo"
+   },
+   "kicker": {
+    "it": "Italia Squisita · Andrea Antonini · Ricetta II · Il piatto di degustazione",
+    "en": "Italia Squisita · Andrea Antonini · Recipe II · The tasting plate"
+   },
+   "description": {
+    "it": "Pepe, limone e senape: tre preparazioni di pepe, una crema in padella, un condimento scarso — porzione da degustazione.",
+    "en": "Pepper, lemon, and mustard: three pepper preparations, a pan cream, a spare garnish — a tasting-menu portion."
+   },
+   "intro": {
+    "it": "Tre preparazioni di pepe, una crema in padella, un condimento scarso. La porzione e da menu di degustazione: piccola, concentrata, precisa.",
+    "en": "Three pepper preparations, a pan cream, and a spare garnish. The portion is that of a tasting menu: small, concentrated, and precise."
+   },
+   "servingNote": {
+    "it": "Metodo di ristorante. La glassa enzimatica richiede cellulasi e un riposo notturno sottovuoto. Lavorare puliti; tenere la glassa leggera sul piatto.",
+    "en": "A restaurant method. The enzymatic glaze calls for cellulase, a specialist food enzyme, and an overnight rest under vacuum. Work cleanly, and keep the glaze light on the plate."
+   },
+   "cover": {
+    "src": "steps/imago-08.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: piccola porzione di spaghetti pepe, limone e senape impiattata",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/4L3aJYqebj8",
+    "label": {
+     "it": "Fonte · Film su YouTube",
+     "en": "Source · Film on YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo Andrea Antonini per Italia Squisita. Film su YouTube",
+    "en": "After Andrea Antonini for Italia Squisita. Film on YouTube"
+   },
+   "ingredients": [
+    {
+     "title": {
+      "it": "Acqua di peperoni arrostito",
+      "en": "Roasted pepper water"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Peperoni Sweet Palermo e cornetto.",
+       "en": "Sweet Palermo and cornetto peppers."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Glassa enzimatica di pepe",
+      "en": "Enzymatic pepper glaze"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Peperoni arrostito tenuti da parte.",
+       "en": "Reserved roasted peppers."
+      },
+      {
+       "it": "Circa 100 g dell'acqua di pepe.",
+       "en": "About 100 g of the pepper water."
+      },
+      {
+       "it": "Cellulasi.",
+       "en": "Cellulase."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Crema agrodolce di pepe",
+      "en": "Sweet-and-sour pepper cream"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Olio extravergine e aglio.",
+       "en": "Extra-virgin olive oil and garlic."
+      },
+      {
+       "it": "Peperoni arrostito al forno.",
+       "en": "Oven-roasted peppers."
+      },
+      {
+       "it": "Origano secco e pimenton de la Vera.",
+       "en": "Dried oregano and pimentón de la Vera."
+      },
+      {
+       "it": "Aceto balsamico.",
+       "en": "Balsamic vinegar."
+      },
+      {
+       "it": "Un poco dell'acqua di pepe.",
+       "en": "A little of the pepper water."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Spaghetti e crema in padella",
+      "en": "Spaghetti and pan cream"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Spaghetti Monograno Felicetti Senatore Cappelli.",
+       "en": "Monograno Felicetti Senatore Cappelli spaghetti."
+      },
+      {
+       "it": "Acqua di pepe e polvere di limone nero.",
+       "en": "Pepper water and black lemon powder."
+      },
+      {
+       "it": "Fondo di pollo ben ridotto, da freddo — per collagene, lucentezza e umami.",
+       "en": "Well-reduced chicken stock, used from cold — for collagen, gloss, and umami."
+      },
+      {
+       "it": "Circa 2 cucchiaini della crema agrodolce.",
+       "en": "About 2 teaspoons of the sweet-and-sour cream."
+      },
+      {
+       "it": "Circa 2 cucchiai della glassa enzimatica (con parsimonia).",
+       "en": "About 2 tablespoons of the enzymatic glaze (use lightly)."
+      },
+      {
+       "it": "Poche gocce d'olio; succo di limone, a correggere.",
+       "en": "A few drops of oil; lemon juice, to correct."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Impiattamento",
+      "en": "To plate"
+     },
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Semi di senape marinati in succo di rafano — con parsimonia.",
+       "en": "Mustard seeds marinated in horseradish juice — sparingly."
+      },
+      {
+       "it": "Polvere di limone nero.",
+       "en": "Black lemon powder."
+      },
+      {
+       "it": "Tre foglie di santoreggia.",
+       "en": "Three leaves of santoreggia (savory)."
+      },
+      {
+       "it": "Una spolverata finale di pimenton de la Vera.",
+       "en": "A final dust of pimentón de la Vera."
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": {
+      "it": "A. Acqua di peperoni arrostito",
+      "en": "A. Roasted pepper water"
+     },
+     "intro": null,
+     "steps": [
+      {
+       "it": "Arrostire Sweet Palermo e cornetto a 200 C per 30 minuti, quasi a secco.",
+       "en": "Roast Sweet Palermo and cornetto peppers at 200 °C for 30 minutes, keeping them mostly dry."
+      },
+      {
+       "it": "Mettere i peperoni caldi in una ciotola, coprire con pellicola, riposare circa due ore. Non appesantire.",
+       "en": "Place the hot peppers in a bowl, cover with film, and rest for about two hours. Do not weight them."
+      },
+      {
+       "it": "Scolare delicatamente al chinoise, con pressione leggera.",
+       "en": "Drain gently through a chinois, applying only light pressure."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "B. Glassa enzimatica — overnight",
+      "en": "B. Enzymatic pepper glaze — overnight"
+     },
+     "intro": null,
+     "steps": [
+      {
+       "it": "Unire i peperoni arrostito riservati con circa 100 g di acqua di pepe in un sacchetto sottovuoto.",
+       "en": "Combine the reserved roasted peppers with about 100 g of pepper water in a vacuum bag."
+      },
+      {
+       "it": "Aggiungere la cellulasi. Vuoto al 100%. Riposare una notte.",
+       "en": "Add cellulase. Vacuum to 100 percent. Rest overnight."
+      },
+      {
+       "it": "Filtrare, poi ridurre a una glassa intensa di pepe arrostito.",
+       "en": "Filter, then reduce to an intense roasted-pepper glaze."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "C. Crema agrodolce di pepe",
+      "en": "C. Sweet-and-sour pepper cream"
+     },
+     "intro": null,
+     "steps": [
+      {
+       "it": "Scaldare olio e aglio. Aggiungere i peperoni al forno.",
+       "en": "Warm extra-virgin olive oil with garlic. Add the oven-roasted peppers."
+      },
+      {
+       "it": "Condire con origano secco e pimenton de la Vera.",
+       "en": "Season with dried oregano and pimentón de la Vera."
+      },
+      {
+       "it": "Sfumare col balsamico e farlo ritirare. Aggiungere un poco di acqua di pepe. Cuocere circa 30 minuti, poi passare a caldo.",
+       "en": "Deglaze with balsamic vinegar and cook it off. Add a little pepper water. Cook for about 30 minutes, then pass while hot."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "La crema degli spaghetti",
+      "en": "The spaghetti cream"
+     },
+     "intro": {
+      "it": "Costruire il sugo in padella. La pasta finisce li, non nell'acqua di bollitura.",
+      "en": "Build the sauce in the pan. The pasta is finished there, not in the boiling water."
+     },
+     "steps": [
+      {
+       "it": "Fare un fondo di acqua di pepe e polvere di limone nero.",
+       "en": "Make a pan base of pepper water and black lemon powder."
+      },
+      {
+       "it": "Scolare gli spaghetti in anticipo e finirli nell'acqua di pepe.",
+       "en": "Drain the spaghetti early and finish it in the pepper water."
+      },
+      {
+       "it": "Da freddo, aggiungere il fondo di pollo ben ridotto.",
+       "en": "From cold, add the well-reduced chicken stock."
+      },
+      {
+       "it": "Aggiungere circa due cucchiaini di crema agrodolce ed emulsionare.",
+       "en": "Add about two teaspoons of the sweet-and-sour cream and emulsify."
+      },
+      {
+       "it": "Aggiungere circa due cucchiai di glassa enzimatica. Andare leggeri.",
+       "en": "Add about two tablespoons of the enzymatic glaze. Go lightly."
+      },
+      {
+       "it": "Finire con poche gocce d'olio. Correggere col limone.",
+       "en": "Finish with a few drops of oil. Correct with lemon juice."
+      }
+     ]
+    },
+    {
+     "title": {
+      "it": "Impiattamento",
+      "en": "To plate"
+     },
+     "intro": null,
+     "steps": [
+      {
+       "it": "Una porzione piccola di spaghetti, col sugo di padella.",
+       "en": "A small portion of spaghetti, with the pan sauce."
+      },
+      {
+       "it": "Semi di senape al rafano, con parsimonia.",
+       "en": "Mustard seeds marinated in horseradish juice, used sparingly."
+      },
+      {
+       "it": "Una spolverata di limone nero.",
+       "en": "A dust of black lemon powder."
+      },
+      {
+       "it": "Tre foglie di santoreggia.",
+       "en": "Three leaves of santoreggia."
+      },
+      {
+       "it": "Una spolverata finale di pimenton de la Vera.",
+       "en": "A final dust of pimentón de la Vera."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "E un piatto di degustazione, non una scodella di pasta al pomodoro. Conta l'intensita, non il volume.",
+     "en": "This is a tasting-menu plate, not a bowl of pasta al pomodoro. Intensity matters more than volume."
+    },
+    {
+     "it": "Le tre basi di pepe sono l'architettura. Il garnish resta una punteggiatura, non un secondo sugo.",
+     "en": "The three pepper bases are the architecture of the dish. The garnish should remain a punctuation, not a second sauce."
+    }
+   ],
+   "meta": [
+    {
+     "it": "⏱ Overnight + service",
+     "en": "⏱ Overnight + service"
+    },
+    {
+     "it": "🍽 Porzione d’assaggio",
+     "en": "🍽 Tasting portion"
+    },
+    {
+     "it": "● Avanzata",
+     "en": "● Advanced"
+    }
+   ],
+   "techNote": {
+    "it": "Nota tecnica: la glassa enzimatica richiede cellulasi e una notte in sottovuoto — è un passaggio da laboratorio di ristorante, non da cucina casalinga veloce.",
+    "en": "Technical note: the enzymatic glaze needs cellulase and an overnight vacuum bag — a restaurant-lab step, not a quick home cook."
+   },
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "pasta"
+   ],
+   "tutorial": {
+    "page": "spaghetti-imago.html",
+    "title": {
+     "it": "Spaghetti Imàgo · pepe limone senape",
+     "en": "Imàgo spaghetti · pepper lemon mustard"
+    },
+    "lede": {
+     "it": "Metodo da ristorante in otto carte Fooby: arrostimento, acqua di peperone, glassa enzimatica, crema agrodolce e impiattamento d’assaggio.",
+     "en": "Restaurant method in eight Fooby cards: roasting, pepper water, enzymatic glaze, sweet-sour cream and a tasting plate."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Arrostisci Sweet Palermo e cornetto a 200°C per 30 minuti, per lo più a secco.",
+      "en": "Roast Sweet Palermo and cornetto at 200°C for 30 minutes, mostly dry.",
+      "img": {
+       "src": "steps/imago-01.jpg",
+       "alt": "Peperoni al forno",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "02",
+      "it": "Trasferisci i peperoni ancora caldi in una ciotola, copri con pellicola e lascia riposare ~2 ore, senza peso.",
+      "en": "Move the hot peppers to a bowl, cover with film, and rest ~2 hours — no weight.",
+      "img": {
+       "src": "steps/imago-02.jpg",
+       "alt": "Riposo sotto pellicola",
+       "w": 560,
+       "h": 314
+      }
+     },
+     {
+      "n": "03",
+      "it": "Scola delicatamente attraverso un chinois con lieve pressione: conserva l’acqua di peperone.",
+      "en": "Drain gently through a chinois with light pressure; reserve the pepper water.",
+      "img": {
+       "src": "steps/imago-03.jpg",
+       "alt": "Filtraggio al chinois",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Metti in sottovuoto i peperoni riservati con ~100 g di acqua di peperone e cellulasi; lascia tutta la notte.",
+      "en": "Vacuum-bag the reserved peppers with ~100 g pepper water and cellulase; leave overnight.",
+      "img": {
+       "src": "steps/imago-04.jpg",
+       "alt": "Sottovuoto con cellulasi",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Filtra e riduci fino a una glassa intensa di peperone arrostito.",
+      "en": "Filter and reduce to an intense roasted-pepper glaze.",
+      "img": {
+       "src": "steps/imago-05.jpg",
+       "alt": "Glassa di peperone",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "06",
+      "it": "Crema agrodolce: olio + aglio + peperoni arrostiti, origano e pimentón, balsamico e acqua di peperone ~30 min; passa a caldo.",
+      "en": "Sweet-sour cream: oil + garlic + roasted peppers, oregano + pimentón, balsamic and pepper water ~30 min; pass hot.",
+      "img": {
+       "src": "steps/imago-06.jpg",
+       "alt": "Crema agrodolce",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "07",
+      "it": "In padella: acqua di peperone + limone nero; finisci gli spaghetti antici; fondo di pollo ridotto freddo; ~2 cucchiaini di panna; ~2 cucchiai di glassa in leggera; olio e limone.",
+      "en": "Pan cream: pepper water + black lemon; finish spaghetti early; cold reduced chicken stock; ~2 tsp cream; ~2 Tbsp glaze lightly; oil + lemon.",
+      "img": {
+       "src": "steps/imago-07.jpg",
+       "alt": "Mantecatura in padella",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "08",
+      "it": "Impiatta una piccola porzione d’assaggio; semi di senape al rafano con parsimonia; limone nero; 3 foglie di santoreggia; pimentón finale.",
+      "en": "Plate a small tasting portion; horseradish mustard seeds sparingly; black lemon; 3 santoreggia leaves; final pimentón.",
+      "img": {
+       "src": "steps/imago-08.jpg",
+       "alt": "Impiattamento Imàgo",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "peperonata.html#spaghetti-imago"
+  },
+  {
+   "slug": "padellata-verdure",
+   "order": 3,
+   "section": {
+    "id": "ratana",
+    "num": "II",
+    "name": "Ratanà"
+   },
+   "title": {
+    "it": "Padellata di verdure e ricotta salata",
+    "en": "Sautéed vegetables with salted ricotta"
+   },
+   "shortTitle": {
+    "it": "Padellata di verdure e ricotta salata",
+    "en": "Sautéed vegetables with salted ricotta"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "Ratanà · Cesare Battisti · Ricetta I",
+    "en": "Ratanà · Cesare Battisti · Recipe I"
+   },
+   "description": {
+    "it": "Verdure di stagione in padella, pesto e ricotta salata — buona anche fredda.",
+    "en": "Seasonal vegetables in a pan, pesto and salted ricotta — good cold as well."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.",
+    "en": "Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented."
+   },
+   "cover": {
+    "src": "steps/padellata-07.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: padellata di verdure finita con ricotta salata",
+    "w": 280,
+    "h": 156
+   },
+   "source": {
+    "url": "https://www.facebook.com/reel/2637710303316773",
+    "label": {
+     "it": "Fonte · Facebook Reel",
+     "en": "Source · Facebook Reel"
+    }
+   },
+   "credits": {
+    "it": "Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.",
+    "en": "After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Cipolla",
+       "en": "Onion"
+      },
+      {
+       "it": "Piccolo spicchio d’aglio",
+       "en": "Small garlic clove"
+      },
+      {
+       "it": "Melanzana",
+       "en": "Aubergine (eggplant)"
+      },
+      {
+       "it": "Peperoni",
+       "en": "Peppers"
+      },
+      {
+       "it": "Zucchina",
+       "en": "Courgette (zucchini)"
+      },
+      {
+       "it": "Sale",
+       "en": "Salt"
+      },
+      {
+       "it": "Origano fresco",
+       "en": "Fresh oregano"
+      },
+      {
+       "it": "3–4 pomodorini datterini",
+       "en": "3–4 date tomatoes (pomodorini datterini)"
+      },
+      {
+       "it": "Pesto, 1 cucchiaio",
+       "en": "Pesto, 1 tablespoon"
+      },
+      {
+       "it": "Basilico, erbe e olive",
+       "en": "Basil, herbs and olives"
+      },
+      {
+       "it": "Ricotta salata",
+       "en": "Salted ricotta (ricotta salata)"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Rosare la cipolla.",
+       "en": "Sweat / lightly brown the onion."
+      },
+      {
+       "it": "Aggiungere l’aglio, poi melanzana e peperoni.",
+       "en": "Add the garlic, then aubergine and peppers."
+      },
+      {
+       "it": "Salare, poi aggiungere la zucchina.",
+       "en": "Season with salt, then add the courgette."
+      },
+      {
+       "it": "Aggiungere origano e pomodorini.",
+       "en": "Add oregano and the date tomatoes."
+      },
+      {
+       "it": "Cuocere: melanzana e cipolla ben cotte; zucchina e peperoni leggermente croccanti.",
+       "en": "Cook until aubergine and onion are well done; courgette and peppers slightly crisp."
+      },
+      {
+       "it": "Aggiungere pesto, basilico, erbe e olive.",
+       "en": "Add pesto, basil, herbs and olives."
+      },
+      {
+       "it": "Finire con ricotta salata.",
+       "en": "Finish with salted ricotta."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Buona anche fredda.",
+     "en": "Also good cold."
+    },
+    {
+     "it": "A casa Ratanà cuoce tutto insieme; in cucina spesso le verdure si cuociono separate.",
+     "en": "At home Ratanà cooks everything together; in the kitchen the vegetables are often cooked separately."
+    },
+    {
+     "it": "Sconosciuto dal reel: quantità d’olio, tempi e temperature.",
+     "en": "Unknown from the reel: oil quantities, times and temperatures."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "verdure"
+   ],
+   "tutorial": {
+    "page": "padellata-verdure-tutorial.html",
+    "title": {
+     "it": "Padellata di verdure e ricotta salata",
+     "en": "Sautéed vegetables with salted ricotta"
+    },
+    "lede": {
+     "it": "Verdure di stagione in padella, pesto e ricotta salata — struttura Fooby, tavole illustrate in stile Leonardo come i tutorial Italia Squisita.",
+     "en": "Seasonal vegetables in the pan, pesto and salted ricotta — Fooby structure, Leonardo-style illustrated plates like the Italia Squisita tutorials."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Rosare la cipolla.",
+      "en": "Sweat / lightly brown the onion.",
+      "img": {
+       "src": "steps/padellata-01.jpg",
+       "alt": "Cipolla in padella",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "02",
+      "it": "Aggiungere l’aglio, poi melanzana e peperoni.",
+      "en": "Add the garlic, then aubergine and peppers.",
+      "img": {
+       "src": "steps/padellata-02.jpg",
+       "alt": "Aglio, melanzana e peperoni",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "03",
+      "it": "Salare, poi aggiungere la zucchina.",
+      "en": "Season with salt, then add the courgette.",
+      "img": {
+       "src": "steps/padellata-03.jpg",
+       "alt": "Zucchina e sale",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "04",
+      "it": "Aggiungere origano e pomodorini.",
+      "en": "Add oregano and the date tomatoes.",
+      "img": {
+       "src": "steps/padellata-04.jpg",
+       "alt": "Origano e pomodorini",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "05",
+      "it": "Cuocere: melanzana e cipolla ben cotte; zucchina e peperoni leggermente croccanti.",
+      "en": "Cook until aubergine and onion are well done; courgette and peppers slightly crisp.",
+      "img": {
+       "src": "steps/padellata-05.jpg",
+       "alt": "Verdure in cottura",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "06",
+      "it": "Aggiungere pesto, basilico, erbe e olive.",
+      "en": "Add pesto, basil, herbs and olives.",
+      "img": {
+       "src": "steps/padellata-06.jpg",
+       "alt": "Pesto, erbe e olive",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "07",
+      "it": "Finire con ricotta salata.",
+      "en": "Finish with salted ricotta.",
+      "img": {
+       "src": "steps/padellata-07.jpg",
+       "alt": "Ricotta salata",
+       "w": 280,
+       "h": 156
+      }
+     }
+    ]
+   },
+   "schedaPage": "padellata-verdure.html"
+  },
+  {
+   "slug": "spaghetti-cipollotto",
+   "order": 4,
+   "section": {
+    "id": "ratana",
+    "num": "II",
+    "name": "Ratanà"
+   },
+   "title": {
+    "it": "Spaghetti con cipollotto",
+    "en": "Spaghetti with spring onion"
+   },
+   "shortTitle": {
+    "it": "Spaghetti con cipollotto",
+    "en": "Spaghetti with spring onion"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "Ratanà · Cesare Battisti · Ricetta II",
+    "en": "Ratanà · Cesare Battisti · Recipe II"
+   },
+   "description": {
+    "it": "Cipollotto stufato a lungo, fondente e non rosolato, cremato con la pasta.",
+    "en": "Spring onion stewed slowly until melting, never browned, creamed with the pasta."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.",
+    "en": "Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented."
+   },
+   "cover": {
+    "src": "steps/cipollotto-07.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: spaghetti con cipollotto nel piatto",
+    "w": 280,
+    "h": 156
+   },
+   "source": {
+    "url": "https://www.facebook.com/reel/4483531095196885",
+    "label": {
+     "it": "Fonte · Facebook Reel",
+     "en": "Source · Facebook Reel"
+    }
+   },
+   "credits": {
+    "it": "Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.",
+    "en": "After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Spaghetti",
+       "en": "Spaghetti"
+      },
+      {
+       "it": "Un paio di cipollotti",
+       "en": "A couple of spring onions (cipollotti)"
+      },
+      {
+       "it": "Olio extravergine d’oliva",
+       "en": "Extra-virgin olive oil"
+      },
+      {
+       "it": "Burro",
+       "en": "Butter"
+      },
+      {
+       "it": "Rosmarino",
+       "en": "Rosemary"
+      },
+      {
+       "it": "Sale e pepe",
+       "en": "Salt and pepper"
+      },
+      {
+       "it": "Aceto (nel video; oppure vino bianco)",
+       "en": "Vinegar (as in the video; or white wine)"
+      },
+      {
+       "it": "Acqua",
+       "en": "Water"
+      },
+      {
+       "it": "Pesto, circa 1 cucchiaino",
+       "en": "Pesto, about 1 teaspoon"
+      },
+      {
+       "it": "Formaggio grattugiato, 1 cucchiaio",
+       "en": "Grated cheese, 1 tablespoon"
+      },
+      {
+       "it": "Pane",
+       "en": "Bread"
+      },
+      {
+       "it": "Parte verde del cipollotto",
+       "en": "Green part of the spring onion"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Tagliare i cipollotti sottilissimi.",
+       "en": "Slice the spring onions very thinly."
+      },
+      {
+       "it": "In padella fredda: olio, burro e rosmarino.",
+       "en": "In a cold pan: oil, butter and rosemary."
+      },
+      {
+       "it": "Sale, pepe, aceto e un mestolino d’acqua.",
+       "en": "Salt, pepper, vinegar and a ladle of water."
+      },
+      {
+       "it": "Stufare almeno 10 minuti senza rosolare.",
+       "en": "Stew at least 10 minutes without browning."
+      },
+      {
+       "it": "Cuocere gli spaghetti.",
+       "en": "Cook the spaghetti."
+      },
+      {
+       "it": "Disporre il cipollotto sul fondo del piatto.",
+       "en": "Lay the spring onion on the base of the plate."
+      },
+      {
+       "it": "Pasta + acqua di cottura + olio fino a crema.",
+       "en": "Pasta + cooking water + oil until creamy."
+      },
+      {
+       "it": "Finire con pesto, formaggio, pane e la parte verde del cipollotto.",
+       "en": "Finish with pesto, cheese, bread and the green part of the spring onion."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Il cipollotto deve risultare fondente, non rosolato.",
+     "en": "The spring onion should be melting, not browned."
+    },
+    {
+     "it": "Sconosciuto dal reel: quantità di pasta e liquidi; tipo di formaggio.",
+     "en": "Unknown from the reel: pasta and liquid quantities; type of cheese."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "pasta"
+   ],
+   "tutorial": {
+    "page": "spaghetti-cipollotto-tutorial.html",
+    "title": {
+     "it": "Spaghetti con cipollotto",
+     "en": "Spaghetti with spring onion"
+    },
+    "lede": {
+     "it": "Cipollotto stufato a lungo, fondente e non rosolato, cremato con la pasta — struttura Fooby, tavole illustrate in stile Leonardo come i tutorial Italia Squisita.",
+     "en": "Spring onion stewed until melting, never browned, creamed with the pasta — Fooby structure, Leonardo-style illustrated plates like the Italia Squisita tutorials."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Tagliare i cipollotti sottilissimi.",
+      "en": "Slice the spring onions very thinly.",
+      "img": {
+       "src": "steps/cipollotto-01.jpg",
+       "alt": "Cipollotti tagliati",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "02",
+      "it": "In padella fredda: olio, burro e rosmarino.",
+      "en": "In a cold pan: oil, butter and rosemary.",
+      "img": {
+       "src": "steps/cipollotto-02.jpg",
+       "alt": "Olio burro rosmarino",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "03",
+      "it": "Sale, pepe, aceto e un mestolino d’acqua.",
+      "en": "Salt, pepper, vinegar and a ladle of water.",
+      "img": {
+       "src": "steps/cipollotto-03.jpg",
+       "alt": "Sale pepe aceto acqua",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "04",
+      "it": "Stufare almeno 10 minuti senza rosolare.",
+      "en": "Stew at least 10 minutes without browning.",
+      "img": {
+       "src": "steps/cipollotto-04.jpg",
+       "alt": "Cipollotto che stufa",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "05",
+      "it": "Cuocere gli spaghetti.",
+      "en": "Cook the spaghetti.",
+      "img": {
+       "src": "steps/cipollotto-05.jpg",
+       "alt": "Spaghetti in cottura",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "06",
+      "it": "Disporre il cipollotto sul fondo del piatto; aggiungere pasta, acqua di cottura e olio fino a crema.",
+      "en": "Lay the spring onion on the base of the plate; add pasta, cooking water and oil until creamy.",
+      "img": {
+       "src": "steps/cipollotto-06.jpg",
+       "alt": "Pasta e cipollotto",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "07",
+      "it": "Finire con pesto, formaggio, pane e la parte verde del cipollotto.",
+      "en": "Finish with pesto, cheese, bread and the green part of the spring onion.",
+      "img": {
+       "src": "steps/cipollotto-07.jpg",
+       "alt": "Finitura",
+       "w": 280,
+       "h": 156
+      }
+     }
+    ]
+   },
+   "schedaPage": "spaghetti-cipollotto.html"
+  },
+  {
+   "slug": "gnocchi-sorrentina",
+   "order": 5,
+   "section": {
+    "id": "ratana",
+    "num": "II",
+    "name": "Ratanà"
+   },
+   "title": {
+    "it": "Gnocchi alla sorrentina",
+    "en": "Gnocchi alla sorrentina"
+   },
+   "shortTitle": {
+    "it": "Gnocchi alla sorrentina",
+    "en": "Gnocchi alla sorrentina"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "Ratanà · Cesare Battisti · Ricetta III",
+    "en": "Ratanà · Cesare Battisti · Recipe III"
+   },
+   "description": {
+    "it": "Gnocchi delicati al forno con sughetto, mozzarella di bufala e pesto.",
+    "en": "Delicate baked gnocchi with tomato sauce, buffalo mozzarella and pesto."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.",
+    "en": "Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented."
+   },
+   "cover": {
+    "src": "steps/gnocchi-06.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: gnocchi alla sorrentina in teglia al forno",
+    "w": 280,
+    "h": 156
+   },
+   "source": {
+    "url": "https://www.facebook.com/reel/1344966010733012",
+    "label": {
+     "it": "Fonte · Facebook Reel",
+     "en": "Source · Facebook Reel"
+    }
+   },
+   "credits": {
+    "it": "Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.",
+    "en": "After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Gnocchi",
+       "en": "Gnocchi"
+      },
+      {
+       "it": "Acqua bollente",
+       "en": "Boiling water"
+      },
+      {
+       "it": "Sughetto di pomodoro",
+       "en": "Tomato sauce (sughetto)"
+      },
+      {
+       "it": "Mozzarella di bufala",
+       "en": "Buffalo mozzarella"
+      },
+      {
+       "it": "Pesto, circa 1 cucchiaino",
+       "en": "Pesto, about 1 teaspoon"
+      },
+      {
+       "it": "Formaggio grattugiato",
+       "en": "Grated cheese"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Tagliare gli gnocchi a pezzetti.",
+       "en": "Cut the gnocchi into pieces."
+      },
+      {
+       "it": "Cuocere in acqua bollente senza romperli.",
+       "en": "Cook in boiling water without breaking them."
+      },
+      {
+       "it": "Quando vengono a galla, circa 5 minuti.",
+       "en": "When they float, about 5 minutes."
+      },
+      {
+       "it": "Padellino o teglia col sugo.",
+       "en": "A small pan or baking dish with the sauce."
+      },
+      {
+       "it": "Mozzarella spezzata a mano.",
+       "en": "Mozzarella torn by hand."
+      },
+      {
+       "it": "Pesto e formaggio.",
+       "en": "Pesto and cheese."
+      },
+      {
+       "it": "Forno a 140 °C per 20 minuti.",
+       "en": "Oven at 140 °C for 20 minutes."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Sono delicati; il latte della mozzarella va bene.",
+     "en": "They are delicate; the mozzarella’s milk is fine."
+    },
+    {
+     "it": "Sconosciuto dal reel: quantità.",
+     "en": "Unknown from the reel: quantities."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "pasta"
+   ],
+   "tutorial": {
+    "page": "gnocchi-sorrentina-tutorial.html",
+    "title": {
+     "it": "Gnocchi alla sorrentina",
+     "en": "Gnocchi alla sorrentina"
+    },
+    "lede": {
+     "it": "Gnocchi delicati al forno con sughetto, mozzarella di bufala e pesto — struttura Fooby, tavole illustrate in stile Leonardo come i tutorial Italia Squisita.",
+     "en": "Delicate baked gnocchi with tomato sauce, buffalo mozzarella and pesto — Fooby structure, Leonardo-style illustrated plates like the Italia Squisita tutorials."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Tagliare gli gnocchi a pezzetti.",
+      "en": "Cut the gnocchi into pieces.",
+      "img": {
+       "src": "steps/gnocchi-01.jpg",
+       "alt": "Gnocchi a pezzetti",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "02",
+      "it": "Cuocere in acqua bollente senza romperli; quando vengono a galla, circa 5 minuti.",
+      "en": "Cook in boiling water without breaking them; when they float, about 5 minutes.",
+      "img": {
+       "src": "steps/gnocchi-02.jpg",
+       "alt": "Gnocchi in bollente",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "03",
+      "it": "Padellino o teglia col sugo.",
+      "en": "A small pan or baking dish with the sauce.",
+      "img": {
+       "src": "steps/gnocchi-03.jpg",
+       "alt": "Sugo in teglia",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "04",
+      "it": "Mozzarella spezzata a mano.",
+      "en": "Mozzarella torn by hand.",
+      "img": {
+       "src": "steps/gnocchi-04.jpg",
+       "alt": "Mozzarella a mano",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "05",
+      "it": "Pesto e formaggio.",
+      "en": "Pesto and cheese.",
+      "img": {
+       "src": "steps/gnocchi-05.jpg",
+       "alt": "Pesto e formaggio",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "06",
+      "it": "Forno a 140 °C per 20 minuti.",
+      "en": "Oven at 140 °C for 20 minutes.",
+      "img": {
+       "src": "steps/gnocchi-06.jpg",
+       "alt": "In forno",
+       "w": 280,
+       "h": 156
+      }
+     }
+    ]
+   },
+   "schedaPage": "gnocchi-sorrentina.html"
+  },
+  {
+   "slug": "risotto-zucchine",
+   "order": 6,
+   "section": {
+    "id": "ratana",
+    "num": "II",
+    "name": "Ratanà"
+   },
+   "title": {
+    "it": "Risotto con zucchine e fiori di zucca",
+    "en": "Risotto with courgettes and squash blossoms"
+   },
+   "shortTitle": {
+    "it": "Risotto con zucchine e fiori di zucca",
+    "en": "Risotto with courgettes and squash blossoms"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "Ratanà · Cesare Battisti · Ricetta IV",
+    "en": "Ratanà · Cesare Battisti · Recipe IV"
+   },
+   "description": {
+    "it": "Carnaroli, zucchine rosolate, fiori e una chiusura con ricotta e pesto — senza mantecatura di burro o olio.",
+    "en": "Carnaroli, browned courgettes, blossoms, finished with ricotta and pesto — no butter or oil mantecatura."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.",
+    "en": "Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented."
+   },
+   "cover": {
+    "src": "steps/risotto-06.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: risotto con zucchine e fiori di zucca nel piatto",
+    "w": 280,
+    "h": 156
+   },
+   "source": {
+    "url": "https://www.facebook.com/reel/1834988014512524",
+    "label": {
+     "it": "Fonte · Facebook Reel",
+     "en": "Source · Facebook Reel"
+    }
+   },
+   "credits": {
+    "it": "Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.",
+    "en": "After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Zucchine",
+       "en": "Courgettes (zucchini)"
+      },
+      {
+       "it": "Fiori di zucca",
+       "en": "Squash blossoms (fiori di zucca)"
+      },
+      {
+       "it": "Sale, pepe, olio",
+       "en": "Salt, pepper, oil"
+      },
+      {
+       "it": "Riso Carnaroli",
+       "en": "Carnaroli rice"
+      },
+      {
+       "it": "Brodo vegetale",
+       "en": "Vegetable stock"
+      },
+      {
+       "it": "Ricotta, 1 cucchiaio",
+       "en": "Ricotta, 1 tablespoon"
+      },
+      {
+       "it": "Pesto, ½ cucchiaino",
+       "en": "Pesto, ½ teaspoon"
+      },
+      {
+       "it": "Eventuale polvere di zucchine/fiori (mostrata nel video)",
+       "en": "Optional courgette/blossom powder (shown in the video)"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Separare il verde esterno e il cuore bianco delle zucchine.",
+       "en": "Separate the outer green and the white heart of the courgettes."
+      },
+      {
+       "it": "Rosolare il verde in padella calda.",
+       "en": "Brown the green in a hot pan."
+      },
+      {
+       "it": "Il cuore a dadini, marinato crudo con sale, pepe e olio.",
+       "en": "Dice the heart and marinate it raw with salt, pepper and oil."
+      },
+      {
+       "it": "Pulire i fiori e tagliarli a pezzetti.",
+       "en": "Clean the blossoms and cut into pieces."
+      },
+      {
+       "it": "I fiori a fuoco spento sulle zucchine.",
+       "en": "Add the blossoms off the heat onto the courgettes."
+      },
+      {
+       "it": "Tostare il Carnaroli e aggiungere il brodo a filo.",
+       "en": "Toast the Carnaroli and add the stock little by little."
+      },
+      {
+       "it": "Cuocere circa 14 minuti.",
+       "en": "Cook about 14 minutes."
+      },
+      {
+       "it": "Spegnere: zucchine, ricotta e pesto (niente mantecatura di burro o olio).",
+       "en": "Turn off the heat: courgettes, ricotta and pesto (no butter or oil mantecatura)."
+      },
+      {
+       "it": "Finire col cuore marinato e fiori sottili.",
+       "en": "Finish with the marinated heart and thin blossom pieces."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "La rosolatura delle zucchine è essenziale.",
+     "en": "Browning the courgettes is essential."
+    },
+    {
+     "it": "Sconosciuto dal reel: quantità; dettaglio sulla polvere.",
+     "en": "Unknown from the reel: quantities; detail on the powder."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "risotto"
+   ],
+   "tutorial": {
+    "page": "risotto-zucchine-tutorial.html",
+    "title": {
+     "it": "Risotto con zucchine e fiori di zucca",
+     "en": "Risotto with courgettes and squash blossoms"
+    },
+    "lede": {
+     "it": "Carnaroli, zucchine rosolate, fiori e chiusura con ricotta e pesto — struttura Fooby, tavole illustrate in stile Leonardo come i tutorial Italia Squisita.",
+     "en": "Carnaroli, browned courgettes, blossoms and a finish with ricotta and pesto — Fooby structure, Leonardo-style illustrated plates like the Italia Squisita tutorials."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Separare il verde esterno e il cuore bianco delle zucchine.",
+      "en": "Separate the outer green and the white heart of the courgettes.",
+      "img": {
+       "src": "steps/risotto-01.jpg",
+       "alt": "Verde e cuore",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "02",
+      "it": "Rosolare il verde in padella calda; il cuore a dadini, marinato crudo con sale, pepe e olio.",
+      "en": "Brown the green in a hot pan; dice the heart and marinate it raw with salt, pepper and oil.",
+      "img": {
+       "src": "steps/risotto-02.jpg",
+       "alt": "Rosolatura e marinatura",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "03",
+      "it": "Pulire i fiori, tagliarli a pezzetti e unirli a fuoco spento sulle zucchine.",
+      "en": "Clean the blossoms, cut into pieces and add them off the heat onto the courgettes.",
+      "img": {
+       "src": "steps/risotto-03.jpg",
+       "alt": "Fiori sulle zucchine",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "04",
+      "it": "Tostare il Carnaroli, aggiungere il brodo a filo e cuocere circa 14 minuti.",
+      "en": "Toast the Carnaroli, add the stock little by little and cook about 14 minutes.",
+      "img": {
+       "src": "steps/risotto-04.jpg",
+       "alt": "Risotto in cottura",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "05",
+      "it": "Spegnere: zucchine, ricotta e pesto (niente mantecatura di burro o olio).",
+      "en": "Turn off the heat: courgettes, ricotta and pesto (no butter or oil mantecatura).",
+      "img": {
+       "src": "steps/risotto-05.jpg",
+       "alt": "Chiusura ricotta pesto",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "06",
+      "it": "Finire col cuore marinato e fiori sottili.",
+      "en": "Finish with the marinated heart and thin blossom pieces.",
+      "img": {
+       "src": "steps/risotto-06.jpg",
+       "alt": "Finitura",
+       "w": 280,
+       "h": 156
+      }
+     }
+    ]
+   },
+   "schedaPage": "risotto-zucchine.html"
+  },
+  {
+   "slug": "carpaccio-peperoni",
+   "order": 7,
+   "section": {
+    "id": "ratana",
+    "num": "II",
+    "name": "Ratanà"
+   },
+   "title": {
+    "it": "Carpaccio di peperoni",
+    "en": "Pepper carpaccio"
+   },
+   "shortTitle": {
+    "it": "Carpaccio di peperoni",
+    "en": "Pepper carpaccio"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "Ratanà · Cesare Battisti · Ricetta V",
+    "en": "Ratanà · Cesare Battisti · Recipe V"
+   },
+   "description": {
+    "it": "Peperoni rossi arrostisti, spellati e marinati — meglio se riposano un paio di giorni.",
+    "en": "Roasted red peppers, peeled and marinated — better after a couple of days’ rest."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.",
+    "en": "Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented."
+   },
+   "cover": {
+    "src": "steps/carpaccio-04.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: carpaccio di peperoni impiattato",
+    "w": 280,
+    "h": 156
+   },
+   "source": {
+    "url": "https://www.facebook.com/reel/2969146523439327",
+    "label": {
+     "it": "Fonte · Facebook Reel",
+     "en": "Source · Facebook Reel"
+    }
+   },
+   "credits": {
+    "it": "Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.",
+    "en": "After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Peperoni rossi",
+       "en": "Red peppers"
+      },
+      {
+       "it": "Sale, pepe, olio",
+       "en": "Salt, pepper, oil"
+      },
+      {
+       "it": "Aglio",
+       "en": "Garlic"
+      },
+      {
+       "it": "Basilico",
+       "en": "Basil"
+      },
+      {
+       "it": "Origano",
+       "en": "Oregano"
+      },
+      {
+       "it": "Un pizzico d’aceto",
+       "en": "A pinch of vinegar"
+      },
+      {
+       "it": "Noci",
+       "en": "Walnuts"
+      },
+      {
+       "it": "Erbette",
+       "en": "Fresh herbs"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Forno a 220 °C per 20 minuti.",
+       "en": "Oven at 220 °C for 20 minutes."
+      },
+      {
+       "it": "Raffreddare e spellare.",
+       "en": "Cool and peel."
+      },
+      {
+       "it": "Marinare con sale, pepe, olio, aglio, basilico, origano e aceto.",
+       "en": "Marinate with salt, pepper, oil, garlic, basil, oregano and vinegar."
+      },
+      {
+       "it": "In frigo un paio di giorni se possibile.",
+       "en": "Refrigerate a couple of days if possible."
+      },
+      {
+       "it": "Impiattare come carpaccio.",
+       "en": "Plate like a carpaccio."
+      },
+      {
+       "it": "Finire con noci, erbette, basilico, pepe e olio+aceto della marinata.",
+       "en": "Finish with walnuts, herbs, basil, pepper and oil+vinegar from the marinade."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Più marinano, meglio è.",
+     "en": "The longer they marinate, the better."
+    },
+    {
+     "it": "Sconosciuto dal reel: quantità.",
+     "en": "Unknown from the reel: quantities."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "verdure"
+   ],
+   "tutorial": {
+    "page": "carpaccio-peperoni-tutorial.html",
+    "title": {
+     "it": "Carpaccio di peperoni",
+     "en": "Pepper carpaccio"
+    },
+    "lede": {
+     "it": "Peperoni rossi arrostisti, spellati e marinati — struttura Fooby, tavole illustrate in stile Leonardo come i tutorial Italia Squisita.",
+     "en": "Roasted red peppers, peeled and marinated — Fooby structure, Leonardo-style illustrated plates like the Italia Squisita tutorials."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Forno a 220 °C per 20 minuti.",
+      "en": "Oven at 220 °C for 20 minutes.",
+      "img": {
+       "src": "steps/carpaccio-01.jpg",
+       "alt": "Peperoni in forno",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "02",
+      "it": "Raffreddare e spellare.",
+      "en": "Cool and peel.",
+      "img": {
+       "src": "steps/carpaccio-02.jpg",
+       "alt": "Spellatura",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "03",
+      "it": "Marinare con sale, pepe, olio, aglio, basilico, origano e aceto; in frigo un paio di giorni se possibile.",
+      "en": "Marinate with salt, pepper, oil, garlic, basil, oregano and vinegar; refrigerate a couple of days if possible.",
+      "img": {
+       "src": "steps/carpaccio-03.jpg",
+       "alt": "Marinatura",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "04",
+      "it": "Impiattare come carpaccio; finire con noci, erbette, basilico, pepe e olio+aceto della marinata.",
+      "en": "Plate like a carpaccio; finish with walnuts, herbs, basil, pepper and oil+vinegar from the marinade.",
+      "img": {
+       "src": "steps/carpaccio-04.jpg",
+       "alt": "Impiattamento",
+       "w": 280,
+       "h": 156
+      }
+     }
+    ]
+   },
+   "schedaPage": "carpaccio-peperoni.html"
+  },
+  {
+   "slug": "pappa-pomodoro",
+   "order": 8,
+   "section": {
+    "id": "ratana",
+    "num": "II",
+    "name": "Ratanà"
+   },
+   "title": {
+    "it": "Pappa al pomodoro",
+    "en": "Pappa al pomodoro"
+   },
+   "shortTitle": {
+    "it": "Pappa al pomodoro",
+    "en": "Pappa al pomodoro"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "Ratanà · Cesare Battisti · Ricetta VI",
+    "en": "Ratanà · Cesare Battisti · Recipe VI"
+   },
+   "description": {
+    "it": "Estiva e tradizionale: pomodori maturi, pane e basilico — a Ratanà si mangia fredda.",
+    "en": "Summer and traditional: ripe tomatoes, bread and basil — at Ratanà it is eaten cold."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nel reel. Gli sconosciuti sono elencati nelle note di cucina — non inventati.",
+    "en": "Quantities only where stated in the reel. Unknowns are listed in the kitchen notes — not invented."
+   },
+   "cover": {
+    "src": "steps/pappa-04.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: pappa al pomodoro con basilico in ciotola",
+    "w": 280,
+    "h": 156
+   },
+   "source": {
+    "url": "https://www.facebook.com/reel/1676772323390929",
+    "label": {
+     "it": "Fonte · Facebook Reel",
+     "en": "Source · Facebook Reel"
+    }
+   },
+   "credits": {
+    "it": "Dopo Ratanà / Cesare Battisti — Facebook Reels. Quaderno indipendente, non affiliato.",
+    "en": "After Ratanà / Cesare Battisti — Facebook Reels. Independent notebook, unaffiliated."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Circa ½ cipolla per 4 pomodori",
+       "en": "About ½ onion per 4 tomatoes"
+      },
+      {
+       "it": "4 pomodori maturi, preferibilmente perini",
+       "en": "4 ripe tomatoes, preferably plum (perini)"
+      },
+      {
+       "it": "Olio abbondante",
+       "en": "Abundant oil"
+      },
+      {
+       "it": "Sale e pepe",
+       "en": "Salt and pepper"
+      },
+      {
+       "it": "Peperoncino",
+       "en": "Chilli"
+      },
+      {
+       "it": "Poca acqua o brodo vegetale",
+       "en": "A little water or vegetable stock"
+      },
+      {
+       "it": "Passata",
+       "en": "Passata (tomato purée)"
+      },
+      {
+       "it": "Pane a pezzetti",
+       "en": "Bread in pieces"
+      },
+      {
+       "it": "Basilico",
+       "en": "Basil"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Tagliare la cipolla grossolana.",
+       "en": "Roughly chop the onion."
+      },
+      {
+       "it": "Olio abbondante in padella.",
+       "en": "Abundant oil in the pan."
+      },
+      {
+       "it": "Aggiungere i pomodori.",
+       "en": "Add the tomatoes."
+      },
+      {
+       "it": "Sale, pepe, peperoncino e acqua o brodo.",
+       "en": "Salt, pepper, chilli and water or stock."
+      },
+      {
+       "it": "Cuocere 15–20 minuti, molto cotti.",
+       "en": "Cook 15–20 minutes, until very soft."
+      },
+      {
+       "it": "Aggiungere passata e pane.",
+       "en": "Add passata and bread."
+      },
+      {
+       "it": "Spegnere e aggiungere il basilico.",
+       "en": "Turn off the heat and add the basil."
+      },
+      {
+       "it": "Raffreddare — a Ratanà la mangiano fredda.",
+       "en": "Cool — at Ratanà they eat it cold."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Estiva, tradizionale.",
+     "en": "A summer classic."
+    },
+    {
+     "it": "Sconosciuto dal reel: quantità d’olio, passata e pane.",
+     "en": "Unknown from the reel: quantities of oil, passata and bread."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "verdure"
+   ],
+   "tutorial": {
+    "page": "pappa-pomodoro-tutorial.html",
+    "title": {
+     "it": "Pappa al pomodoro",
+     "en": "Pappa al pomodoro"
+    },
+    "lede": {
+     "it": "Estiva e tradizionale: pomodori maturi, pane e basilico — struttura Fooby, tavole illustrate in stile Leonardo come i tutorial Italia Squisita.",
+     "en": "Summer and traditional: ripe tomatoes, bread and basil — Fooby structure, Leonardo-style illustrated plates like the Italia Squisita tutorials."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Tagliare la cipolla grossolana; olio abbondante in padella.",
+      "en": "Roughly chop the onion; abundant oil in the pan.",
+      "img": {
+       "src": "steps/pappa-01.jpg",
+       "alt": "Cipolla e olio",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "02",
+      "it": "Aggiungere i pomodori; sale, pepe, peperoncino e acqua o brodo. Cuocere 15–20 minuti, molto cotti.",
+      "en": "Add the tomatoes; salt, pepper, chilli and water or stock. Cook 15–20 minutes, until very soft.",
+      "img": {
+       "src": "steps/pappa-02.jpg",
+       "alt": "Pomodori in cottura",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "03",
+      "it": "Aggiungere passata e pane.",
+      "en": "Add passata and bread.",
+      "img": {
+       "src": "steps/pappa-03.jpg",
+       "alt": "Passata e pane",
+       "w": 280,
+       "h": 156
+      }
+     },
+     {
+      "n": "04",
+      "it": "Spegnere e aggiungere il basilico; raffreddare — a Ratanà la mangiano fredda.",
+      "en": "Turn off the heat and add the basil; cool — at Ratanà they eat it cold.",
+      "img": {
+       "src": "steps/pappa-04.jpg",
+       "alt": "Basilico e raffreddamento",
+       "w": 280,
+       "h": 156
+      }
+     }
+    ]
+   },
+   "schedaPage": "pappa-pomodoro.html"
+  },
+  {
+   "slug": "tartare-trota",
+   "order": 9,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Tartare di trota con carciofi all’aglio nero e polenta al taleggio",
+    "en": "Trout tartare with black-garlic artichokes and Taleggio polenta"
+   },
+   "shortTitle": {
+    "it": "Tartare di trota con carciofi all’aglio nero e polenta al taleggio",
+    "en": "Trout tartare with black-garlic artichokes and Taleggio polenta"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta I",
+    "en": "MasterChef Magazine · Recipe I"
+   },
+   "description": {
+    "it": "Spesa di Locatelli: trota, zenzero, carciofi, aglio nero, polenta e taleggio — tartare e contorni detti a fine video.",
+    "en": "Locatelli’s shopping: trout, ginger, artichokes, black garlic, polenta and Taleggio — tartare and sides named at plating."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/tartare-trota-04.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: tartare di trota con carciofi all’aglio nero e polenta al taleggio",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/CLNFePxSN8Q",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Trota (per tartare) — quantità non detta",
+       "en": "Trout (for tartare) — quantity not stated"
+      },
+      {
+       "it": "Zenzero — quantità non detta",
+       "en": "Ginger — quantity not stated"
+      },
+      {
+       "it": "Carciofi — quantità non detta",
+       "en": "Artichokes — quantity not stated"
+      },
+      {
+       "it": "Aglio nero — quantità non detta",
+       "en": "Black garlic — quantity not stated"
+      },
+      {
+       "it": "Polenta — quantità non detta",
+       "en": "Polenta — quantity not stated"
+      },
+      {
+       "it": "Taleggio — quantità non detta",
+       "en": "Taleggio — quantity not stated"
+      },
+      {
+       "it": "Vino bianco (nella spesa; uso in cottura non chiarito nei sottotitoli)",
+       "en": "White wine (in the shopping; cooking use unclear in subs)"
+      },
+      {
+       "it": "Rosmarino (crema di rosmarino menzionata) — quantità non detta",
+       "en": "Rosemary (rosemary cream mentioned) — quantity not stated"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Pulire la trota togliendo tutte le lische; preparare la tartare con lo zenzero.",
+       "en": "Clean the trout, removing every bone; make the tartare with ginger."
+      },
+      {
+       "it": "Preparare i carciofi glassati / all’aglio nero (tecnica dettagliata non detta).",
+       "en": "Prepare artichokes glazed / with black garlic (detailed technique not stated)."
+      },
+      {
+       "it": "Preparare una polenta fonduta / aromatizzata al taleggio (crema di rosmarino menzionata — metodo non detto).",
+       "en": "Prepare a polenta fondue / flavoured with Taleggio (rosemary cream mentioned — method not stated)."
+      },
+      {
+       "it": "Impiattare: carciofi all’aglio nero, tartare di trota allo zenzero, polenta al taleggio.",
+       "en": "Plate: black-garlic artichokes, ginger trout tartare, Taleggio polenta."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Nome piatto detto in chiusura: tartare di trota con carciofi all’aglio nero e polenta al taleggio.",
+     "en": "Dish name spoken at the end: trout tartare with black-garlic artichokes and Taleggio polenta."
+    },
+    {
+     "it": "Tempi, temperature e grammi: assenti nei sottotitoli.",
+     "en": "Times, temperatures and weights: absent from the subtitles."
+    },
+    {
+     "it": "ASR rumoroso: alcuni dettagli tecnici restano «non chiari».",
+     "en": "Noisy ASR: some technical details remain unclear."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "pesce"
+   ],
+   "tutorial": {
+    "page": "tartare-trota-tutorial.html",
+    "title": {
+     "it": "Tartare di trota con carciofi all’aglio nero e polenta al taleggio",
+     "en": "Trout tartare with black-garlic artichokes and Taleggio polenta"
+    },
+    "lede": {
+     "it": "Spesa di Locatelli: trota, zenzero, carciofi, aglio nero, polenta e taleggio — tartare e contorni detti a fine video. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "Locatelli’s shopping: trout, ginger, artichokes, black garlic, polenta and Taleggio — tartare and sides named at plating. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Pulire la trota togliendo tutte le lische; preparare la tartare con lo zenzero.",
+      "en": "Clean the trout, removing every bone; make the tartare with ginger.",
+      "img": {
+       "src": "steps/tartare-trota-01.jpg",
+       "alt": "Tartare di trota",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Preparare i carciofi glassati / all’aglio nero (tecnica dettagliata non detta).",
+      "en": "Prepare artichokes glazed / with black garlic (detailed technique not stated).",
+      "img": {
+       "src": "steps/tartare-trota-02.jpg",
+       "alt": "Carciofi all’aglio nero",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Preparare una polenta fonduta / aromatizzata al taleggio (crema di rosmarino menzionata — metodo non detto).",
+      "en": "Prepare a polenta fondue / flavoured with Taleggio (rosemary cream mentioned — method not stated).",
+      "img": {
+       "src": "steps/tartare-trota-03.jpg",
+       "alt": "Polenta al taleggio",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Impiattare: carciofi all’aglio nero, tartare di trota allo zenzero, polenta al taleggio.",
+      "en": "Plate: black-garlic artichokes, ginger trout tartare, Taleggio polenta.",
+      "img": {
+       "src": "steps/tartare-trota-04.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "tartare-trota.html"
+  },
+  {
+   "slug": "medaglie-salsiccia",
+   "order": 10,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Medaglie di salsiccia con burro all’acetosella e coriandoli di verdure",
+    "en": "Sausage pasta medallions with sorrel butter and vegetable confetti"
+   },
+   "shortTitle": {
+    "it": "Medaglie di salsiccia con burro all’acetosella e coriandoli di verdure",
+    "en": "Sausage pasta medallions with sorrel butter and vegetable confetti"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta II",
+    "en": "MasterChef Magazine · Recipe II"
+   },
+   "description": {
+    "it": "Ravioli/medaglioni di pasta ripieni di salsiccia, ricotta e rosmarino; salsa al burro e acetosella; mostarda di Cremona.",
+    "en": "Pasta medallions filled with sausage, ricotta and rosemary; sorrel butter sauce; Cremona mustard."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/medaglie-salsiccia-05.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: medaglie di salsiccia con burro all’acetosella e coriandoli di verdure",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/2OVMWcRPlWc",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Uova — quantità non detta",
+       "en": "Eggs — quantity not stated"
+      },
+      {
+       "it": "Farina — quantità non detta",
+       "en": "Flour — quantity not stated"
+      },
+      {
+       "it": "Salsiccia — quantità non detta",
+       "en": "Sausage — quantity not stated"
+      },
+      {
+       "it": "Ricotta — quantità non detta",
+       "en": "Ricotta — quantity not stated"
+      },
+      {
+       "it": "Rosmarino — quantità non detta",
+       "en": "Rosemary — quantity not stated"
+      },
+      {
+       "it": "Burro — quantità non detta",
+       "en": "Butter — quantity not stated"
+      },
+      {
+       "it": "Acetosella — quantità non detta",
+       "en": "Sorrel — quantity not stated"
+      },
+      {
+       "it": "Vino bianco / aceto (per salsa al burro) — quantità non detta",
+       "en": "White wine / vinegar (for butter sauce) — quantity not stated"
+      },
+      {
+       "it": "Mostarda di Cremona — quantità non detta",
+       "en": "Cremona mustard — quantity not stated"
+      },
+      {
+       "it": "Patate americane dolci — quantità non detta",
+       "en": "Sweet potatoes — quantity not stated"
+      },
+      {
+       "it": "Sedano di Verona (sedano rapa) — quantità non detta",
+       "en": "Celeriac (Verona celery) — quantity not stated"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Sbattere molto bene le uova senza farina, poi incorporare la farina; tirare la pasta.",
+       "en": "Beat the eggs thoroughly without flour, then incorporate flour; roll the pasta."
+      },
+      {
+       "it": "Formare medaglioni/ravioli ripieni di salsiccia, ricotta e rosmarino.",
+       "en": "Form medallions/ravioli filled with sausage, ricotta and rosemary."
+      },
+      {
+       "it": "Dadolata colorata di patata dolce e sedano rapa («coriandoli di verdure»).",
+       "en": "Colourful dice of sweet potato and celeriac («vegetable confetti»)."
+      },
+      {
+       "it": "Salsa: burro montato con aceto (vino bianco/scalogno menzionati) e acetosella; passare al setaccio.",
+       "en": "Sauce: whipped butter with vinegar (white wine/shallot mentioned) and sorrel; strain."
+      },
+      {
+       "it": "Cuocere la pasta, saltare con mostarda di Cremona; impiattare con salsa, coriandoli e mostarda.",
+       "en": "Cook the pasta, toss with Cremona mustard; plate with sauce, confetti and mustard."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Sale: in dialogo dicono di non usarlo (pressione); resta scelta dichiarata in video, non norma generica.",
+     "en": "Salt: in dialogue they say not to use it (blood pressure); stated choice in the video, not a general rule."
+    },
+    {
+     "it": "Quantità pasta/ripieno/tempi di cottura: non dette.",
+     "en": "Pasta/filling quantities and cooking times: not stated."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "pasta",
+    "carne"
+   ],
+   "tutorial": {
+    "page": "medaglie-salsiccia-tutorial.html",
+    "title": {
+     "it": "Medaglie di salsiccia con burro all’acetosella e coriandoli di verdure",
+     "en": "Sausage pasta medallions with sorrel butter and vegetable confetti"
+    },
+    "lede": {
+     "it": "Ravioli/medaglioni di pasta ripieni di salsiccia, ricotta e rosmarino; salsa al burro e acetosella; mostarda di Cremona. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "Pasta medallions filled with sausage, ricotta and rosemary; sorrel butter sauce; Cremona mustard. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Sbattere molto bene le uova senza farina, poi incorporare la farina; tirare la pasta.",
+      "en": "Beat the eggs thoroughly without flour, then incorporate flour; roll the pasta.",
+      "img": {
+       "src": "steps/medaglie-salsiccia-01.jpg",
+       "alt": "Pasta all’uovo",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Formare medaglioni/ravioli ripieni di salsiccia, ricotta e rosmarino.",
+      "en": "Form medallions/ravioli filled with sausage, ricotta and rosemary.",
+      "img": {
+       "src": "steps/medaglie-salsiccia-02.jpg",
+       "alt": "Medaglioni ripieni",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Dadolata colorata di patata dolce e sedano rapa («coriandoli di verdure»).",
+      "en": "Colourful dice of sweet potato and celeriac («vegetable confetti»).",
+      "img": {
+       "src": "steps/medaglie-salsiccia-03.jpg",
+       "alt": "Coriandoli",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Salsa: burro montato con aceto (vino bianco/scalogno menzionati) e acetosella; passare al setaccio.",
+      "en": "Sauce: whipped butter with vinegar (white wine/shallot mentioned) and sorrel; strain.",
+      "img": {
+       "src": "steps/medaglie-salsiccia-04.jpg",
+       "alt": "Burro all’acetosella",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Cuocere la pasta, saltare con mostarda di Cremona; impiattare con salsa, coriandoli e mostarda.",
+      "en": "Cook the pasta, toss with Cremona mustard; plate with sauce, confetti and mustard.",
+      "img": {
+       "src": "steps/medaglie-salsiccia-05.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "medaglie-salsiccia.html"
+  },
+  {
+   "slug": "fish-and-chips-locatelli",
+   "order": 11,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Fish and chips con mushy peas",
+    "en": "Fish and chips with mushy peas"
+   },
+   "shortTitle": {
+    "it": "Fish and chips con mushy peas",
+    "en": "Fish and chips with mushy peas"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta III",
+    "en": "MasterChef Magazine · Recipe III"
+   },
+   "description": {
+    "it": "Chips a due temperature, pastella farina-birra-aceto di malto-limone, piselli freschi allo scalogno.",
+    "en": "Twice-fried chips, flour–beer–malt vinegar–lemon batter, fresh peas with shallot."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/fish-chips-05.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: fish and chips con mushy peas nel piatto",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/WDY7uZK0Vuc",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — Locatelli’s Home Cooking / #instafood. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — Locatelli’s Home Cooking / #instafood. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Patate — quantità non detta (cita varietà inglesi Maris Piper / King Edward come preferite in UK)",
+       "en": "Potatoes — quantity not stated (mentions Maris Piper / King Edward as UK favourites)"
+      },
+      {
+       "it": "Pesce (tipo non fissato nel video; parla di merluzzi/nasello del Nord) — quantità non detta",
+       "en": "Fish (type not fixed; discusses North Sea cod/hake) — quantity not stated"
+      },
+      {
+       "it": "Farina (per pastella e spolverata) — quantità non detta",
+       "en": "Flour (for batter and dusting) — quantity not stated"
+      },
+      {
+       "it": "Birra — quantità non detta",
+       "en": "Beer — quantity not stated"
+      },
+      {
+       "it": "Aceto di malto — «un po’»",
+       "en": "Malt vinegar — «a little»"
+      },
+      {
+       "it": "Succo di limone — «un po’»",
+       "en": "Lemon juice — «a little»"
+      },
+      {
+       "it": "Piselli freschi",
+       "en": "Fresh peas"
+      },
+      {
+       "it": "1 scalogno (o cipolla)",
+       "en": "1 shallot (or onion)"
+      },
+      {
+       "it": "Burro — «pochettino»",
+       "en": "Butter — «a little»"
+      },
+      {
+       "it": "Olio di semi — per friggere",
+       "en": "Seed oil — for frying"
+      },
+      {
+       "it": "Sale — a fine impiattamento",
+       "en": "Salt — at plating"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Pelare e tagliare chips lunghe regolari; tenere sotto acqua corrente per togliere l’amido.",
+       "en": "Peel and cut long even chips; keep under running water to remove starch."
+      },
+      {
+       "it": "Mushy peas: 1 scalogno (o cipolla) grossolano, pochettino di burro, rosolare; piselli freschi.",
+       "en": "Mushy peas: 1 rough shallot (or onion), a little butter, brown; fresh peas."
+      },
+      {
+       "it": "Olio di semi a 130–140 °C: prima cottura chips senza colorire.",
+       "en": "Seed oil at 130–140 °C: first chip fry without colouring."
+      },
+      {
+       "it": "Pastella: farina, birra, un po’ di aceto di malto e limone; riposo 15–20 minuti. Pesce a fingers, farina, pastella, friggere.",
+       "en": "Batter: flour, beer, a little malt vinegar and lemon; rest 15–20 min. Fish fingers, flour, batter, fry."
+      },
+      {
+       "it": "Secondo passaggio chips a 170–180 °C; impiattare con mushy peas e sale.",
+       "en": "Second chip fry at 170–180 °C; plate with mushy peas and salt."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Quantità di farina/birra/pesce/patate: non dette.",
+     "en": "Flour/beer/fish/potato quantities: not stated."
+    },
+    {
+     "it": "Temperatura pastella/olio per il pesce: non numerata oltre il contesto di frittura; chips sì (130–140 poi 170–180).",
+     "en": "Batter/fish oil temperature: not numbered beyond frying context; chips yes (130–140 then 170–180)."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "pesce"
+   ],
+   "tutorial": {
+    "page": "fish-and-chips-locatelli-tutorial.html",
+    "title": {
+     "it": "Fish and chips con mushy peas",
+     "en": "Fish and chips with mushy peas"
+    },
+    "lede": {
+     "it": "Chips a due temperature, pastella farina-birra-aceto di malto-limone, piselli freschi allo scalogno. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "Twice-fried chips, flour–beer–malt vinegar–lemon batter, fresh peas with shallot. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Pelare e tagliare chips lunghe regolari; tenere sotto acqua corrente per togliere l’amido.",
+      "en": "Peel and cut long even chips; keep under running water to remove starch.",
+      "img": {
+       "src": "steps/fish-chips-01.jpg",
+       "alt": "Patate in acqua",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Mushy peas: 1 scalogno (o cipolla) grossolano, pochettino di burro, rosolare; piselli freschi.",
+      "en": "Mushy peas: 1 rough shallot (or onion), a little butter, brown; fresh peas.",
+      "img": {
+       "src": "steps/fish-chips-02.jpg",
+       "alt": "Mushy peas",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Olio di semi a 130–140 °C: prima cottura chips senza colorire.",
+      "en": "Seed oil at 130–140 °C: first chip fry without colouring.",
+      "img": {
+       "src": "steps/fish-chips-03.jpg",
+       "alt": "Prima frittura",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Pastella: farina, birra, un po’ di aceto di malto e limone; riposo 15–20 minuti. Pesce a fingers, farina, pastella, friggere.",
+      "en": "Batter: flour, beer, a little malt vinegar and lemon; rest 15–20 min. Fish fingers, flour, batter, fry.",
+      "img": {
+       "src": "steps/fish-chips-04.jpg",
+       "alt": "Pastella e pesce",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Secondo passaggio chips a 170–180 °C; impiattare con mushy peas e sale.",
+      "en": "Second chip fry at 170–180 °C; plate with mushy peas and salt.",
+      "img": {
+       "src": "steps/fish-chips-05.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "fish-and-chips-locatelli.html"
+  },
+  {
+   "slug": "medaglioni-cervo",
+   "order": 12,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Medaglioni di cervo al lemongrass con patate e funghi",
+    "en": "Venison medallions with lemongrass, potatoes and mushrooms"
+   },
+   "shortTitle": {
+    "it": "Medaglioni di cervo al lemongrass con patate e funghi",
+    "en": "Venison medallions with lemongrass, potatoes and mushrooms"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta IV",
+    "en": "MasterChef Magazine · Recipe IV"
+   },
+   "description": {
+    "it": "Filetto di cervo, lemongrass, funghi (non lavati), salsa paprika-limone-aglio, crostini di brioche.",
+    "en": "Venison fillet, lemongrass, mushrooms (not washed), paprika–lemon–garlic sauce, brioche croûtons."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/medaglioni-cervo-05.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: medaglioni di cervo con patate, funghi e crostini di brioche",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/TxQ9k9UFcnA",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Filetto / medaglioni di cervo — quantità non detta",
+       "en": "Venison fillet / medallions — quantity not stated"
+      },
+      {
+       "it": "Lemongrass (citronella) — quantità non detta",
+       "en": "Lemongrass — quantity not stated"
+      },
+      {
+       "it": "Funghi (porcini menzionati in chiusura) — quantità non detta",
+       "en": "Mushrooms (porcini named at plating) — quantity not stated"
+      },
+      {
+       "it": "Patate — quantità non detta",
+       "en": "Potatoes — quantity not stated"
+      },
+      {
+       "it": "Guanciale — lessato poi in burro con lemongrass; quantità non detta",
+       "en": "Guanciale — blanched then in butter with lemongrass; quantity not stated"
+      },
+      {
+       "it": "Burro — quantità non detta",
+       "en": "Butter — quantity not stated"
+      },
+      {
+       "it": "Paprika, limone, aglio, aceto (salsa) — quantità non dette",
+       "en": "Paprika, lemon, garlic, vinegar (sauce) — quantities not stated"
+      },
+      {
+       "it": "Brioche (crostini) — quantità non detta",
+       "en": "Brioche (croûtons) — quantity not stated"
+      },
+      {
+       "it": "Erba cipollina — quantità non detta",
+       "en": "Chives — quantity not stated"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Pulire i funghi con panno umido (non lavarli).",
+       "en": "Clean mushrooms with a damp cloth (do not wash)."
+      },
+      {
+       "it": "Rosolare medaglioni di cervo nel burro: croccanti fuori, morbidi dentro.",
+       "en": "Brown venison medallions in butter: crisp outside, soft inside."
+      },
+      {
+       "it": "Guanciale lessato, poi burro e lemongrass; salsa paprika, limone, aglio, lemongrass, aceto.",
+       "en": "Blanched guanciale, then butter and lemongrass; sauce of paprika, lemon, garlic, lemongrass, vinegar."
+      },
+      {
+       "it": "Patate fritte; erba cipollina.",
+       "en": "Fried potatoes; chives."
+      },
+      {
+       "it": "Impiattare: crostini di brioche, medaglioni, porcini, patate ed erba cipollina.",
+       "en": "Plate: brioche croûtons, medallions, porcini, potatoes and chives."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Temperature e grammi: assenti.",
+     "en": "Temperatures and weights: absent."
+    },
+    {
+     "it": "Nome piatto in chiusura: medaglioni di cervo al lemongrass con patate e funghi.",
+     "en": "Closing dish name: venison medallions with lemongrass, potatoes and mushrooms."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "carne"
+   ],
+   "tutorial": {
+    "page": "medaglioni-cervo-tutorial.html",
+    "title": {
+     "it": "Medaglioni di cervo al lemongrass con patate e funghi",
+     "en": "Venison medallions with lemongrass, potatoes and mushrooms"
+    },
+    "lede": {
+     "it": "Filetto di cervo, lemongrass, funghi (non lavati), salsa paprika-limone-aglio, crostini di brioche. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "Venison fillet, lemongrass, mushrooms (not washed), paprika–lemon–garlic sauce, brioche croûtons. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Pulire i funghi con panno umido (non lavarli).",
+      "en": "Clean mushrooms with a damp cloth (do not wash).",
+      "img": {
+       "src": "steps/medaglioni-cervo-01.jpg",
+       "alt": "Funghi",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Rosolare medaglioni di cervo nel burro: croccanti fuori, morbidi dentro.",
+      "en": "Brown venison medallions in butter: crisp outside, soft inside.",
+      "img": {
+       "src": "steps/medaglioni-cervo-02.jpg",
+       "alt": "Cervo",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Guanciale lessato, poi burro e lemongrass; salsa paprika, limone, aglio, lemongrass, aceto.",
+      "en": "Blanched guanciale, then butter and lemongrass; sauce of paprika, lemon, garlic, lemongrass, vinegar.",
+      "img": {
+       "src": "steps/medaglioni-cervo-03.jpg",
+       "alt": "Lemongrass e salsa",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Patate fritte; erba cipollina.",
+      "en": "Fried potatoes; chives.",
+      "img": {
+       "src": "steps/medaglioni-cervo-04.jpg",
+       "alt": "Patate",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Impiattare: crostini di brioche, medaglioni, porcini, patate ed erba cipollina.",
+      "en": "Plate: brioche croûtons, medallions, porcini, potatoes and chives.",
+      "img": {
+       "src": "steps/medaglioni-cervo-05.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "medaglioni-cervo.html"
+  },
+  {
+   "slug": "colazione-barbieri",
+   "order": 13,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Colazione Barbieri: porridge, chutney di frutta e gioco d’uovo",
+    "en": "Barbieri breakfast: porridge, fruit chutney and egg game"
+   },
+   "shortTitle": {
+    "it": "Colazione Barbieri: porridge, chutney di frutta e gioco d’uovo",
+    "en": "Barbieri breakfast: porridge, fruit chutney and egg game"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta V",
+    "en": "MasterChef Magazine · Recipe V"
+   },
+   "description": {
+    "it": "Chutney di frutta/verdura, uova strapazzate ripiene nei gusci sterilizzati, porridge con elisir di fiori.",
+    "en": "Fruit/vegetable chutney, scrambled eggs back in sterilised shells, porridge with flower elixirs."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/colazione-barbieri-06.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: porridge con chutney e uova farcite nei gusci",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/-IM4EEDXp1c",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — #instafood · Bruno Barbieri. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — #instafood · Bruno Barbieri. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Mele, mango, pomodori verdi, albicocche — quantità non dette",
+       "en": "Apples, mango, green tomatoes, apricots — quantities not stated"
+      },
+      {
+       "it": "Zucchero; pectina (per addensare)",
+       "en": "Sugar; pectin (to thicken)"
+      },
+      {
+       "it": "Lamponi; scorza di lime; menta",
+       "en": "Raspberries; lime zest; mint"
+      },
+      {
+       "it": "Uova (gusci da conservare e sterilizzare)",
+       "en": "Eggs (shells to keep and sterilise)"
+      },
+      {
+       "it": "Aceto (per sterilizzare i gusci in acqua)",
+       "en": "Vinegar (to sterilise shells in water)"
+      },
+      {
+       "it": "Olio EVO — «goccino»",
+       "en": "EVOO — «a drop»"
+      },
+      {
+       "it": "Crema di latte — «un po’»",
+       "en": "Cream — «a little»"
+      },
+      {
+       "it": "Salmone; caviale",
+       "en": "Salmon; caviar"
+      },
+      {
+       "it": "Funghi; bacon; taleggio",
+       "en": "Mushrooms; bacon; Taleggio"
+      },
+      {
+       "it": "Salsiccia; spinaci",
+       "en": "Sausage; spinach"
+      },
+      {
+       "it": "Fiocchi d’avena; latte",
+       "en": "Oat flakes; milk"
+      },
+      {
+       "it": "Elisir di rose; elisir di sambuco",
+       "en": "Rose elixir; elderflower elixir"
+      },
+      {
+       "it": "Pistacchi; miele; cacao (opzionale, detto)",
+       "en": "Pistachios; honey; cocoa (optional, stated)"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Chutney: mele, mango, pomodori verdi, albicocche, zucchero, pectina, lamponi, scorza di lime, menta; sobbollire a fuoco basso con carta forno, senza girare.",
+       "en": "Chutney: apples, mango, green tomatoes, apricots, sugar, pectin, raspberries, lime zest, mint; simmer low under parchment, do not stir."
+      },
+      {
+       "it": "Conservare i gusci; sterilizzarli in acqua con aceto. Strapazzata con goccino di EVO, bianchi, crema di latte e uova.",
+       "en": "Keep the shells; sterilise in water with vinegar. Scramble with a drop of EVOO, whites, cream and eggs."
+      },
+      {
+       "it": "Guarnizioni: salmone brunoise e caviale; funghi con bacon, crema e taleggio; salsiccia e spinaci.",
+       "en": "Toppings: salmon brunoise and caviar; mushrooms with bacon, cream and Taleggio; sausage and spinach."
+      },
+      {
+       "it": "Porridge: fiocchi d’avena, latte, elisir di rose e sambuco; pistacchi.",
+       "en": "Porridge: oat flakes, milk, rose and elderflower elixirs; pistachios."
+      },
+      {
+       "it": "Riempire i gusci con strapazzata e guarnizioni diverse.",
+       "en": "Fill shells with scramble and different toppings."
+      },
+      {
+       "it": "Impiattare porridge con chutney e miele (cacao opzionale) e le uova farcite.",
+       "en": "Plate porridge with chutney and honey (optional cocoa) and filled eggs."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Elisir: estratti di fiori con sciroppo di zucchero; a freddo acido citrico e fiori; riposo da 48 ore a 2–3 mesi (spiegato in video).",
+     "en": "Elixirs: flower extracts with sugar syrup; cold citric acid and flowers; rest from 48 hours to 2–3 months (explained on camera)."
+    },
+    {
+     "it": "Grammi e tempi di cottura porridge/uova: non numerati.",
+     "en": "Porridge/egg weights and cook times: not numbered."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "colazione"
+   ],
+   "tutorial": {
+    "page": "colazione-barbieri-tutorial.html",
+    "title": {
+     "it": "Colazione Barbieri: porridge, chutney di frutta e gioco d’uovo",
+     "en": "Barbieri breakfast: porridge, fruit chutney and egg game"
+    },
+    "lede": {
+     "it": "Chutney di frutta/verdura, uova strapazzate ripiene nei gusci sterilizzati, porridge con elisir di fiori. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "Fruit/vegetable chutney, scrambled eggs back in sterilised shells, porridge with flower elixirs. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Chutney: mele, mango, pomodori verdi, albicocche, zucchero, pectina, lamponi, scorza di lime, menta; sobbollire a fuoco basso con carta forno, senza girare.",
+      "en": "Chutney: apples, mango, green tomatoes, apricots, sugar, pectin, raspberries, lime zest, mint; simmer low under parchment, do not stir.",
+      "img": {
+       "src": "steps/colazione-barbieri-01.jpg",
+       "alt": "Chutney",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Conservare i gusci; sterilizzarli in acqua con aceto. Strapazzata con goccino di EVO, bianchi, crema di latte e uova.",
+      "en": "Keep the shells; sterilise in water with vinegar. Scramble with a drop of EVOO, whites, cream and eggs.",
+      "img": {
+       "src": "steps/colazione-barbieri-02.jpg",
+       "alt": "Uova e gusci",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Guarnizioni: salmone brunoise e caviale; funghi con bacon, crema e taleggio; salsiccia e spinaci.",
+      "en": "Toppings: salmon brunoise and caviar; mushrooms with bacon, cream and Taleggio; sausage and spinach.",
+      "img": {
+       "src": "steps/colazione-barbieri-03.jpg",
+       "alt": "Guarnizioni",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Porridge: fiocchi d’avena, latte, elisir di rose e sambuco; pistacchi.",
+      "en": "Porridge: oat flakes, milk, rose and elderflower elixirs; pistachios.",
+      "img": {
+       "src": "steps/colazione-barbieri-04.jpg",
+       "alt": "Porridge",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Riempire i gusci con strapazzata e guarnizioni diverse.",
+      "en": "Fill shells with scramble and different toppings.",
+      "img": {
+       "src": "steps/colazione-barbieri-05.jpg",
+       "alt": "Gioco d’uovo",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "06",
+      "it": "Impiattare porridge con chutney e miele (cacao opzionale) e le uova farcite.",
+      "en": "Plate porridge with chutney and honey (optional cocoa) and filled eggs.",
+      "img": {
+       "src": "steps/colazione-barbieri-06.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "colazione-barbieri.html"
+  },
+  {
+   "slug": "pernice-ripiena",
+   "order": 14,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Pernice ripiena di lardo con rane, salsa all’Amarone e indivia brasata",
+    "en": "Lard-stuffed partridge with frogs, Amarone sauce and braised endive"
+   },
+   "shortTitle": {
+    "it": "Pernice ripiena di lardo con rane, salsa all’Amarone e indivia brasata",
+    "en": "Lard-stuffed partridge with frogs, Amarone sauce and braised endive"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta VI",
+    "en": "MasterChef Magazine · Recipe VI"
+   },
+   "description": {
+    "it": "Pernice farcita di lardo di montagna, rane al burro e rosmarino, salsa Amarone e frutti di bosco, indivia belga.",
+    "en": "Partridge stuffed with mountain lard, frogs in butter and rosemary, Amarone–berry sauce, Belgian endive."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/pernice-ripiena-05.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: pernice ripiena tagliata e impiattata",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/cB1LeXkUHAw",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Pernice — quantità non detta",
+       "en": "Partridge — quantity not stated"
+      },
+      {
+       "it": "Lardo di montagna — quantità non detta",
+       "en": "Mountain lard — quantity not stated"
+      },
+      {
+       "it": "Rane — quantità non detta",
+       "en": "Frogs — quantity not stated"
+      },
+      {
+       "it": "Burro; rosmarino; aglio (per le rane)",
+       "en": "Butter; rosemary; garlic (for the frogs)"
+      },
+      {
+       "it": "Amarone; frutti di bosco — quantità non dette",
+       "en": "Amarone; berries — quantities not stated"
+      },
+      {
+       "it": "Indivia belga — quantità non detta",
+       "en": "Belgian endive — quantity not stated"
+      },
+      {
+       "it": "Olio (filo a fine); maggiorana (detta in impiattamento)",
+       "en": "Oil (drizzle at end); marjoram (named at plating)"
+      },
+      {
+       "it": "Mostarda (richiamata in chiusura — quantità non detta)",
+       "en": "Mustard (mentioned at closing — quantity not stated)"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Farcire la pernice con lardo di montagna e chiudere; cosce a parte in burro.",
+       "en": "Stuff the partridge with mountain lard and close; legs separately in butter."
+      },
+      {
+       "it": "Rane in padella con burro e rosmarino (stile francese).",
+       "en": "Frogs in the pan with butter and rosemary (French style)."
+      },
+      {
+       "it": "Salsa di Amarone e frutti di bosco.",
+       "en": "Amarone and berry sauce."
+      },
+      {
+       "it": "Brasare l’indivia belga in padella.",
+       "en": "Braise Belgian endive in a pan."
+      },
+      {
+       "it": "Tagliare e impiattare con olio, maggiorana e mostarda richiamata.",
+       "en": "Carve and plate with oil, marjoram and mustard as recalled."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Un «48 minuti» compare nei sottotitoli vicino alle rane: contesto ASR ambiguo — non usato come tempo affidabile.",
+     "en": "A «48 minutes» appears near the frogs in the subs: ambiguous ASR — not treated as a reliable time."
+    },
+    {
+     "it": "Temperature forno/padella: non dette.",
+     "en": "Oven/pan temperatures: not stated."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "carne"
+   ],
+   "tutorial": {
+    "page": "pernice-ripiena-tutorial.html",
+    "title": {
+     "it": "Pernice ripiena di lardo con rane, salsa all’Amarone e indivia brasata",
+     "en": "Lard-stuffed partridge with frogs, Amarone sauce and braised endive"
+    },
+    "lede": {
+     "it": "Pernice farcita di lardo di montagna, rane al burro e rosmarino, salsa Amarone e frutti di bosco, indivia belga. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "Partridge stuffed with mountain lard, frogs in butter and rosemary, Amarone–berry sauce, Belgian endive. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Farcire la pernice con lardo di montagna e chiudere; cosce a parte in burro.",
+      "en": "Stuff the partridge with mountain lard and close; legs separately in butter.",
+      "img": {
+       "src": "steps/pernice-ripiena-01.jpg",
+       "alt": "Pernice farcita",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Rane in padella con burro e rosmarino (stile francese).",
+      "en": "Frogs in the pan with butter and rosemary (French style).",
+      "img": {
+       "src": "steps/pernice-ripiena-02.jpg",
+       "alt": "Rane",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Salsa di Amarone e frutti di bosco.",
+      "en": "Amarone and berry sauce.",
+      "img": {
+       "src": "steps/pernice-ripiena-03.jpg",
+       "alt": "Salsa Amarone",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Brasare l’indivia belga in padella.",
+      "en": "Braise Belgian endive in a pan.",
+      "img": {
+       "src": "steps/pernice-ripiena-04.jpg",
+       "alt": "Indivia",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Tagliare e impiattare con olio, maggiorana e mostarda richiamata.",
+      "en": "Carve and plate with oil, marjoram and mustard as recalled.",
+      "img": {
+       "src": "steps/pernice-ripiena-05.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "pernice-ripiena.html"
+  },
+  {
+   "slug": "cucina-vegana-locatelli",
+   "order": 15,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Melanzana ripiena vegana («’mbuttunata») con ricotta di soia",
+    "en": "Vegan stuffed aubergine («’mbuttunata») with soy ricotta"
+   },
+   "shortTitle": {
+    "it": "Melanzana ripiena vegana («’mbuttunata») con ricotta di soia",
+    "en": "Vegan stuffed aubergine («’mbuttunata») with soy ricotta"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta VII",
+    "en": "MasterChef Magazine · Recipe VII"
+   },
+   "description": {
+    "it": "Melanzana al cartoccio, ricotta di soia a 80 °C, pomodorini secchi, confettura di peperoni, leggera affumicatura.",
+    "en": "Foil-baked aubergine, 80 °C soy ricotta, oven-dried tomatoes, pepper jam, light smoking."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/vegana-locatelli-06.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: melanzana ripiena vegana con pomodorini secchi e basilico",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/Uf_H6BdFNtA",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — #instafood · Giorgio Locatelli. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — #instafood · Giorgio Locatelli. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Melanzana",
+       "en": "Aubergine (eggplant)"
+      },
+      {
+       "it": "Rosmarino; 1 spicchio d’aglio tagliato a metà",
+       "en": "Rosemary; 1 garlic clove cut in half"
+      },
+      {
+       "it": "Latte di soia; aceto; sale (ricotta vegana)",
+       "en": "Soy milk; vinegar; salt (vegan ricotta)"
+      },
+      {
+       "it": "Pomodorini; olio all’aglio (riposato ore); zucchero",
+       "en": "Cherry tomatoes; garlic oil (rested hours); sugar"
+      },
+      {
+       "it": "Cipolla; alloro; peperoni; zucchero di canna; concentrato di pomodoro; aceto (confettura)",
+       "en": "Onion; bay; peppers; brown sugar; tomato paste; vinegar (jam)"
+      },
+      {
+       "it": "Olive taggiasche; altro concentrato di pomodoro (per la farcia)",
+       "en": "Taggiasca olives; more tomato paste (for the stuffing)"
+      },
+      {
+       "it": "Pepe; olio; basilico (finitura)",
+       "en": "Pepper; oil; basil (finish)"
+      },
+      {
+       "it": "1–2 cucchiai di ricotta vegana in farcia (detto)",
+       "en": "1–2 spoonfuls of vegan ricotta in the stuffing (stated)"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Melanzana: 2–3 tagli trasversali; rosmarino e mezzo spicchio d’aglio; cartoccio in forno (temp. non detta).",
+       "en": "Aubergine: 2–3 transverse cuts; rosemary and half garlic clove; foil parcel in oven (temp. not stated)."
+      },
+      {
+       "it": "Ricotta vegana: latte di soia a 80 °C, aceto e sale; filtrare; riposo in frigo.",
+       "en": "Vegan ricotta: soy milk to 80 °C, vinegar and salt; strain; fridge rest."
+      },
+      {
+       "it": "Pomodorini: scottare, spellare, olio all’aglio e zucchero, forno → secchi.",
+       "en": "Cherry tomatoes: blanch, peel, garlic oil and sugar, oven → dried."
+      },
+      {
+       "it": "Confettura di peperoni: cipolla e alloro, peperoni, zucchero di canna, concentrato, aceto; ~1 h 15’.",
+       "en": "Pepper jam: onion and bay, peppers, brown sugar, paste, vinegar; ~1 h 15’."
+      },
+      {
+       "it": "Estrarre polpa; affumicare 15–20 min; condire (olive taggiasche, concentrato); 1–2 cucchiai di ricotta; rimettere in forno.",
+       "en": "Scoop flesh; smoke 15–20 min; season (Taggiasca olives, paste); 1–2 spoonfuls ricotta; return to oven."
+      },
+      {
+       "it": "Decorare con pomodorini secchi e basilico; impiattare.",
+       "en": "Decorate with dried tomatoes and basil; plate."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Temperature forno melanzana/pomodorini: non dette (solo latte soia 80 °C e scottatura pomodorini).",
+     "en": "Oven temps for aubergine/tomatoes: not stated (only soy milk 80 °C and tomato blanch)."
+    },
+    {
+     "it": "Metodo di affumicatura (attrezzo): non descritto nei dettagli.",
+     "en": "Smoking method (equipment): not detailed."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "vegano"
+   ],
+   "tutorial": {
+    "page": "cucina-vegana-locatelli-tutorial.html",
+    "title": {
+     "it": "Melanzana ripiena vegana («’mbuttunata») con ricotta di soia",
+     "en": "Vegan stuffed aubergine («’mbuttunata») with soy ricotta"
+    },
+    "lede": {
+     "it": "Melanzana al cartoccio, ricotta di soia a 80 °C, pomodorini secchi, confettura di peperoni, leggera affumicatura. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "Foil-baked aubergine, 80 °C soy ricotta, oven-dried tomatoes, pepper jam, light smoking. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Melanzana: 2–3 tagli trasversali; rosmarino e mezzo spicchio d’aglio; cartoccio in forno (temp. non detta).",
+      "en": "Aubergine: 2–3 transverse cuts; rosemary and half garlic clove; foil parcel in oven (temp. not stated).",
+      "img": {
+       "src": "steps/vegana-locatelli-01.jpg",
+       "alt": "Cartoccio",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Ricotta vegana: latte di soia a 80 °C, aceto e sale; filtrare; riposo in frigo.",
+      "en": "Vegan ricotta: soy milk to 80 °C, vinegar and salt; strain; fridge rest.",
+      "img": {
+       "src": "steps/vegana-locatelli-02.jpg",
+       "alt": "Ricotta di soia",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Pomodorini: scottare, spellare, olio all’aglio e zucchero, forno → secchi.",
+      "en": "Cherry tomatoes: blanch, peel, garlic oil and sugar, oven → dried.",
+      "img": {
+       "src": "steps/vegana-locatelli-03.jpg",
+       "alt": "Pomodorini secchi",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Confettura di peperoni: cipolla e alloro, peperoni, zucchero di canna, concentrato, aceto; ~1 h 15’.",
+      "en": "Pepper jam: onion and bay, peppers, brown sugar, paste, vinegar; ~1 h 15’.",
+      "img": {
+       "src": "steps/vegana-locatelli-04.jpg",
+       "alt": "Confettura",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Estrarre polpa; affumicare 15–20 min; condire (olive taggiasche, concentrato); 1–2 cucchiai di ricotta; rimettere in forno.",
+      "en": "Scoop flesh; smoke 15–20 min; season (Taggiasca olives, paste); 1–2 spoonfuls ricotta; return to oven.",
+      "img": {
+       "src": "steps/vegana-locatelli-05.jpg",
+       "alt": "Farcitura",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "06",
+      "it": "Decorare con pomodorini secchi e basilico; impiattare.",
+      "en": "Decorate with dried tomatoes and basil; plate.",
+      "img": {
+       "src": "steps/vegana-locatelli-06.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "cucina-vegana-locatelli.html"
+  },
+  {
+   "slug": "risotto-caprino-lumache",
+   "order": 16,
+   "section": {
+    "id": "masterchef",
+    "num": "III",
+    "name": "MasterChef Magazine"
+   },
+   "title": {
+    "it": "Risotto al caprino con lumache, capesante e cavolo rosso",
+    "en": "Goat-cheese risotto with snails, scallops and red cabbage"
+   },
+   "shortTitle": {
+    "it": "Risotto al caprino con lumache, capesante e cavolo rosso",
+    "en": "Goat-cheese risotto with snails, scallops and red cabbage"
+   },
+   "subtitle": null,
+   "kicker": {
+    "it": "MasterChef Magazine · Ricetta VIII",
+    "en": "MasterChef Magazine · Recipe VIII"
+   },
+   "description": {
+    "it": "Risotto bianco al caprino su brodo alle erbe; lumache; capesante in due cotture; cavolo rosso.",
+    "en": "White goat-cheese risotto on herb stock; snails; scallops two ways; red cabbage."
+   },
+   "intro": null,
+   "servingNote": {
+    "it": "Quantità solo dove dette nei sottotitoli/descrizione. Gli sconosciuti sono nelle note — non inventati. Quaderno indipendente, non affiliato a Sky/Endemol/MasterChef.",
+    "en": "Quantities only where stated in subtitles/description. Unknowns are in the notes — not invented. Independent notebook, unaffiliated with Sky/Endemol/MasterChef."
+   },
+   "cover": {
+    "src": "steps/risotto-caprino-05.jpg",
+    "alt": "Tavola a inchiostro seppia in stile Leonardo: risotto al caprino con lumache, capesante e cavolo rosso",
+    "w": 560,
+    "h": 315
+   },
+   "source": {
+    "url": "https://youtu.be/nX8r3FTP_Q0",
+    "label": {
+     "it": "Fonte · YouTube",
+     "en": "Source · YouTube"
+    }
+   },
+   "credits": {
+    "it": "Dopo MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Quaderno indipendente, non affiliato a Sky, Endemol o MasterChef.",
+    "en": "After MasterChef Magazine / YouTube — Due Giudici Una Spesa · Barbieri & Locatelli. Independent notebook, unaffiliated with Sky, Endemol or MasterChef."
+   },
+   "ingredients": [
+    {
+     "title": null,
+     "intro": null,
+     "note": null,
+     "items": [
+      {
+       "it": "Riso — quantità non detta",
+       "en": "Rice — quantity not stated"
+      },
+      {
+       "it": "Caprino — quantità non detta",
+       "en": "Goat cheese (caprino) — quantity not stated"
+      },
+      {
+       "it": "Lumache — quantità non detta",
+       "en": "Snails — quantity not stated"
+      },
+      {
+       "it": "Capesante — quantità non detta (cita 80–100 g ca. per capa pulita in aneddoto, non come dose ricetta)",
+       "en": "Scallops — quantity not stated (anecdote cites ~80–100 g cleaned each, not a recipe dose)"
+      },
+      {
+       "it": "Cavolo rosso — quantità non detta",
+       "en": "Red cabbage — quantity not stated"
+      },
+      {
+       "it": "Brodo alle erbe; cipolla",
+       "en": "Herb stock; onion"
+      },
+      {
+       "it": "Panna — «un po’»",
+       "en": "Cream — «a little»"
+      },
+      {
+       "it": "Guanciale (offerto in spesa; uso nel piatto finale non chiarito)",
+       "en": "Guanciale (offered in shopping; use in final dish unclear)"
+      },
+      {
+       "it": "Aglio, pepe, erbe (per capesante) — quantità non dette",
+       "en": "Garlic, pepper, herbs (for scallops) — quantities not stated"
+      }
+     ]
+    }
+   ],
+   "method": [
+    {
+     "title": null,
+     "intro": null,
+     "steps": [
+      {
+       "it": "Brodo alle erbe, cipolla, tostare il riso e bagnare col brodo (risotto in bianco).",
+       "en": "Herb stock, onion, toast rice and moisten with stock (white risotto)."
+      },
+      {
+       "it": "Preparare il cavolo rosso (metodo dettagliato non detto).",
+       "en": "Prepare red cabbage (detailed method not stated)."
+      },
+      {
+       "it": "Cuocere le lumache; panna come detto; finire il risotto col caprino.",
+       "en": "Cook snails; cream as said; finish risotto with goat cheese."
+      },
+      {
+       "it": "Capesante: parte in padella, parte con lumache/cavolo; aglio, pepe, erbe.",
+       "en": "Scallops: some pan-fried, some with snails/cabbage; garlic, pepper, herbs."
+      },
+      {
+       "it": "Impiattare risotto al caprino con lumache, capesante e cavolo rosso.",
+       "en": "Plate goat-cheese risotto with snails, scallops and red cabbage."
+      }
+     ]
+    }
+   ],
+   "notes": [
+    {
+     "it": "Tempi di mantecatura e dose riso/brodo: non detti.",
+     "en": "Mantecatura times and rice/stock doses: not stated."
+    },
+    {
+     "it": "Guanciale in spesa ma non nominato nel nome piatto finale.",
+     "en": "Guanciale in the shopping but not named in the final dish title."
+    }
+   ],
+   "meta": [],
+   "techNote": null,
+   "servings": null,
+   "scalable": false,
+   "categories": [
+    "risotto"
+   ],
+   "tutorial": {
+    "page": "risotto-caprino-lumache-tutorial.html",
+    "title": {
+     "it": "Risotto al caprino con lumache, capesante e cavolo rosso",
+     "en": "Goat-cheese risotto with snails, scallops and red cabbage"
+    },
+    "lede": {
+     "it": "Risotto bianco al caprino su brodo alle erbe; lumache; capesante in due cotture; cavolo rosso. — struttura Fooby, tavole Leonardo; quantità solo se dette nel video.",
+     "en": "White goat-cheese risotto on herb stock; snails; scallops two ways; red cabbage. — Fooby structure, Leonardo plates; quantities only if spoken on camera."
+    },
+    "steps": [
+     {
+      "n": "01",
+      "it": "Brodo alle erbe, cipolla, tostare il riso e bagnare col brodo (risotto in bianco).",
+      "en": "Herb stock, onion, toast rice and moisten with stock (white risotto).",
+      "img": {
+       "src": "steps/risotto-caprino-01.jpg",
+       "alt": "Risotto",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "02",
+      "it": "Preparare il cavolo rosso (metodo dettagliato non detto).",
+      "en": "Prepare red cabbage (detailed method not stated).",
+      "img": {
+       "src": "steps/risotto-caprino-02.jpg",
+       "alt": "Cavolo rosso",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "03",
+      "it": "Cuocere le lumache; panna come detto; finire il risotto col caprino.",
+      "en": "Cook snails; cream as said; finish risotto with goat cheese.",
+      "img": {
+       "src": "steps/risotto-caprino-03.jpg",
+       "alt": "Caprino e lumache",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "04",
+      "it": "Capesante: parte in padella, parte con lumache/cavolo; aglio, pepe, erbe.",
+      "en": "Scallops: some pan-fried, some with snails/cabbage; garlic, pepper, herbs.",
+      "img": {
+       "src": "steps/risotto-caprino-04.jpg",
+       "alt": "Capesante",
+       "w": 560,
+       "h": 315
+      }
+     },
+     {
+      "n": "05",
+      "it": "Impiattare risotto al caprino con lumache, capesante e cavolo rosso.",
+      "en": "Plate goat-cheese risotto with snails, scallops and red cabbage.",
+      "img": {
+       "src": "steps/risotto-caprino-05.jpg",
+       "alt": "Impiattamento",
+       "w": 560,
+       "h": 315
+      }
+     }
+    ]
+   },
+   "schedaPage": "risotto-caprino-lumache.html"
+  }
+ ]
+}

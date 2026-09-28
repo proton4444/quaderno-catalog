@@ -1,0 +1,25 @@
+{
+  "name": "Quaderno",
+  "short_name": "Quaderno",
+  "description": "Quaderno di cucina — Italia Squisita, Ratanà e MasterChef Magazine: schede e tutorial illustrati, bilingue, offline.",
+  "id": "./app.html",
+  "start_url": "./app.html#/home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5eddf",
+  "theme_color": "#704a2c",
+  "lang": "it",
+  "dir": "ltr",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Esplora", "url": "./app.html#/explore", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Salvati", "url": "./app.html#/saved", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}
