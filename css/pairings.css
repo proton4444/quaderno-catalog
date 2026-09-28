@@ -229,3 +229,12 @@ body.typing .hint{opacity:0}
 .oq{font:500 10.5px/1 var(--sans);color:var(--muted);font-style:italic;margin-left:4px;white-space:nowrap}
 .modenote{margin:-2px 0 6px;font-size:11.5px;color:var(--muted)}
 .more button.out{border-style:dashed;color:var(--muted)}
+
+/* ---------- no-pairings state ---------- */
+.nopair-box{margin:4px 0 12px;padding:12px 14px;border:1px dashed rgba(112,74,44,.35);border-radius:14px;background:rgba(251,246,236,.6)}
+.nopair-box b{display:block;font:italic 600 17px/1.25 var(--serif);color:var(--ink-2)}
+.nopair-box p{margin:6px 0 0;font-size:13px;line-height:1.45;color:var(--muted)}
+.nopair-box .cta{display:inline-flex;align-items:center;margin-top:8px;height:34px;padding:0 14px;border-radius:999px;background:var(--ink-2);color:#fbf6ec;
+  font:600 12.5px/1 var(--sans);letter-spacing:.01em}
+.nopair-box .cta:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dl.nopair .ct{display:block;font-style:italic;text-transform:none;letter-spacing:0;color:var(--muted)}

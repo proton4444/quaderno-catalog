@@ -24,6 +24,14 @@ var T={
    never:'mai insieme nelle ricette del quaderno',moreC:function(n){return ' e altri '+n;},
    known:function(n){return n+(n===1?' composto aromatico noto':' composti aromatici noti');},entity:'voce del dataset',approx:'voce più vicina',
    noData:'Questo ingrediente non è nel dataset dei composti aromatici: nessun filo, per non inventare dati.',
+   noPair:'Nessun abbinamento aromatico nei dati',noPairCt:'nessun abbinamento',
+   whyNb:function(n){return 'I suoi '+n+' composti aromatici noti non compaiono in nessun altro ingrediente del quaderno.';},
+   whyAll:function(n){return n===1?'Il suo unico composto aromatico noto non compare in nessun altro ingrediente del dataset.':'Nessuno dei suoi '+n+' composti aromatici noti compare in un altro ingrediente del dataset.';},
+   seeAll:'Vedi in Tutti gli ingredienti',seeAllN:function(n){return n+(n===1?' abbinamento':' abbinamenti')+' tra tutti gli ingredienti del dataset.';},
+   noneAll:'Nessun abbinamento neanche tra tutti gli ingredienti del dataset.',
+   onlyStaples:'Condivide aromi solo con ingredienti onnipresenti (qui sotto).',
+   filtered:function(n){return n+(n===1?' abbinamento nascosto':' abbinamenti nascosti')+' dai filtri per tipo.';},showTypes:'Mostra tutti i tipi',hiddenT:'Abbinamenti nascosti',
+   weak:'Abbinamenti deboli: nessun ingrediente ne condivide almeno 2 composti, quindi mostro quelli che ne condividono 1.',
    src:'Dati aromatici',unm:'Senza dati aromatici: ',
    inN:function(n){return 'in '+n+(n===1?' ricetta':' ricette')+' del quaderno';},nRec:function(n){return n+(n===1?' ricetta':' ricette');},
    staples:'Anche, onnipresenti: ',more:function(n){return 'Altri '+n+' abbinamenti aromatici';},none:'Nessun composto aromatico in comune con gli altri ingredienti del quaderno.',
@@ -39,6 +47,14 @@ var T={
    never:'never together in the notebook recipes',moreC:function(n){return ' and '+n+' more';},
    known:function(n){return n+(n===1?' known aroma compound':' known aroma compounds');},entity:'dataset entry',approx:'closest entry',
    noData:'This ingredient is not in the aroma-compound dataset: no threads, rather than invented data.',
+   noPair:'No aroma pairings in the data',noPairCt:'no pairings',
+   whyNb:function(n){return 'None of its '+n+' known aroma compounds occurs in any other notebook ingredient.';},
+   whyAll:function(n){return n===1?'Its only known aroma compound occurs in no other ingredient of the dataset.':'None of its '+n+' known aroma compounds occurs in another ingredient of the dataset.';},
+   seeAll:'See in All ingredients',seeAllN:function(n){return n+(n===1?' pairing':' pairings')+' among all the dataset ingredients.';},
+   noneAll:'No pairings among all the dataset ingredients either.',
+   onlyStaples:'Shares aromas only with everyday staples (below).',
+   filtered:function(n){return n+(n===1?' pairing hidden':' pairings hidden')+' by the type filters.';},showTypes:'Show all types',hiddenT:'Pairings hidden',
+   weak:'Weak pairings: no ingredient shares 2 of its compounds, so these share 1.',
    src:'Aroma data',unm:'No aroma data: ',
    inN:function(n){return 'in '+n+(n===1?' recipe':' recipes')+' in the notebook';},nRec:function(n){return n+(n===1?' recipe':' recipes');},
    staples:'Also, everywhere: ',more:function(n){return n+' more aroma pairings';},none:'No aroma compounds shared with the other notebook ingredients.',
@@ -80,7 +96,7 @@ function clamp(v,a,b){return v<a?a:v>b?b:v;}
 function rnd(a,b){return a+Math.random()*(b-a);}
 
 /* ---------- full mode ("Tutti gli ingredienti"): lazily loaded per-ingredient files ---------- */
-var DATA_V='5';
+var DATA_V='6';
 var MODE_KEY='pairings-mode';
 var MODE=(function(){var q=/[?&]mode=(all|nb)\b/.exec(location.search);if(q)return q[1];try{return localStorage.getItem(MODE_KEY)==='all'?'all':'nb';}catch(e){return 'nb';}})();
 var IDX=null, IDXROW={}, COMP=null, FULL={}, idxP=null;
@@ -233,6 +249,14 @@ function init(data){
     // full mode (or a deep link to a dataset-only ingredient): load the search index first
     loadIndex().then(function(){if(h&&!ING[h]&&IDXROW[h]){if(MODE!=='all')setMode('all',true);ensureIng(h);}go();},function(e){console.warn(e);if(MODE==='all')modeFail();go();});
   }else go();
+  // in-page navigation to another #id (typed in the address bar, a link, back/forward) selects it too
+  window.addEventListener('hashchange',function(){
+    var id=decodeURIComponent(location.hash.replace(/^#\/?/,''));
+    if(!id){reset();return;}
+    if(focus&&focus.id===id)return;
+    if(ING[id]&&(!ING[id].ds||MODE==='all')){select(id);return;}
+    loadIndex().then(function(){if(!IDXROW[id])return;if(MODE!=='all')setMode('all',true);ensureIng(id);select(id);},function(e){console.warn(e);});
+  });
 }
 
 /* ---------- layout ---------- */
@@ -291,7 +315,8 @@ function makeSearchDrop(){
     hx:0,hy:0,ph:1.3,wob:0,role:'search',spawned:false,dragging:false,el:sbox,score:0,dead:false,search:true};
   drops.push(d);SD=d;return d;
 }
-function setLabel(d){if(d.search)return;d.nmEl.textContent=nm(d.g);d.ctEl.textContent=d.g.ds?T[lang].notInNb:T[lang].nRec(d.g.n);
+function setLabel(d){if(d.search)return;d.nmEl.textContent=nm(d.g);d.ctEl.textContent=d.nopair?T[lang].noPairCt:d.g.ds?T[lang].notInNb:T[lang].nRec(d.g.n);
+  d.el.classList.toggle('nopair',!!d.nopair);
   if(d.g.ds){d.el.setAttribute('aria-label',nm(d.g)+' — '+T[lang].notInNb);return;}
   d.el.setAttribute('aria-label',nm(d.g)+' — '+(d.hub?T[lang].hubOf+', ':'')+nm(TYPE[d.type])+', '+T[lang].nRec(d.g.n));}
 function ensureHubs(){
@@ -346,6 +371,9 @@ function select(id,instant){
   body.classList.add('sel');hintEl.classList.add('gone');resetBtn.disabled=false;
   var ms=topMatches(g),mset={};
   ms.forEach(function(m,i){mset[m.id]=m;});
+  drops.forEach(function(o){if(o.nopair&&o!==d){o.nopair=false;setLabel(o);}});
+  var none=!ms.length&&!matchesFor(g).some(function(m){var o=ING[m.id];return o&&!m.staple&&hidden[o.type];});
+  if(!!d.nopair!==none){d.nopair=none;setLabel(d);}
   // make sure matches exist on stage (they emerge from the tapped drop)
   ms.forEach(function(m){var md=byId[m.id];if(!md){md=makeDrop(m.id,true);md.x=d.x+rnd(-4,4);md.y=d.y+rnd(-4,4);md.s=0;md.delay=RM?0:0.16+Math.random()*0.25;}});
   openSheet(g,ms);
@@ -379,7 +407,9 @@ function pop(d,instant){
   d.vs+=9; // swell…
   d.popAt=time+0.14; // …then burst
 }
+var BURSTS=0;
 function burst(d){
+  BURSTS++;
   var r=d.r0*d.s,c=d.rgb,n=mobile?34:46;
   d.s*=0.78;d.vs=-2;
   for(var i=0;i<n;i++){
@@ -392,6 +422,7 @@ function burst(d){
 function reset(){
   if(!focus)return;
   focus=null;trail=[];threads=[];
+  drops.forEach(function(o){if(o.nopair){o.nopair=false;setLabel(o);}});
   body.classList.remove('sel');resetBtn.disabled=true;hintEl.classList.remove('gone');
   closeSheet();
   drops.forEach(function(o){o.el.classList.remove('focus');
@@ -420,7 +451,9 @@ function openSheet(g,ms){
   }
   var full=MODE==='all'&&!!FULL[g.id];
   h+='<h3 class="sh-h">'+esc(L.pairs)+'</h3>'+(full?'<p class="modenote">'+esc(L.allNote)+'</p>':'')+(MODE==='all'&&g.fullErr?'<p class="modenote">'+esc(L.loadErr)+'</p>':'');
-  if(!ms.length)h+='<p class="empty">'+esc(g.ahn||full?L.none:L.noData)+'</p>';
+  var allM=matchesFor(g);
+  if(full&&FULL[g.id].fb&&ms.length)h+='<p class="modenote">'+esc(L.weak)+'</p>';
+  if(!ms.length)h+=emptyState(g,allM,full,L);
   var max=Math.max(ms.length?ms[0].score:1,1e-6);
   h+='<ol class="mlist">'+ms.map(function(m){var o=ING[m.id],c=TYPE[o.type].color;
     var names=m.exN||(m.ex||[]).map(function(k){return D.compounds[k];});
@@ -431,7 +464,7 @@ function openSheet(g,ms){
       '<div class="mr cx"><b>'+esc(L.shared)+'</b> '+ex+'</div>'+
       (m.out||g.ds?'':'<div class="mr"><b>'+esc(L.togetherNb)+'</b> '+(m.recipes.length?m.recipes.map(rlink).join(' · '):'<span class="nv">'+esc(L.never)+'</span>')+'</div>')+'</li>';}).join('')+'</ol>';
   var shown={};ms.forEach(function(m){shown[m.id]=1;});
-  var all=matchesFor(g);
+  var all=allM;
   var rest=all.filter(function(m){return !m.staple&&!shown[m.id]&&ING[m.id];});
   if(rest.length){
     h+='<details class="faint"><summary>'+esc(L.more(rest.length))+'</summary><div class="more">'+rest.map(function(m){var o=ING[m.id];
@@ -445,6 +478,23 @@ function openSheet(g,ms){
   if(D.source)h+='<p class="credit">'+srcCredit()+'</p>';
   sheetIn.innerHTML=h;sheetIn.scrollTop=0;
   sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');sheet.setAttribute('aria-labelledby','shTitle');
+}
+// A drop with no threads always says why, and offers the next useful step.
+function emptyState(g,all,full,L){
+  var hiddenN=all.filter(function(m){var o=ING[m.id];return o&&!m.staple&&hidden[o.type];}).length;
+  var h='<div class="nopair-box" role="status"><b>'+esc(L.noPair)+'</b><p>';
+  if(hiddenN)return '<div class="nopair-box" role="status"><b>'+esc(L.hiddenT)+'</b><p>'+esc(L.filtered(hiddenN))+'</p><button type="button" class="cta" data-act="types">'+esc(L.showTypes)+'</button></div>';
+  if(all.some(function(m){return m.staple;}))return h+esc(L.onlyStaples)+'</p></div>';
+  if(!g.ahn&&!full)return h+esc(L.noData)+'</p></div>';
+  if(full)return h+esc(L.whyAll(g.nc||0))+'</p></div>';
+  // notebook mode: maybe the whole dataset has partners
+  h+=esc(L.whyNb(g.nc||0))+'</p><p class="nopair-all" data-for="'+esc(g.id)+'">'+esc(L.loading)+'</p></div>';
+  loadFull(g.id).then(function(d){
+    var el=sheetIn.querySelector('.nopair-all[data-for="'+g.id+'"]');if(!el)return;
+    var n=d&&d.m?d.m.length:0;
+    el.innerHTML=n?esc(L.seeAllN(n))+' <button type="button" class="cta" data-act="seeall">'+esc(L.seeAll)+'</button>':esc(L.noneAll);
+  },function(){var el=sheetIn.querySelector('.nopair-all[data-for="'+g.id+'"]');if(el)el.remove();});
+  return h;
 }
 function srcCredit(){var s=D.source;if(!s||!s.url)return '';return esc(t('src'))+': <a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.short)+'</a> · <a href="'+esc(s.licenseUrl)+'" target="_blank" rel="noopener">'+esc(s.license)+'</a>';}
 function closeSheet(){sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true');}
@@ -550,6 +600,9 @@ function bind(){
   sheetIn.addEventListener('click',function(e){
     var go=e.target.closest('[data-go]');if(go){select(go.dataset.go);return;}
     if(e.target.closest('[data-act="reset"]'))reset();
+    else if(e.target.closest('[data-act="seeall"]'))setMode('all');
+    else if(e.target.closest('[data-act="types"]')){hidden={};[].forEach.call(chipsEl.children,function(b){b.setAttribute('aria-pressed','true');});
+      if(focus){var f=focus.id;focus=null;trail.pop();select(f,true);}}
   });
   $('grab').addEventListener('click',function(){sheetPeek=!sheetPeek;sheet.classList.toggle('peek',sheetPeek);if(focus){var f=focus.id;focus=null;trail.pop();select(f,true);}});
   doc.addEventListener('keydown',function(e){if(e.key==='Escape'&&focus)reset();});
@@ -870,5 +923,5 @@ function renderFx(){
 }
 
 // test hook (headless screenshots)
-window.__pairings={warp:function(sec){for(var i=0;i<sec*60;i++)step(1/60);renderAll();},select:select,reset:reset,drops:function(){return drops.map(function(d){return {id:d.id,x:d.x,y:d.y,r:d.r0*d.s,role:d.role,out:!!d.out};});},mode:function(){return MODE;},setMode:setMode,gl:function(){return !use2D;}};
+window.__pairings={warp:function(sec){for(var i=0;i<sec*60;i++)step(1/60);renderAll();},select:select,reset:reset,drops:function(){return drops.map(function(d){return {id:d.id,x:d.x,y:d.y,r:d.r0*d.s,role:d.role,out:!!d.out};});},mode:function(){return MODE;},setMode:setMode,stats:function(){return {bursts:BURSTS,threads:threads.length,focus:focus?focus.id:null,nopair:!!(focus&&focus.nopair)};},gl:function(){return !use2D;}};
 })();

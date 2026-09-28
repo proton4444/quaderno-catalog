@@ -158,7 +158,7 @@ Two modes (toggle under the type chips, remembered in the browser; `?mode=all` o
   ranked by Jaccard (shared ÷ union of compounds), plus recipes where they appear together.
 - **Tutti gli ingredienti / All ingredients**: all 1,525 ingredients of the dataset (loaded lazily, one small JSON
   file per ingredient). Per ingredient the top 25 partners by Jaccard; partners need ≥ 3 known compounds (or be in the
-  notebook) and ≥ 2 shared compounds; near-duplicates (Jaccard ≥ 0.9 with a partner already listed) are skipped.
+  notebook) and ≥ 2 shared compounds; near-duplicates (Jaccard ≥ 0.9 with a partner already listed) are skipped. If nothing reaches the threshold, partners sharing 1 compound are shown as "weak pairings"; 18 ingredients share no compound with any other and say so.
   Ingredients not in the notebook are drawn pale with a dashed outline and labelled “non nel quaderno”.
 
 Sizes: 1,525 files ≈ 1.13 MB in total (median ≈ 0.9 KB), index 81 KB, compounds 25 KB.

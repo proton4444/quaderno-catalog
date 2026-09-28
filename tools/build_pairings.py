@@ -202,15 +202,22 @@ def build_full(A, nb, out_dir):
         shutil.rmtree(ing_dir)                                 # drop files of ingredients no longer produced
     os.makedirs(ing_dir)
     total = 0; empty = 0
+    weak = 0
     for n in ents:
         need = FULL_MIN_SHARED if size[n] >= 2 else 1
-        cand = []
         bn = bits[n]
-        for o in pool:
-            if o == n: continue
-            k = (bn & bits[o]).bit_count()
-            if k < need: continue
-            cand.append((k / (size[n] + size[o] - k), k, eid[o], o))
+        def candidates(among, need):
+            out = []
+            for o in among:
+                if o == n: continue
+                k = (bn & bits[o]).bit_count()
+                if k < need: continue
+                out.append((k / (size[n] + size[o] - k), k, eid[o], o))
+            return out
+        cand = candidates(pool, need)
+        fb = False
+        if not cand:   # fallback: nothing reaches the threshold -> any dataset ingredient sharing >= 1 compound
+            cand = candidates(ents, 1); fb = bool(cand)
         cand.sort(key=lambda t: (-t[0], -t[1], t[3] not in rev, len(t[2]), t[2]))
         ms = []; chosen = []
         for jac, k, oid, o in cand:
@@ -223,9 +230,11 @@ def build_full(A, nb, out_dir):
             ex = distinctive(IC[n] & IC[o], comp, deg, FULL_EX)
             ms.append([oid, k, round(jac, 4), [cix[c] for c in ex]])
         if not ms: empty += 1
+        weak += fb
         i = eid[n]; nbid = rev.get(n)
         obj = {'id': i, 'en': meta[nbid][2] if nbid else cname(n), 'ahn': n, 'cat': cat[n],
                'type': meta[nbid][3] if nbid else CAT_TYPE.get(cat[n], 'altro'), 'nc': size[n], 'nb': bool(nbid), 'm': ms}
+        if fb: obj['fb'] = 1   # weak pairings (fallback rule)
         if nbid: obj['it'] = meta[nbid][1]
         path = os.path.join(ing_dir, i + '.json')
         write_json(path, obj)
@@ -243,15 +252,15 @@ def build_full(A, nb, out_dir):
     items.sort(key=lambda r: (-r[5] if r[5] else 0, r[2]))
     index = {'version': 1, 'fields': ['id', 'it', 'en', 'type', 'compounds', 'notebook(1=aroma data,2=no aroma data,0=dataset only)'],
              'top': FULL_TOP,
-             'rule': {'it': 'Tutti gli ingredienti: per ogni ingrediente del dataset (Ahn et al. 2011) i %d con indice di Jaccard più alto, tra gli ingredienti con almeno %d composti noti (o del quaderno) che ne condividono almeno %d; le quasi-varianti (Jaccard ≥ 0,9 con uno già in lista, es. decine di tè) sono saltate.' % (FULL_TOP, FULL_POOL_MIN, FULL_MIN_SHARED),
-                      'en': 'All ingredients: for every dataset ingredient (Ahn et al. 2011) the %d with the highest Jaccard index, among ingredients with at least %d known compounds (or in the notebook) sharing at least %d; near-variants (Jaccard ≥ 0.9 with one already listed, e.g. dozens of teas) are skipped.' % (FULL_TOP, FULL_POOL_MIN, FULL_MIN_SHARED)},
+             'rule': {'it': 'Tutti gli ingredienti: per ogni ingrediente del dataset (Ahn et al. 2011) i %d con indice di Jaccard più alto, tra gli ingredienti con almeno %d composti noti (o del quaderno) che ne condividono almeno %d; le quasi-varianti (Jaccard ≥ 0,9 con uno già in lista, es. decine di tè) sono saltate. Se nessuno raggiunge la soglia, mostro gli ingredienti che ne condividono 1 (abbinamenti deboli).' % (FULL_TOP, FULL_POOL_MIN, FULL_MIN_SHARED),
+                      'en': 'All ingredients: for every dataset ingredient (Ahn et al. 2011) the %d with the highest Jaccard index, among ingredients with at least %d known compounds (or in the notebook) sharing at least %d; near-variants (Jaccard ≥ 0.9 with one already listed, e.g. dozens of teas) are skipped. If none reaches the threshold, ingredients sharing 1 compound are shown (weak pairings).' % (FULL_TOP, FULL_POOL_MIN, FULL_MIN_SHARED)},
              'items': items}
     write_json(os.path.join(out_dir, 'data', 'ing-index.json'), index)
     write_json(os.path.join(out_dir, 'data', 'compounds.json'), [cname(comp[c]) for c in cids])
     idx_size = os.path.getsize(os.path.join(out_dir, 'data', 'ing-index.json'))
     cmp_size = os.path.getsize(os.path.join(out_dir, 'data', 'compounds.json'))
-    print('full mode: %d ingredient files (%.0f KB, %d without partners), index %.0f KB, compounds %.0f KB'
-          % (len(ents), total / 1024, empty, idx_size / 1024, cmp_size / 1024))
+    print('full mode: %d ingredient files (%.0f KB, %d without partners, %d with weak pairings only), index %.0f KB, compounds %.0f KB'
+          % (len(ents), total / 1024, empty, weak, idx_size / 1024, cmp_size / 1024))
     return {'files': len(ents), 'bytes': total, 'index': idx_size, 'compounds': cmp_size}
 
 

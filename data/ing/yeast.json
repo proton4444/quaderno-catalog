@@ -1,1 +1,1 @@
-{"id":"yeast","en":"yeast","ahn":"yeast","cat":"plant","type":"altro","nc":3,"nb":false,"m":[]}
+{"id":"yeast","en":"yeast","ahn":"yeast","cat":"plant","type":"altro","nc":3,"nb":false,"m":[["root",1,0.3333,[151]],["animal",1,0.1111,[151]],["seed",1,0.0526,[151]],["rapeseed",1,0.0476,[151]],["cruciferae-seed",1,0.0476,[151]],["leaf",1,0.0435,[151]],["dill-seed",1,0.0417,[151]],["peanut",1,0.0101,[864]],["latte",1,0.0083,[151]],["roasted-peanut",1,0.0068,[864]],["cacao",1,0.0051,[864]]],"fb":1}
