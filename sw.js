@@ -1,7 +1,7 @@
 /* Quaderno app service worker. Scope: the folder it is served from (/quaderno-catalog/).
    Only handles requests that belong to the app (shell, data, fonts, icons, images);
    every other page of the static site is left to the network untouched. */
-var VERSION='quaderno-app-v4'; // v2: drops caches that pinned data/pairings.json (cache-first) before the compound rebuild
+var VERSION='quaderno-app-v5'; // v2: drops caches that pinned data/pairings.json (cache-first) before the compound rebuild
 var SHELL=['app.html','css/app.css','js/app.js','js/app-ink.js','data/recipes.json','manifest.webmanifest',
   'fonts/cormorant-garamond.woff2','fonts/cormorant-garamond-italic.woff2','fonts/inter.woff2',
   'icons/icon-192.png','icons/maskable-192.png','icons/apple-touch-icon.png','icons/favicon-32.png','arcimboldo-hero.jpg'];

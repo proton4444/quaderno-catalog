@@ -12,7 +12,7 @@
 <link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="data/pairings-v4.json" as="fetch" crossorigin/>
-<link rel="stylesheet" href="css/pairings.css?v=6"/>
+<link rel="stylesheet" href="css/pairings.css?v=7"/>
 </head>
 <body>
 <div class="stage" id="stage">
@@ -26,7 +26,7 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 5.2 8.2 12l6.4 6.8"/></svg>
   </a>
   <div class="ttl">
-    <p class="kicker" data-i18n="kicker">Quaderno · concept</p>
+    <p class="kicker" data-i18n="kicker">Quaderno · prototipo</p>
     <h1 data-i18n="title">Abbinamenti</h1>
   </div>
   <button class="ibtn" id="reset" type="button" data-i18n-aria="reset" aria-label="Ricomincia" disabled>
@@ -58,7 +58,7 @@
 
 <noscript><p class="nojs">Questa pagina concept richiede JavaScript. <a href="app.html">Torna al quaderno</a>.</p></noscript>
 <section class="fallback" id="fallback" hidden></section>
-<script src="js/pairings.js?v=6" defer></script>
+<script src="js/pairings.js?v=7" defer></script>
 <script>
 /* watchdog: if the page script never starts (network error, old browser), show a readable message instead of a blank page */
 setTimeout(function(){if(window.__pairingsReady)return;var b=document.getElementById('fallback');if(!b||!b.hidden)return;

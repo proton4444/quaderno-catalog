@@ -102,8 +102,16 @@ or taxa count. `wikidata_match` = `unique` (one candidate), `ranked` (clear winn
 over taxon, label over alias, FoodOn link, sitelinks), `ambiguous`, or `manual`. FoodOn comes from Wikidata's P6767
 link, else a unique exact label / exact synonym. Anything doubtful gets a `review` reason and a row in
 `tools/pairings_review.csv` (with the candidates found); decisions go in `tools/sources/overrides.csv`
-(`id,wikidata,foodon,name_it,note`; `-` = none) and win over the automatic choice. Italian names from Wikidata are
-stored in the database but **not** used on the site until reviewed.
+(`id,wikidata,foodon,name_it,note`; `-` = none) and win over the automatic choice.
+
+Italian names: notebook ingredients keep their catalog names (`tools/catalog.py`). Every other ingredient takes its
+Italian name from **`tools/sources/names_it.csv`** (`id,en,it,origin,note`), a reviewed, hand-editable list:
+`origin` = `wikidata` (the Wikidata label, kept as is apart from a lower-case initial), `reviewed` (a Wikidata label
+that was wrong or awkward and was corrected, e.g. *flower* → “fiori”, not “marijuana”), or `manual` (translated by
+hand; Latin botanical names are kept when there is no established Italian common name, `note` = “Latin name kept”).
+`build_db.py` copies it into `ingredient.name_it` / `name_it_source` and `build_pairings.py` into the site data
+(`data/ing-index.json` column `it`, `data/ing/<id>.json` field `it`); the build fails if an ingredient has no row.
+To fix a name, edit the CSV and run `python tools/build.py`.
 
 Example queries:
 

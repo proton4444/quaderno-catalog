@@ -33,6 +33,19 @@ CAT_TYPE = {'vegetable': 'verdure', 'herb': 'erbe', 'fish/seafood': 'mare', 'mea
             'animal product': 'latticini', 'cereal/crop': 'cereali', 'fruit': 'frutta', 'nut/seed/pulse': 'frutta',
             'spice': 'condimenti', 'alcoholic beverage': 'altro', 'plant': 'altro', 'plant derivative': 'altro', 'flower': 'altro'}
 VERBOSE = False
+NAMES_IT = os.path.join(HERE, 'sources', 'names_it.csv')   # reviewed Italian names of the dataset-only ingredients
+
+
+def load_names_it(path=NAMES_IT):
+    """id -> (Italian name, origin) from tools/sources/names_it.csv (origin: wikidata | reviewed | manual)."""
+    import csv
+    out = {}
+    with open(path, encoding='utf-8', newline='') as f:
+        for r in csv.DictReader(f):
+            assert r['it'].strip() and r['origin'] in ('wikidata', 'reviewed', 'manual'), r
+            assert r['id'] not in out, 'duplicate id in names_it.csv: ' + r['id']
+            out[r['id']] = (r['it'].strip(), r['origin'])
+    return out
 
 
 def log(*a):
@@ -185,6 +198,7 @@ def build_full(A, nb, out_dir):
     rev = {a: cid for cid, (a, q, _) in MAP.items()}           # Ahn entity -> catalog id
     assert len(rev) == len(MAP), 'two catalog ingredients map to the same dataset entity'
     meta = {c[0]: c for c in C}
+    names_it = load_names_it()
     ents = sorted(n for n in IC if IC[n])
     eid = {}
     for n in ents:
@@ -192,6 +206,8 @@ def build_full(A, nb, out_dir):
         assert re.fullmatch(r'[a-z0-9-]+', i), i
         eid[n] = i
     assert len(set(eid.values())) == len(eid), 'id collision between catalog ids and dataset slugs'
+    missing = [eid[n] for n in ents if n not in rev and eid[n] not in names_it]
+    assert not missing, 'no Italian name in tools/sources/names_it.csv for: ' + ', '.join(missing[:20])
     cids = sorted(comp)                                        # compound id -> index in compounds.json
     cix = {c: k for k, c in enumerate(cids)}
     bits = {n: sum(1 << cix[c] for c in IC[n]) for n in ents}
@@ -235,7 +251,7 @@ def build_full(A, nb, out_dir):
         obj = {'id': i, 'en': meta[nbid][2] if nbid else cname(n), 'ahn': n, 'cat': cat[n],
                'type': meta[nbid][3] if nbid else CAT_TYPE.get(cat[n], 'altro'), 'nc': size[n], 'nb': bool(nbid), 'm': ms}
         if fb: obj['fb'] = 1   # weak pairings (fallback rule)
-        if nbid: obj['it'] = meta[nbid][1]
+        obj['it'] = meta[nbid][1] if nbid else names_it[i][0]
         path = os.path.join(ing_dir, i + '.json')
         write_json(path, obj)
         total += os.path.getsize(path)
@@ -246,7 +262,7 @@ def build_full(A, nb, out_dir):
         if nbid:
             items.append([eid[n], meta[nbid][1], meta[nbid][2], meta[nbid][3], size[n], 1])
         else:
-            items.append([eid[n], None, cname(n), CAT_TYPE.get(cat[n], 'altro'), size[n], 0])
+            items.append([eid[n], names_it[eid[n]][0], cname(n), CAT_TYPE.get(cat[n], 'altro'), size[n], 0])
     for i in nb['unmapped']:
         items.append([i, meta[i][1], meta[i][2], meta[i][3], 0, 2])
     items.sort(key=lambda r: (-r[5] if r[5] else 0, r[2]))

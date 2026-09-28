@@ -20,5 +20,9 @@ Wikidata snapshot files:
 `name_it`, `note`). The build applies them after the automatic matching; see `tools/pairings_review.csv` for the rows that
 need a decision.
 
+`names_it.csv` holds the Italian display names of the 1,463 ingredients that are not in the notebook (`id,en,it,origin,note`;
+origin `wikidata` = Wikidata label kept, `reviewed` = Wikidata label corrected by hand, `manual` = hand translation).
+It is an editorial file of this repository, not a download; the Wikidata labels it started from are in `wikidata/candidates.tsv`.
+
 Attribution when publishing derived data: “Contains data from Wikidata (CC0) and FoodOn (CC BY 4.0,
 https://foodon.org); flavour compounds from Ahn et al. 2011 (CC BY-NC-SA 3.0).”

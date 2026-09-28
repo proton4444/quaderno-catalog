@@ -22,7 +22,7 @@ sys.path.insert(0, HERE)
 from catalog import C, MAP, UNMAPPED_WHY, ingredient_id  # noqa: E402
 from flavordata import load as load_ahn, cname  # noqa: E402
 import fetch_sources as fs  # noqa: E402
-from build_pairings import CAT_TYPE  # noqa: E402
+from build_pairings import CAT_TYPE, load_names_it  # noqa: E402
 
 SRC = fs.SRC
 DB = os.path.join(HERE, 'pairings.db')
@@ -36,7 +36,7 @@ CREATE TABLE ingredient(
   id TEXT PRIMARY KEY,              -- stable id, same as the site (catalog id, or Ahn name with '_' -> '-')
   name_en TEXT NOT NULL,
   name_it TEXT,
-  name_it_source TEXT,              -- 'catalog' | 'wikidata' | 'manual'
+  name_it_source TEXT,              -- 'catalog' | 'wikidata' | 'reviewed' | 'manual' (see sources/names_it.csv)
   category TEXT NOT NULL,           -- verdure|erbe|mare|carne|latticini|cereali|frutta|condimenti|altro
   in_notebook INTEGER NOT NULL,     -- 1 = one of the notebook (catalog) ingredients
   wikidata TEXT,                    -- QID
@@ -143,6 +143,7 @@ def main():
     for r in read_tsv('wikidata/candidates.tsv'):
         cands[(r['lang'], fold(r['name']))].append(r)
     food = {r['qid'] for r in read_tsv('wikidata/food_classes.tsv')}
+    names_it = load_names_it()
     clab = {r['qid']: (r['label_en'], r['label_it']) for r in read_tsv('wikidata/class_labels.tsv')}
     aliases = collections.defaultdict(list)
     for r in read_tsv('wikidata/aliases.tsv'):
@@ -216,10 +217,11 @@ def main():
                     fo, fhow = next(iter(hit)), 'exact-synonym'; break
         if o.get('foodon'):
             fo, fhow = (None if o['foodon'] == '-' else o['foodon']), 'manual'
-        # Italian name: notebook name wins; else the Wikidata label of a food item (taxon labels are Latin)
+        # Italian name: notebook name wins; else the reviewed name in tools/sources/names_it.csv
+        # (a Wikidata label kept as is, a corrected Wikidata label, or a manual translation)
         it, its = g['it'], ('catalog' if g['it'] else None)
-        if not it and r and r['label_it'] and (r['qid'] in food or set(r['classes'].split()) & food):
-            it, its = r['label_it'], 'wikidata'
+        if not it and i in names_it:
+            it, its = names_it[i]
         if o.get('name_it'):
             it, its = o['name_it'], 'manual'
         if not qid and not fo:
@@ -237,6 +239,7 @@ def main():
         syn.add((i, 'en', g['en'], 'catalog' if g['nb'] else 'ahn2011'))
         if g['ahn']: syn.add((i, 'en', cname(g['ahn']), 'ahn2011'))
         if g['nb']: syn.add((i, 'it', g['it'], 'catalog'))
+        elif i in names_it: syn.add((i, 'it', names_it[i][0], 'names_it'))
         if r and qid:
             if r['label_en']: syn.add((i, 'en', r['label_en'], 'wikidata'))
             if r['label_it']: syn.add((i, 'it', r['label_it'], 'wikidata'))
@@ -296,7 +299,9 @@ def main():
          lock.get('wikidata/candidates.tsv', {}).get('sha256')),
         ('foodon', 'FoodOn food ontology (foodon-synonyms.tsv)', 'CC BY 4.0', fs.FOODON['foodon/foodon-synonyms.tsv'][0], fs.FOODON_TAG,
          fs.FOODON['foodon/foodon-synonyms.tsv'][1]),
-        ('catalog', 'Quaderno notebook ingredients (tools/catalog.py)', 'see README', 'tools/catalog.py', None, None)])
+        ('catalog', 'Quaderno notebook ingredients (tools/catalog.py)', 'see README', 'tools/catalog.py', None, None),
+        ('names_it', 'Italian names of the dataset-only ingredients (reviewed Wikidata labels + manual translations)', 'same as the repository',
+         'tools/sources/names_it.csv', None, None)])
     db.executemany('INSERT INTO ingredient VALUES (?,?,?,?,?,?,?,?,?,?,?)', rows)
     db.executemany('INSERT INTO synonym VALUES (?,?,?,?)', sorted(syn))
     db.executemany('INSERT INTO ingredient_category VALUES (?,?,?,?)', sorted(cats))

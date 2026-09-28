@@ -15,7 +15,7 @@ var chipsEl=$('chips'), hintEl=$('hint'), resetBtn=$('reset');
 
 /* ---------- i18n ---------- */
 var T={
- it:{title:'Abbinamenti',kicker:'Quaderno · concept',hint:'Cerca, o tocca uno degli ingredienti principali',how:'Come funziona',
+ it:{title:'Abbinamenti',kicker:'Quaderno · prototipo',hint:'Cerca, o tocca uno degli ingredienti principali',how:'Come funziona',
    modeNb:'Solo quaderno',modeAll:'Tutti gli ingredienti',modeLbl:'Quali ingredienti',notInNb:'non nel quaderno',
    allNote:'Tutti gli ingredienti del dataset Ahn et al. 2011',loadErr:'Dati completi non disponibili: mostro solo il quaderno.',loading:'Carico…',
    search:'Cerca un ingrediente…',searchLbl:'Cerca un ingrediente',noRes:'Nessun ingrediente trovato',noAroma:'senza dati aromatici',hubs:'Ingredienti principali',hubOf:'ingrediente principale',
@@ -36,8 +36,8 @@ var T={
    inN:function(n){return 'in '+n+(n===1?' ricetta':' ricette')+' del quaderno';},nRec:function(n){return n+(n===1?' ricetta':' ricette');},
    staples:'Anche, onnipresenti: ',more:function(n){return 'Altri '+n+' abbinamenti aromatici';},none:'Nessun composto aromatico in comune con gli altri ingredienti del quaderno.',
    howTitle:'Abbinamenti dalla scienza degli aromi',
-   stats:function(r,i,t,m){return r+' ricette · '+i+' ingredienti ('+m+' con dati aromatici) · '+t+' tipi. Un concept: la chimica suggerisce, il cuoco decide.';},
-   types:'Tipi di ingrediente',ings:'Ingredienti',together:'insieme in'},
+   stats:function(r,i,t,m){return r+' ricette · '+i+' ingredienti ('+m+' con dati aromatici) · '+t+' tipi. Un prototipo: la chimica suggerisce, il cuoco decide.';},
+   types:'Tipi di ingrediente',ings:'Ingredienti',together:'insieme in',path:'Percorso'},
  en:{title:'Pairings',kicker:'Notebook · concept',hint:'Search, or tap one of the key ingredients',how:'How it works',
    modeNb:'Notebook only',modeAll:'All ingredients',modeLbl:'Which ingredients',notInNb:'not in the notebook',
    allNote:'All ingredients of the Ahn et al. 2011 dataset',loadErr:'Full data unavailable: showing the notebook only.',loading:'Loading…',
@@ -60,7 +60,7 @@ var T={
    staples:'Also, everywhere: ',more:function(n){return n+' more aroma pairings';},none:'No aroma compounds shared with the other notebook ingredients.',
    howTitle:'Pairings from flavour science',
    stats:function(r,i,t,m){return r+' recipes · '+i+' ingredients ('+m+' with aroma data) · '+t+' types. A concept: chemistry suggests, the cook decides.';},
-   types:'Ingredient types',ings:'Ingredients',together:'together in'}
+   types:'Ingredient types',ings:'Ingredients',together:'together in',path:'Path'}
 };
 var SHORT={verdure:['Verdure','Vegetables'],erbe:['Erbe','Herbs'],mare:['Mare','Seafood'],carne:['Carne','Meat'],latticini:['Latticini & uova','Dairy & eggs'],
   cereali:['Cereali','Grains'],frutta:['Frutta','Fruit'],condimenti:['Condimenti','Condiments'],altro:['Altro','Other']};
@@ -96,7 +96,7 @@ function clamp(v,a,b){return v<a?a:v>b?b:v;}
 function rnd(a,b){return a+Math.random()*(b-a);}
 
 /* ---------- full mode ("Tutti gli ingredienti"): lazily loaded per-ingredient files ---------- */
-var DATA_V='6';
+var DATA_V='7';
 var MODE_KEY='pairings-mode';
 var MODE=(function(){var q=/[?&]mode=(all|nb)\b/.exec(location.search);if(q)return q[1];try{return localStorage.getItem(MODE_KEY)==='all'?'all':'nb';}catch(e){return 'nb';}})();
 var IDX=null, IDXROW={}, COMP=null, FULL={}, idxP=null;
@@ -450,7 +450,7 @@ function openSheet(g,ms){
     '<h2 id="shTitle">'+esc(nm(g))+'</h2><div class="sh-meta">'+esc(g.ds?L.notInNb:L.inN(g.n))+(g.ahn?' · '+esc(L.known(g.nc))+'<br><span class="ent">'+esc(g.approx?L.approx:L.entity)+': <i>'+esc(g.ahn.replace(/_/g,' '))+'</i></span>':'')+'</div></div>'+
     '<button class="sh-close" type="button" data-act="reset" aria-label="'+esc(L.close)+'">'+ICON_CLOSE+'</button></div>';
   if(trail.length>1){
-    h+='<nav class="crumbs" aria-label="Percorso">'+trail.map(function(id,i){
+    h+='<nav class="crumbs" aria-label="'+esc(L.path)+'">'+trail.map(function(id,i){
       return i===trail.length-1?'<span aria-current="true">'+esc(nm(ING[id]))+'</span>':'<button type="button" data-go="'+id+'">'+esc(nm(ING[id]))+'</button><span aria-hidden="true">→</span>';}).join('')+'</nav>';
   }
   var full=MODE==='all'&&!!FULL[g.id];
@@ -725,8 +725,9 @@ function suggest(q){
   q=fold(q);if(!q)return [];
   var out=[];
   suggestPool().forEach(function(g){
-    var best=9;[g.it,g.en,g.id.replace(/-/g,' ')].forEach(function(n){var f=fold(n),ix=f.indexOf(q);
-      if(ix<0)return;var sc=ix===0?0:(f.charAt(ix-1)===' '?1:2);if(sc<best)best=sc;});
+    // matches the Italian and the English name (accent-insensitive); the current language wins ties
+    var best=9;[nm(g),lang==='en'?g.it:g.en,g.id.replace(/-/g,' ')].forEach(function(n,k){var f=fold(n),ix=f.indexOf(q);
+      if(ix<0)return;var sc=(ix===0?0:(f.charAt(ix-1)===' '?1:2))+(k?0.5:0);if(sc<best)best=sc;});
     if(best<9)out.push({g:g,sc:best});
   });
   out.sort(function(a,b){return (a.sc-b.sc)||((a.g.ds?1:0)-(b.g.ds?1:0))||((b.g.ahn?1:0)-(a.g.ahn?1:0))||(b.g.n-a.g.n)||(fold(nm(a.g))<fold(nm(b.g))?-1:1);});
