@@ -1,5 +1,7 @@
 /* Quaderno — Abbinamenti (concept). Ingredient "drops" as SDF metaball watercolor (WebGL1),
-   gentle physics, tap to pop + reveal pairings mined from data/pairings.json. No build step. */
+   gentle physics, tap to pop + reveal flavour pairings from data/pairings.json:
+   threads = shared aroma compounds (Ahn et al. 2011, Sci. Rep. 1:196, CC BY-NC-SA 3.0),
+   plus the notebook recipes where both ingredients appear. No build step. */
 (function(){
 'use strict';
 var doc=document, html=doc.documentElement, body=doc.body;
@@ -14,18 +16,28 @@ var chipsEl=$('chips'), hintEl=$('hint'), resetBtn=$('reset');
 /* ---------- i18n ---------- */
 var T={
  it:{title:'Abbinamenti',kicker:'Quaderno · concept',hint:'Tocca una goccia per scoprire con cosa si abbina',how:'Come funziona',
-   back:'Torna al quaderno',reset:'Ricomincia',close:'Chiudi',pairs:'Si abbina con…',recipesWith:'Ricette con ',
+   back:'Torna al quaderno',reset:'Ricomincia',close:'Chiudi',pairs:'Condivide aromi con…',recipesWith:'Ricette con ',
+   nComp:function(n){return n+(n===1?' composto':' composti');},shared:'Composti aromatici in comune',togetherNb:'Insieme nel quaderno',
+   never:'mai insieme nelle ricette del quaderno',moreC:function(n){return ' e altri '+n;},
+   known:function(n){return n+(n===1?' composto aromatico noto':' composti aromatici noti');},entity:'voce del dataset',approx:'voce più vicina',
+   noData:'Questo ingrediente non è nel dataset dei composti aromatici: nessun filo, per non inventare dati.',
+   src:'Dati aromatici',unm:'Senza dati aromatici: ',
    inN:function(n){return 'in '+n+(n===1?' ricetta':' ricette')+' del quaderno';},nRec:function(n){return n+(n===1?' ricetta':' ricette');},
-   staples:'Anche, onnipresenti: ',more:function(n){return 'Altri '+n+' abbinamenti';},none:'Nessun abbinamento nel quaderno.',
-   howTitle:'Abbinamenti ricavati dalle ricette del quaderno',
-   stats:function(r,i,t){return r+' ricette · '+i+' ingredienti · '+t+' tipi. Un concept: non regole di cucina, solo ciò che il quaderno contiene.';},
+   staples:'Anche, onnipresenti: ',more:function(n){return 'Altri '+n+' abbinamenti aromatici';},none:'Nessun composto aromatico in comune con gli altri ingredienti del quaderno.',
+   howTitle:'Abbinamenti dalla scienza degli aromi',
+   stats:function(r,i,t,m){return r+' ricette · '+i+' ingredienti ('+m+' con dati aromatici) · '+t+' tipi. Un concept: la chimica suggerisce, il cuoco decide.';},
    types:'Tipi di ingrediente',ings:'Ingredienti',together:'insieme in'},
  en:{title:'Pairings',kicker:'Notebook · concept',hint:'Tap a drop to see what it pairs with',how:'How it works',
-   back:'Back to the notebook',reset:'Start over',close:'Close',pairs:'Pairs with…',recipesWith:'Recipes with ',
+   back:'Back to the notebook',reset:'Start over',close:'Close',pairs:'Shares aromas with…',recipesWith:'Recipes with ',
+   nComp:function(n){return n+(n===1?' compound':' compounds');},shared:'Shared aroma compounds',togetherNb:'Together in the notebook',
+   never:'never together in the notebook recipes',moreC:function(n){return ' and '+n+' more';},
+   known:function(n){return n+(n===1?' known aroma compound':' known aroma compounds');},entity:'dataset entry',approx:'closest entry',
+   noData:'This ingredient is not in the aroma-compound dataset: no threads, rather than invented data.',
+   src:'Aroma data',unm:'No aroma data: ',
    inN:function(n){return 'in '+n+(n===1?' recipe':' recipes')+' in the notebook';},nRec:function(n){return n+(n===1?' recipe':' recipes');},
-   staples:'Also, everywhere: ',more:function(n){return n+' more pairings';},none:'No pairings in the notebook.',
-   howTitle:'Pairings derived from the notebook recipes',
-   stats:function(r,i,t){return r+' recipes · '+i+' ingredients · '+t+' types. A concept: not cooking rules, only what the notebook contains.';},
+   staples:'Also, everywhere: ',more:function(n){return n+' more aroma pairings';},none:'No aroma compounds shared with the other notebook ingredients.',
+   howTitle:'Pairings from flavour science',
+   stats:function(r,i,t,m){return r+' recipes · '+i+' ingredients ('+m+' with aroma data) · '+t+' types. A concept: chemistry suggests, the cook decides.';},
    types:'Ingredient types',ings:'Ingredients',together:'together in'}
 };
 var SHORT={verdure:['Verdure','Vegetables'],erbe:['Erbe','Herbs'],mare:['Mare','Seafood'],carne:['Carne','Meat'],latticini:['Latticini & uova','Dairy & eggs'],
@@ -237,19 +249,21 @@ function openSheet(g,ms){
   if(mobile)sheet.style.setProperty('--sheet-h',sheetH()+'px');
   var ty=TYPE[g.type],L=T[lang];
   var h='<div class="sh-head"><span class="sh-dot" style="--c:'+ty.color+'"></span><div class="sh-t"><div class="sh-type">'+esc(nm(ty))+'</div>'+
-    '<h2 id="shTitle">'+esc(nm(g))+'</h2><div class="sh-meta">'+esc(L.inN(g.n))+'</div></div>'+
+    '<h2 id="shTitle">'+esc(nm(g))+'</h2><div class="sh-meta">'+esc(L.inN(g.n))+(g.ahn?' · '+esc(L.known(g.nc))+'<br><span class="ent">'+esc(g.approx?L.approx:L.entity)+': <i>'+esc(g.ahn.replace(/_/g,' '))+'</i></span>':'')+'</div></div>'+
     '<button class="sh-close" type="button" data-act="reset" aria-label="'+esc(L.close)+'">'+ICON_CLOSE+'</button></div>';
   if(trail.length>1){
     h+='<nav class="crumbs" aria-label="Percorso">'+trail.map(function(id,i){
       return i===trail.length-1?'<span aria-current="true">'+esc(nm(ING[id]))+'</span>':'<button type="button" data-go="'+id+'">'+esc(nm(ING[id]))+'</button><span aria-hidden="true">→</span>';}).join('')+'</nav>';
   }
   h+='<h3 class="sh-h">'+esc(L.pairs)+'</h3>';
-  if(!ms.length)h+='<p class="empty">'+esc(L.none)+'</p>';
+  if(!ms.length)h+='<p class="empty">'+esc(g.ahn?L.none:L.noData)+'</p>';
   var max=ms.length?ms[0].score:1;
   h+='<ol class="mlist">'+ms.map(function(m){var o=ING[m.id],c=TYPE[o.type].color;
+    var ex=(m.ex||[]).map(function(k){return esc(D.compounds[k]);}).join(' · ')+(m.n>(m.ex||[]).length?esc(L.moreC(m.n-m.ex.length)):'');
     return '<li><button class="m" type="button" data-go="'+m.id+'"><span class="d" style="--c:'+c+'"></span><span class="mn">'+esc(nm(o))+'</span>'+
-      '<span class="bar" title="'+m.score+'"><i style="width:'+Math.round(18+82*m.score/max)+'%"></i></span><span class="mc">'+esc(L.nRec(m.n))+'</span></button>'+
-      '<div class="mr">'+esc(L.together)+' '+m.recipes.map(rlink).join(' · ')+'</div></li>';}).join('')+'</ol>';
+      '<span class="bar" title="Jaccard '+m.score+'"><i style="width:'+Math.round(18+82*m.score/max)+'%"></i></span><span class="mc">'+esc(L.nComp(m.n))+'</span></button>'+
+      '<div class="mr cx"><b>'+esc(L.shared)+'</b> '+ex+'</div>'+
+      '<div class="mr"><b>'+esc(L.togetherNb)+'</b> '+(m.recipes.length?m.recipes.map(rlink).join(' · '):'<span class="nv">'+esc(L.never)+'</span>')+'</div></li>';}).join('')+'</ol>';
   var shown={};ms.forEach(function(m){shown[m.id]=1;});
   var rest=g.matches.filter(function(m){return !m.staple&&!shown[m.id];});
   if(rest.length){
@@ -261,9 +275,11 @@ function openSheet(g,ms){
   h+='<h3 class="sh-h">'+esc(L.recipesWith+nm(g).toLowerCase())+'</h3><ul class="rlist">'+g.recipes.map(function(s){var r=RECIPE[s];
     return '<li><a href="app.html#/r/'+encodeURIComponent(s)+'">'+(r.cover?'<img src="'+esc(r.cover)+'" alt="" loading="lazy" decoding="async"/>':'<i></i>')+
       '<span>'+esc(nm(r.title))+'</span>'+ICON_GO+'</a></li>';}).join('')+'</ul>';
+  h+='<p class="credit">'+srcCredit()+'</p>';
   sheetIn.innerHTML=h;sheetIn.scrollTop=0;
   sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');sheet.setAttribute('aria-labelledby','shTitle');
 }
+function srcCredit(){var s=D.source;return esc(t('src'))+': <a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.short)+'</a> · <a href="'+esc(s.licenseUrl)+'" target="_blank" rel="noopener">'+esc(s.license)+'</a>';}
 function closeSheet(){sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true');}
 
 /* ---------- chips / language ---------- */
@@ -298,7 +314,11 @@ function applyLang(){
   chipsEl.setAttribute('aria-label',t('types'));labelsEl.setAttribute('aria-label',t('ings'));
   doc.title=t('title')+' — Quaderno';
   if(D){
-    $('howBody').innerHTML='<strong>'+esc(t('howTitle'))+'</strong><p>'+esc(nm(D.method))+'</p><p>'+esc(T[lang].stats(D.recipeCount,D.ingredients.length,D.types.length))+'</p>';
+    $('howBody').innerHTML='<strong>'+esc(t('howTitle'))+'</strong><p>'+esc(nm(D.method))+'</p>'+
+      '<p class="src">'+esc(D.source.label)+'. <a href="'+esc(D.source.url)+'" target="_blank" rel="noopener">doi:10.1038/srep00196</a> · <a href="'+esc(D.source.licenseUrl)+'" target="_blank" rel="noopener">'+esc(D.source.license)+'</a></p>'+
+      '<p class="unm">'+esc(t('unm'))+esc(D.unmapped.map(function(u){return nm(u);}).join(', '))+'.</p>'+
+      '<p>'+esc(T[lang].stats(D.recipeCount,D.ingredients.length,D.types.length,D.mappedCount))+'</p>';
+    $('credit').innerHTML=srcCredit();
     drops.forEach(setLabel);
     if(focus)openSheet(focus.g,topMatches(focus.g));
   }

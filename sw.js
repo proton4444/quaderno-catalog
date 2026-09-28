@@ -46,7 +46,7 @@ self.addEventListener('fetch',function(e){
   }
   if(!isApp(url))return;
   var path=url.slice(BASE.length).split('?')[0];
-  if(path==='data/recipes.json'||path==='js/app.js'||path==='css/app.css'||path==='js/app-ink.js'){
+  if(path==='data/recipes.json'||path==='data/pairings.json'||path==='js/app.js'||path==='css/app.css'||path==='js/app-ink.js'){
     // network-first so content/app updates land quickly; cache when offline
     e.respondWith(fetch(req).then(function(res){if(res.ok){var cp=res.clone();caches.open(VERSION).then(function(c){c.put(path,cp);});}return res;})
       .catch(function(){return caches.match(path);}));
