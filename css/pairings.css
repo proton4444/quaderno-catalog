@@ -192,3 +192,27 @@ body.sel .credit-fixed{opacity:0;pointer-events:none}
 .fallback button{padding:6px 14px;border-radius:999px;border:1px solid currentColor;color:var(--sepia,#704a2c);font:600 13px/1 var(--sans,system-ui,sans-serif)}
 .fallback a{color:var(--sepia,#704a2c)}
 .fb-src{font-size:11.5px;color:var(--muted,#7a6a5a);margin-top:14px}
+
+/* ---------- search drop (start screen) ---------- */
+.sbox{position:fixed;left:0;top:0;z-index:7;display:flex;flex-direction:column;align-items:center;gap:6px;will-change:transform;opacity:0;visibility:hidden;transition:opacity .35s}
+.sbox.off{pointer-events:none}
+.sbox form{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;margin:0}
+.sbox .sic{width:22px;height:22px;color:var(--sepia);opacity:.8;margin-bottom:2px}
+.sbox input{width:100%;box-sizing:border-box;border:0;border-bottom:1.5px solid rgba(112,74,44,.45);background:transparent;border-radius:0;
+  font:italic 500 19px/1.2 var(--serif);color:var(--ink);text-align:center;padding:6px 4px;-webkit-appearance:none;appearance:none;outline:none}
+.sbox input::placeholder{color:rgba(74,55,39,.62);opacity:1}
+.sbox input:focus{border-bottom-color:var(--accent)}
+.sbox input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+.shubs{margin:2px 0 0;font:600 9.5px/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:rgba(74,55,39,.6);text-align:center}
+#sList{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:max(270px,135%);margin:8px 0 0;padding:6px;list-style:none;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);max-height:min(52vh,340px);overflow:auto;text-align:left}
+#sList[hidden]{display:none}
+#sList li{display:flex;align-items:baseline;gap:8px;padding:9px 10px;border-radius:10px;cursor:pointer}
+#sList li i{width:10px;height:10px;border-radius:50% 46% 52% 48%;background:var(--c);flex:none;align-self:center}
+#sList li .sn{font:600 17px/1.15 var(--serif);color:var(--ink)}
+#sList li .so{font-size:12px;color:var(--muted)}
+#sList li .sx{margin-left:auto;font-size:10.5px;color:var(--muted);font-style:italic;white-space:nowrap}
+#sList li[aria-selected="true"],#sList li:hover{background:var(--accent-soft)}
+#sList li.none{cursor:default;color:var(--muted);font-style:italic}
+@media (max-width:759px){.sbox input{font-size:17px}}
+body.typing .hint{opacity:0}

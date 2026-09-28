@@ -4,15 +4,15 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>Abbinamenti — Quaderno</title>
-<meta name="description" content="Concept: gli ingredienti del quaderno come gocce d'inchiostro. Tocca una goccia per scoprire con cosa si abbina secondo i composti aromatici in comune (Ahn et al. 2011) e dove compaiono insieme nel quaderno."/>
+<meta name="description" content="Concept: gli ingredienti del quaderno come gocce d'inchiostro. Cerca un ingrediente o tocca una goccia per scoprire con cosa si abbina secondo i composti aromatici in comune (Ahn et al. 2011) e dove compaiono insieme nel quaderno."/>
 <meta name="theme-color" content="#704a2c"/>
 <meta name="color-scheme" content="light"/>
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png"/>
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
 <link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin/>
-<link rel="preload" href="data/pairings-v2.json" as="fetch" crossorigin/>
-<link rel="stylesheet" href="css/pairings.css?v=3"/>
+<link rel="preload" href="data/pairings-v4.json" as="fetch" crossorigin/>
+<link rel="stylesheet" href="css/pairings.css?v=4"/>
 </head>
 <body>
 <div class="stage" id="stage">
@@ -39,7 +39,9 @@
 </header>
 <nav class="chips" id="chips" aria-label="Tipi di ingrediente"></nav>
 
-<p class="hint" id="hint" data-i18n="hint">Tocca una goccia per scoprire con cosa si abbina</p>
+<div class="sbox" id="sbox"></div>
+
+<p class="hint" id="hint" data-i18n="hint">Cerca, o tocca uno degli ingredienti principali</p>
 
 <p class="credit-fixed" id="credit">Dati aromatici: <a href="https://doi.org/10.1038/srep00196" target="_blank" rel="noopener">Ahn et al. 2011 · Sci. Rep.</a> · CC BY-NC-SA 3.0</p>
 
@@ -55,7 +57,7 @@
 
 <noscript><p class="nojs">Questa pagina concept richiede JavaScript. <a href="app.html">Torna al quaderno</a>.</p></noscript>
 <section class="fallback" id="fallback" hidden></section>
-<script src="js/pairings.js?v=3" defer></script>
+<script src="js/pairings.js?v=4" defer></script>
 <script>
 /* watchdog: if the page script never starts (network error, old browser), show a readable message instead of a blank page */
 setTimeout(function(){if(window.__pairingsReady)return;var b=document.getElementById('fallback');if(!b||!b.hidden)return;
