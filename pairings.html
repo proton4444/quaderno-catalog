@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Abbinamenti — Quaderno</title>
+<meta name="description" content="Concept: gli ingredienti del quaderno come gocce d'inchiostro. Tocca una goccia per scoprire con cosa si abbina nelle ricette."/>
+<meta name="theme-color" content="#704a2c"/>
+<meta name="color-scheme" content="light"/>
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png"/>
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+<link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="data/pairings.json" as="fetch" crossorigin/>
+<link rel="stylesheet" href="css/pairings.css"/>
+</head>
+<body>
+<div class="stage" id="stage">
+  <canvas id="ink" aria-hidden="true"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="labels" id="labels" role="group" aria-label="Ingredienti"></div>
+</div>
+
+<header class="pbar" id="pbar">
+  <a class="ibtn back" href="app.html" data-i18n-aria="back" aria-label="Torna al quaderno">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 5.2 8.2 12l6.4 6.8"/></svg>
+  </a>
+  <div class="ttl">
+    <p class="kicker" data-i18n="kicker">Quaderno · concept</p>
+    <h1 data-i18n="title">Abbinamenti</h1>
+  </div>
+  <button class="ibtn" id="reset" type="button" data-i18n-aria="reset" aria-label="Ricomincia" disabled>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 12.4a6.8 6.8 0 1 0 2.1-5.1"/><path d="M6.6 3.6v4.2h4.2"/></svg>
+  </button>
+  <div class="lang" role="group" aria-label="Lingua / Language">
+    <button type="button" data-lang="it" aria-pressed="true">IT</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+<nav class="chips" id="chips" aria-label="Tipi di ingrediente"></nav>
+
+<p class="hint" id="hint" data-i18n="hint">Tocca una goccia per scoprire con cosa si abbina</p>
+
+<details class="how" id="how">
+  <summary data-i18n="how">Come funziona</summary>
+  <div class="how-body" id="howBody"></div>
+</details>
+
+<aside class="psheet" id="sheet" aria-hidden="true" aria-live="polite" tabindex="-1">
+  <button class="grab" id="grab" type="button" aria-label="Espandi / riduci"><span></span></button>
+  <div class="sheet-in" id="sheetIn"></div>
+</aside>
+
+<noscript><p class="nojs">Questa pagina concept richiede JavaScript. <a href="app.html">Torna al quaderno</a>.</p></noscript>
+<script src="js/pairings.js" defer></script>
+</body>
+</html>
